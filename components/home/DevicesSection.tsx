@@ -19,31 +19,37 @@ const devices = [
     title: "Amazon Firestick and Fire TV",
     body: "Install the dedicated app through Downloader using the verified code in the Installation Guide. Open the app and enter the details from your welcome message.",
     icon: TvMinimal,
+    href: "/installation-guide/firestick",
   },
   {
     title: "Android TV and Google TV",
     body: "Use the dedicated app or a compatible player on supported Android TV, Google TV and Android box devices.",
     icon: Tv,
+    href: "/installation-guide/android-tv",
   },
   {
     title: "Samsung, LG and Other Smart TVs",
     body: "Install a compatible player from your television's official app store, then add the supplied Xtream Codes details. App availability varies by television model and operating system.",
     icon: Monitor,
+    href: "/installation-guide/smart-tv",
   },
   {
     title: "iPhone, iPad and Apple TV",
     body: "Install a compatible player from the App Store and enter the supplied username, password and server address.",
     icon: Apple,
+    href: "/installation-guide/ios",
   },
   {
     title: "Android Phones and Tablets",
     body: "Use the dedicated Android app or a compatible player. A phone or tablet is also useful for checking whether your account is active.",
     icon: Smartphone,
+    href: "/installation-guide/android-mobile",
   },
   {
     title: "Windows and Mac",
     body: "Install a reputable compatible player and add the supplied Xtream Codes details. Download software only from its official publisher or a recognised app store.",
     icon: TabletSmartphone,
+    href: "/installation-guide/windows",
   },
 ] as const;
 
@@ -79,7 +85,11 @@ export function DevicesSection() {
                 <GlassIcon icon={device.icon} className="is-large" />
               </CardRevealPart>
               <CardRevealPart variant="content">
-                <h3 className="telvis-info-title">{device.title}</h3>
+                <h3 className="telvis-info-title">
+                  <Link href={device.href} className="telvis-device-title-link">
+                    {device.title}
+                  </Link>
+                </h3>
                 <p className="telvis-info-body">{device.body}</p>
               </CardRevealPart>
             </CardReveal>

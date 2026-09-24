@@ -24,7 +24,7 @@ export function HeroSection() {
               className="telvis-h1"
               lines={[
                 <>
-                  IPTV UK – Premium IPTV Subscription from{" "}
+                  Telvis IPTV UK – Subscription from{" "}
                   <span className="telvis-h1-accent">£9.99</span>
                 </>,
                 <>

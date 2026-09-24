@@ -9,13 +9,13 @@ import { routes } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   path: routes.refund,
-  title: "IPTV UK Refund Policy – Seven-Day Guarantee",
+  title: "Telvis 7-Day Refund Policy",
   description:
-    "Read the Telvis IPTV UK seven-day refund guarantee, how to request a refund, and what information support needs to review an eligible paid order.",
+    "Eligible Telvis paid plans include a seven-day refund guarantee. Read what is covered, how to request a refund, and how UK consumer rights still apply.",
   keywords: [
-    "IPTV UK refund policy",
-    "Telvis refund",
-    "IPTV subscription refund UK",
+    "Telvis refund policy",
+    "7 day IPTV refund",
+    "Telvis guarantee",
   ],
 });
 

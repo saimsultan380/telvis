@@ -6,9 +6,9 @@ import { buildBreadcrumbList, webPageSchema } from "@/lib/seo";
 export function ReviewsSchema() {
   const webPage: Record<string, unknown> = webPageSchema({
     path: routes.reviews,
-    name: "IPTV UK Reviews – Customer Feedback & User Experiences",
+    name: "Telvis Reviews | Customer Feedback on Setup and Picture",
     description:
-      "Read IPTV UK customer reviews covering setup, streaming quality, device compatibility, support and everyday viewing experience.",
+      "Read Telvis customer reviews covering Firestick and Smart TV setup, everyday viewing, support replies and what the 24-hour trial showed.",
   });
 
   const product = reviewsPageProductSchema();
@@ -22,7 +22,7 @@ export function ReviewsSchema() {
     "@graph": [
       buildBreadcrumbList([
         { name: "Home", path: "/" },
-        { name: "IPTV UK Reviews", path: routes.reviews },
+        { name: "Telvis Reviews", path: routes.reviews },
       ]),
       webPage,
       ...(product ? [product] : []),

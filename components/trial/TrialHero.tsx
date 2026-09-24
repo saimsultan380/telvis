@@ -14,9 +14,9 @@ export function TrialHero() {
       headingId="trial-heading"
       titleLines={[
         <>
-          Request an <span className="telvis-h1-accent">IPTV UK</span>
+          Request a <span className="telvis-h1-accent">24-Hour</span>
         </>,
-        <>Free Trial</>,
+        <>Telvis Free Trial</>,
       ]}
       visual={
         <ScrollReveal delay={0.18} variant="media" className="telvis-visual-wrap">

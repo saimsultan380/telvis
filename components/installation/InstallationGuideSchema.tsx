@@ -1,71 +1,23 @@
 import Link from "next/link";
 import { CardReveal, CardRevealPart } from "@/components/ui/CardReveal";
 import { JsonLdScript } from "@/components/seo/JsonLdScript";
-import { buildBreadcrumbList, canonicalUrl, webPageSchema } from "@/lib/seo";
+import { buildBreadcrumbList, webPageSchema } from "@/lib/seo";
 import { routes, supportConfig } from "@/lib/site";
 
 export function InstallationGuideSchema() {
-  const pageUrl = canonicalUrl(routes.installation);
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       buildBreadcrumbList([
         { name: "Home", path: "/" },
-        { name: "IPTV UK Installation Guide", path: routes.installation },
+        { name: "Installation Guide", path: routes.installation },
       ]),
       webPageSchema({
         path: routes.installation,
-        name: "IPTV UK Installation Guide – Firestick, TV & Mobile",
+        name: "IPTV Installation Guide UK | Firestick, Smart TV, Phone | Telvis",
         description:
-          "Install IPTV UK on Firestick, Android TV, Smart TV, Apple devices, Windows or Mac. Follow dedicated-app and Xtream Codes setup steps.",
+          "Choose your device and open a dedicated Telvis setup page for Firestick, Smart TV, Android, Apple, Windows or Kodi. Each guide has its own steps.",
       }),
-      {
-        "@type": "HowTo",
-        "@id": `${pageUrl}#howto`,
-        url: pageUrl,
-        name: "Firestick and Fire TV Setup with the Dedicated App",
-        description:
-          "Install the Telvis dedicated app on Firestick or Fire TV using Downloader and your account credentials.",
-        step: [
-          {
-            "@type": "HowToStep",
-            position: 1,
-            name: "Install Downloader",
-            text: "From the Fire TV home screen, search for Downloader and install the recognised orange Downloader application.",
-          },
-          {
-            "@type": "HowToStep",
-            position: 2,
-            name: "Allow installation",
-            text: "Open Fire TV settings and allow Downloader to install apps from unknown sources where required.",
-          },
-          {
-            "@type": "HowToStep",
-            position: 3,
-            name: "Enter the downloader code",
-            text: `Open Downloader and enter code ${supportConfig.downloaderCode}, then confirm the download belongs to Telvis.`,
-          },
-          {
-            "@type": "HowToStep",
-            position: 4,
-            name: "Download and install",
-            text: "Start the download, install the app and open it once installation completes.",
-          },
-          {
-            "@type": "HowToStep",
-            position: 5,
-            name: "Sign in",
-            text: "Enter the username, password and server information from your welcome message exactly as supplied.",
-          },
-          {
-            "@type": "HowToStep",
-            position: 6,
-            name: "Allow the first load to finish",
-            text: "Keep the app open until live, movie, series and EPG data finish loading on first sign-in.",
-          },
-        ],
-      },
     ],
   };
 
@@ -103,7 +55,7 @@ export function InstallationGuideSupport() {
             </div>
           </CardRevealPart>
           <CardRevealPart as="p" className="telvis-section-note">
-            <Link href={routes.plans}>Compare IPTV UK plans</Link>
+            <Link href={routes.plans}>Compare Telvis plans</Link>
             {" • "}
             <Link href={routes.reviews}>Read customer reviews</Link>
             {" • "}

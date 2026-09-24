@@ -13,9 +13,9 @@ export function InstallationGuideHero() {
       eyebrow="Installation Guide"
       headingId="installation-guide-heading"
       titleLines={[
-        <>IPTV UK Installation Guide for</>,
+        <>Installation Guide for</>,
         <>
-          <span className="telvis-h1-accent">Supported Devices</span>
+          <span className="telvis-h1-accent">Firestick, Smart TV and More</span>
         </>,
       ]}
       visual={

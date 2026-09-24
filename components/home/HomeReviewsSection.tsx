@@ -59,7 +59,7 @@ export function HomeReviewsSection() {
         <ScrollReveal delay={0.08} variant="cta">
           <div className="telvis-inline-actions is-row">
             <Link href={routes.reviews} className="telvis-cta-primary">
-              Read All IPTV UK Reviews
+              Read Telvis Reviews
             </Link>
           </div>
         </ScrollReveal>

@@ -17,16 +17,13 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   path: routes.installation,
-  title: "IPTV UK Installation Guide – Firestick, TV & Mobile",
+  title: "IPTV Installation Guide UK | Firestick, Smart TV, Phone | Telvis",
   description:
-    "Install IPTV UK on Firestick, Android TV, Smart TV, Apple devices, Windows or Mac. Follow dedicated-app and Xtream Codes setup steps.",
+    "Choose your device and open a dedicated Telvis setup page for Firestick, Smart TV, Android, Apple, Windows or Kodi. Each guide has its own steps.",
   keywords: [
-    "IPTV UK installation guide",
-    "install IPTV on Firestick",
-    "IPTV setup UK",
-    "IPTV on Smart TV",
-    "Xtream Codes setup",
-    "IPTV player installation",
+    "IPTV installation guide UK",
+    "Telvis setup",
+    "IPTV device setup",
   ],
   ogType: "article",
 });
@@ -49,11 +46,11 @@ export default function InstallationGuidePage() {
               eyebrow="Device setup"
               title={
                 <>
-                  Set Up <TitleAccent>IPTV UK</TitleAccent> on Firestick, Smart TV,
-                  Mobile and More
+                  Open the <TitleAccent>Device Guide</TitleAccent> That Matches
+                  Your Screen
                 </>
               }
-              lead="Choose your device from the list below. Tabs run from Firestick setup through to Kodi. Follow one method at a time and keep your welcome message nearby."
+              lead="Each device now has its own page. Open Firestick, Smart TV, Android, Apple, Windows or another guide, then follow one method at a time with your welcome message nearby."
             />
             <InstallationGuideTabs />
           </div>

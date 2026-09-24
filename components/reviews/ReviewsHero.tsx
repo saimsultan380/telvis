@@ -14,7 +14,7 @@ export function ReviewsHero() {
       headingId="reviews-heading"
       titleLines={[
         <>
-          IPTV UK Reviews from{" "}
+          Telvis Reviews from{" "}
           <span className="telvis-h1-accent">Verified Customers</span>
         </>,
       ]}

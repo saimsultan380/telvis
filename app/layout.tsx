@@ -22,13 +22,11 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [
-    "IPTV UK",
+    "Telvis",
+    "Telvis IPTV",
     "IPTV subscription UK",
-    "IPTV service UK",
-    "IPTV plans UK",
-    "UK IPTV subscription",
-    "IPTV free trial",
-    "IPTV installation",
+    "IPTV free trial UK",
+    "IPTV installation UK",
   ],
   icons: {
     icon: [

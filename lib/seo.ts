@@ -152,7 +152,7 @@ export function pageMetadata({
   const url = canonicalUrl(path);
 
   return {
-    title: path === "/" ? { absolute: title } : title,
+    title: { absolute: title },
     description,
     keywords,
     alternates: {
@@ -187,12 +187,16 @@ export function pageMetadata({
   };
 }
 
-/** Routes included in sitemap.xml (indexable pages only). */
-export const indexableRoutes = [
+/** Static marketing and legal routes included in sitemap.xml. */
+export const staticIndexableRoutes = [
   "/",
   "/free-trial",
+  "/plans",
+  "/about",
   "/contact",
   "/reviews",
   "/installation-guide",
   "/refund-policy",
+  "/privacy-policy",
+  "/terms",
 ] as const;

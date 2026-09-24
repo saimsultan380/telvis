@@ -8,14 +8,13 @@ import { routes } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   path: routes.trial,
-  title: "Free IPTV UK Trial – 24 Hours on Your Device",
+  title: "24-Hour IPTV Free Trial UK | Telvis",
   description:
-    "Request a free 24-hour IPTV UK trial. Test live TV, movies and series on your Firestick, Smart TV or mobile before choosing a Telvis plan.",
+    "Request a free 24-hour Telvis trial on your Firestick, Smart TV or phone. No card needed. Test picture, channels and setup before you pay.",
   keywords: [
     "IPTV UK free trial",
     "24 hour IPTV trial",
-    "IPTV trial UK",
-    "try IPTV before buying",
+    "Telvis free trial",
   ],
 });
 

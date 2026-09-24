@@ -10,14 +10,14 @@ export function ContactSchema() {
     "@graph": [
       buildBreadcrumbList([
         { name: "Home", path: "/" },
-        { name: "Contact IPTV UK Support", path: routes.contact },
+        { name: "Contact Telvis", path: routes.contact },
       ]),
       webPageSchema({
         type: "ContactPage",
         path: routes.contact,
-        name: "Contact IPTV UK Support",
+        name: "Contact Telvis Support | Trial, Setup and Account Help",
         description:
-          "Contact IPTV UK for trial access, plan questions, installation help, account support and troubleshooting by email or WhatsApp, 24 hours a day.",
+          "Contact Telvis by email or WhatsApp for a free trial, plan advice, installation help or account support. Help is available 24 hours a day.",
       }),
     ],
   };
@@ -64,7 +64,7 @@ export function ContactFinalCta() {
           </CardRevealPart>
 
           <CardRevealPart as="p" className="telvis-section-note is-center">
-            <Link href={routes.home}>IPTV UK Homepage</Link>
+            <Link href={routes.home}>Telvis Homepage</Link>
             {" • "}
             <Link href={routes.installation}>Installation Guide</Link>
             {" • "}

@@ -2,21 +2,25 @@ export const siteConfig = {
   name: "Telvis",
   url: "https://telvis.uk",
   primaryKeyword: "IPTV UK",
-  title:
-    "IPTV UK – Premium IPTV Subscription UK | 20,000+ Channels & Free Trial",
+  title: "Telvis IPTV UK | Subscription from £9.99 with 24-Hour Trial",
   description:
-    "Access IPTV UK with 20,000+ live channels, sports, movies and series. Free trial available, instant activation, guided setup and 24/7 support.",
-  h1: "IPTV UK – Premium IPTV Subscription from £9.99 with Free 24-Hour Trial",
+    "Try Telvis IPTV on your own device for 24 hours. Paid plans start at £9.99, with setup guides, WhatsApp support and a seven-day refund on eligible orders.",
+  h1: "Telvis IPTV UK – Subscription from £9.99 with Free 24-Hour Trial",
+  contentUpdated: "2026-09-24",
 } as const;
 
 export const routes = {
   home: "/",
   trial: "/free-trial",
-  plans: "/#plans",
+  plans: "/plans",
+  plansHash: "/#plans",
+  about: "/about",
   installation: "/installation-guide",
   reviews: "/reviews",
   contact: "/contact",
   refund: "/refund-policy",
+  privacy: "/privacy-policy",
+  terms: "/terms",
 } as const;
 
 export const supportConfig = {
@@ -37,6 +41,7 @@ export const brandAssets = {
 
 export const navLinks = [
   { href: routes.home, label: "Home" },
+  { href: routes.plans, label: "Plans" },
   { href: routes.installation, label: "Installation Guide" },
   { href: routes.reviews, label: "Reviews" },
   { href: routes.contact, label: "Contact Us" },
@@ -48,6 +53,16 @@ export const footerQuickLinks = [
   { href: "/#faq", label: "FAQ" },
 ] as const;
 
+export const footerPageLinks = [
+  { href: routes.home, label: "Home" },
+  { href: routes.about, label: "About Telvis" },
+  { href: routes.installation, label: "Installation Guide" },
+  { href: routes.reviews, label: "Reviews" },
+  { href: routes.contact, label: "Contact Us" },
+] as const;
+
 export const footerLegalLinks = [
   { href: routes.refund, label: "Refund Policy" },
+  { href: routes.privacy, label: "Privacy Policy" },
+  { href: routes.terms, label: "Terms of Use" },
 ] as const;

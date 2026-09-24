@@ -8,13 +8,13 @@ export function TrialSchema() {
     "@graph": [
       buildBreadcrumbList([
         { name: "Home", path: "/" },
-        { name: "Free IPTV UK Trial", path: routes.trial },
+        { name: "Free Trial", path: routes.trial },
       ]),
       webPageSchema({
         path: routes.trial,
-        name: "Free IPTV UK Trial – 24 Hours on Your Device",
+        name: "24-Hour IPTV Free Trial UK | Telvis",
         description:
-          "Request a free 24-hour IPTV UK trial. Test live TV, movies and series on your Firestick, Smart TV or mobile before choosing a Telvis plan.",
+          "Request a free 24-hour Telvis trial on your Firestick, Smart TV or phone. No card needed. Test picture, channels and setup before you pay.",
       }),
     ],
   };

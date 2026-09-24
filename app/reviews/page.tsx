@@ -13,14 +13,13 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   path: routes.reviews,
-  title: "IPTV UK Reviews – Customer Feedback & User Experiences",
+  title: "Telvis Reviews | Customer Feedback on Setup and Picture",
   description:
-    "Read IPTV UK customer reviews covering setup, streaming quality, device compatibility, support and everyday viewing experience.",
+    "Read Telvis customer reviews covering Firestick and Smart TV setup, everyday viewing, support replies and what the 24-hour trial showed.",
   keywords: [
-    "IPTV UK reviews",
-    "IPTV customer reviews UK",
-    "IPTV service feedback",
-    "IPTV subscription reviews",
+    "Telvis reviews",
+    "Telvis customer reviews",
+    "IPTV subscription reviews UK",
   ],
 });
 

@@ -13,7 +13,7 @@ export function ContactHero() {
       headingId="contact-heading"
       titleLines={[
         <>
-          Contact <span className="telvis-h1-accent">IPTV UK</span>
+          Contact <span className="telvis-h1-accent">Telvis</span>
         </>,
         <>Support</>,
       ]}

@@ -238,7 +238,7 @@ export function subscriptionProductGroupSchema() {
       name: siteConfig.name,
     },
     productGroupID: "telvis-iptv-uk",
-    url: `${homeUrl}#plans`,
+    url: canonicalUrl(routes.plans),
     hasVariant: subscriptionPlans.map((plan) => ({
       "@id": planProductId(plan.sku),
     })),

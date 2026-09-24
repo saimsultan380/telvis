@@ -9,6 +9,7 @@ import {
   Tv,
 } from "lucide-react";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { GlassIcon } from "@/components/ui/GlassIcon";
 import { CardReveal, CardRevealList, CardRevealListItem, CardRevealPart } from "@/components/ui/CardReveal";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -71,7 +72,17 @@ const plans = [
   },
 ] as const;
 
-export function PlansSection() {
+type PlansSectionProps = {
+  title?: ReactNode;
+  lead?: string;
+  showCompareLink?: boolean;
+};
+
+export function PlansSection({
+  title,
+  lead,
+  showCompareLink = true,
+}: PlansSectionProps = {}) {
   return (
     <section
       id="plans"
@@ -81,14 +92,19 @@ export function PlansSection() {
       <div className="telvis-section-inner">
         <SectionHeader
           id="plans-heading"
-          eyebrow="IPTV UK Plans"
+          eyebrow="Telvis plans"
           title={
-            <>
-              Choose an <TitleAccent>IPTV UK</TitleAccent> Plan That Fits Your
-              Viewing
-            </>
+            title ?? (
+              <>
+                Choose a <TitleAccent>Telvis</TitleAccent> Plan That Fits Your
+                Viewing
+              </>
+            )
           }
-          lead="Choose the subscription length that suits you. Start with one month for flexibility or select a longer plan for a lower average monthly cost. Every IPTV UK plan includes the same catalogue, access options and support."
+          lead={
+            lead ??
+            "Choose the subscription length that suits you. Start with one month for flexibility or select a longer plan for a lower average monthly cost. Every Telvis plan includes the same catalogue, access options and support."
+          }
         />
 
         <div className="telvis-plan-grid">
@@ -154,9 +170,15 @@ export function PlansSection() {
           <Link href={routes.trial} className="telvis-cta-primary">
             Start Your 24-Hour Trial
           </Link>
-          <Link href={routes.plans} className="telvis-cta-outline">
-            Compare IPTV UK Plans
-          </Link>
+          {showCompareLink ? (
+            <Link href={routes.plans} className="telvis-cta-outline">
+              Compare Telvis Plans
+            </Link>
+          ) : (
+            <Link href={routes.contact} className="telvis-cta-outline">
+              Ask About a Plan
+            </Link>
+          )}
           </div>
         </ScrollReveal>
       </div>

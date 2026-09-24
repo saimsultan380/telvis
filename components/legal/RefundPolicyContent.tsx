@@ -18,9 +18,9 @@ export function RefundPolicySchema() {
       webPageSchema({
         type: "WebPage",
         path: routes.refund,
-        name: "IPTV UK Refund Policy – Seven-Day Guarantee",
+        name: "Telvis 7-Day Refund Policy",
         description:
-          "Read the Telvis IPTV UK seven-day refund guarantee, how to request a refund, and what information support needs to review an eligible paid order.",
+          "Eligible Telvis paid plans include a seven-day refund guarantee. Read what is covered, how to request a refund, and how UK consumer rights still apply.",
       }),
     ],
   };
@@ -35,7 +35,7 @@ export function RefundPolicyHero() {
       headingId="refund-heading"
       titleLines={[
         <>
-          IPTV UK <span className="telvis-h1-accent">Refund Policy</span>
+          Telvis <span className="telvis-h1-accent">Refund Policy</span>
         </>,
       ]}
     >

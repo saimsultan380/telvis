@@ -5,8 +5,8 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import {
   footerLegalLinks,
+  footerPageLinks,
   footerQuickLinks,
-  navLinks,
   routes,
   siteConfig,
 } from "@/lib/site";
@@ -43,7 +43,7 @@ export function SiteFooter() {
             <ScrollReveal delay={0.06} variant="text" className="telvis-footer-col">
               <h2 className="telvis-footer-heading">Pages</h2>
               <nav className="telvis-footer-links" aria-label="Footer pages">
-                {navLinks.map((link) => (
+                {footerPageLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="telvis-footer-link">
                     {link.label}
                   </Link>

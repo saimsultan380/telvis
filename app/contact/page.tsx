@@ -13,14 +13,13 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   path: routes.contact,
-  title: "Contact IPTV UK – Sales, Setup & Account Support",
+  title: "Contact Telvis Support | Trial, Setup and Account Help",
   description:
-    "Contact IPTV UK for trial access, plan questions, installation help, account support and troubleshooting by email or WhatsApp, 24 hours a day.",
+    "Contact Telvis by email or WhatsApp for a free trial, plan advice, installation help or account support. Help is available 24 hours a day.",
   keywords: [
-    "contact IPTV UK",
-    "IPTV support UK",
+    "contact Telvis",
+    "Telvis support",
     "IPTV installation help",
-    "IPTV subscription support",
   ],
 });
 

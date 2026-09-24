@@ -26,6 +26,21 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/pricing",
+        destination: "/plans/",
+        permanent: true,
+      },
+      {
+        source: "/privacy",
+        destination: "/privacy-policy/",
+        permanent: true,
+      },
+      {
+        source: "/terms-of-service",
+        destination: "/terms/",
+        permanent: true,
+      },
+      {
         source: "/favicon.ico/",
         destination: "/favicon.ico",
         permanent: true,

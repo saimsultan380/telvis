@@ -23,13 +23,10 @@ export const metadata: Metadata = pageMetadata({
   title: siteConfig.title,
   description: siteConfig.description,
   keywords: [
-    "IPTV UK",
+    "Telvis IPTV",
+    "Telvis IPTV UK",
     "IPTV subscription UK",
-    "IPTV service UK",
-    "IPTV plans UK",
-    "UK IPTV subscription",
-    "IPTV free trial",
-    "IPTV installation",
+    "24 hour IPTV trial",
   ],
 });
 

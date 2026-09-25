@@ -24,21 +24,25 @@ export function InstallationGuideTabs() {
             className="telvis-glass telvis-guide-device-card"
           >
             <CardRevealPart className="telvis-guide-device-card-inner">
-              <span className="telvis-guide-tab-icon" aria-hidden="true">
-                <Icon size={18} strokeWidth={1.9} />
-              </span>
-              <div className="telvis-guide-device-copy">
-                <h3 className="telvis-guide-device-title">{section.label}</h3>
-                <p className="telvis-guide-device-lead">
-                  {seo?.description ?? section.title}
-                </p>
+              <div className="telvis-guide-device-card-top">
+                <span className="telvis-guide-device-icon" aria-hidden="true">
+                  <Icon size={18} strokeWidth={1.9} />
+                </span>
+                <div className="telvis-guide-device-copy">
+                  <h3 className="telvis-guide-device-title">{section.label}</h3>
+                  <p className="telvis-guide-device-lead">
+                    {seo?.description ?? section.title}
+                  </p>
+                </div>
               </div>
-              <Link
-                href={deviceGuidePath(section.id)}
-                className="telvis-guide-device-link"
-              >
-                Open {section.label} guide
-              </Link>
+              <div className="telvis-guide-device-card-footer">
+                <Link
+                  href={deviceGuidePath(section.id)}
+                  className="telvis-guide-device-link"
+                >
+                  Open {section.label} guide
+                </Link>
+              </div>
             </CardRevealPart>
           </CardReveal>
         );

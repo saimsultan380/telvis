@@ -39,7 +39,7 @@ export default function InstallationGuidePage() {
         <InstallationGuideBefore />
 
         <section
-          className="telvis-section telvis-guide-section"
+          className="telvis-section telvis-guide-section telvis-guide-devices-section"
           aria-labelledby="guide-devices-heading"
         >
           <div className="telvis-section-inner">

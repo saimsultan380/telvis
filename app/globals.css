@@ -4684,3 +4684,221 @@ main > :first-child.telvis-hero-page {
   }
 }
 
+.telvis-stats-band {
+  padding-top: 0;
+  padding-bottom: 32px;
+}
+
+.telvis-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.telvis-stat-card {
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.telvis-stat-value {
+  margin: 0 0 6px;
+  color: var(--telvis-heading);
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.telvis-stat-label {
+  margin: 0;
+  color: var(--telvis-muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.telvis-table-compare th,
+.telvis-table-compare td {
+  vertical-align: top;
+}
+
+.telvis-iptv-uk-intro {
+  display: grid;
+  gap: 20px;
+}
+
+.telvis-iptv-uk-points {
+  margin: 0;
+}
+
+.telvis-whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid rgba(207, 143, 255, 0.55);
+  border-radius: var(--radius-pill);
+  background:
+    linear-gradient(
+      100deg,
+      #4a4cff 0%,
+      #6946ff 42%,
+      #a82bf1 100%
+    );
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow:
+    0 8px 24px rgba(91, 58, 255, 0.32),
+    0 0 18px rgba(153, 47, 255, 0.18);
+}
+
+.telvis-whatsapp-float:hover {
+  color: #ffffff;
+  filter: brightness(1.06);
+}
+
+@media (min-width: 768px) {
+  .telvis-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.telvis-blog-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.telvis-blog-grid-related {
+  grid-template-columns: 1fr;
+}
+
+.telvis-blog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 22px;
+  gap: 14px;
+}
+
+.telvis-blog-card-meta {
+  margin: 0 0 8px;
+  color: var(--telvis-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.telvis-blog-card-title {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  font-weight: 780;
+  letter-spacing: -0.03em;
+}
+
+.telvis-blog-card-title a {
+  color: var(--telvis-heading);
+  text-decoration: none;
+}
+
+.telvis-blog-card-title a:hover {
+  color: #d7c8ff;
+}
+
+.telvis-blog-article-section {
+  padding-top: 8px;
+}
+
+.telvis-blog-article-wrap {
+  max-width: 760px;
+}
+
+.telvis-blog-prose {
+  display: grid;
+  gap: 0;
+}
+
+.telvis-blog-prose p {
+  margin: 0 0 16px;
+  color: var(--telvis-body);
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+.telvis-blog-h2 {
+  margin: 32px 0 12px;
+  color: var(--telvis-heading);
+  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+  line-height: 1.22;
+  font-weight: 780;
+  letter-spacing: -0.03em;
+}
+
+.telvis-blog-h3 {
+  margin: 22px 0 10px;
+  color: #efe8ff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.telvis-blog-list,
+.telvis-blog-ordered {
+  margin: 0 0 18px;
+  padding-left: 1.25rem;
+  color: var(--telvis-body);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.telvis-blog-list li + li,
+.telvis-blog-ordered li + li {
+  margin-top: 8px;
+}
+
+.telvis-blog-cta {
+  margin: 28px 0;
+  padding: 22px 20px;
+}
+
+.telvis-blog-cta-title {
+  margin: 0 0 10px;
+  color: var(--telvis-heading);
+  font-size: 1.15rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.telvis-blog-cta-actions {
+  margin-top: 16px;
+  grid-template-columns: 1fr;
+}
+
+.telvis-blog-post-meta {
+  margin: 0 0 12px;
+  color: var(--telvis-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .telvis-blog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .telvis-blog-grid-related {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .telvis-blog-cta-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

@@ -51,7 +51,7 @@ export function WhyChooseSection() {
           eyebrow="Why Choose"
           title={
             <>
-              Why Choose <TitleAccent>IPTV UK</TitleAccent>?
+              Why Choose <TitleAccent>Telvis</TitleAccent>?
             </>
           }
           align="center"

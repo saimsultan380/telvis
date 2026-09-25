@@ -190,6 +190,7 @@ export function pageMetadata({
 /** Static marketing and legal routes included in sitemap.xml. */
 export const staticIndexableRoutes = [
   "/",
+  "/iptv-uk",
   "/free-trial",
   "/plans",
   "/about",
@@ -199,4 +200,5 @@ export const staticIndexableRoutes = [
   "/refund-policy",
   "/privacy-policy",
   "/terms",
+  "/blog",
 ] as const;

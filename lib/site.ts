@@ -6,11 +6,12 @@ export const siteConfig = {
   description:
     "Try Telvis IPTV on your own device for 24 hours. Paid plans start at £9.99, with setup guides, WhatsApp support and a seven-day refund on eligible orders.",
   h1: "Telvis IPTV UK – Subscription from £9.99 with Free 24-Hour Trial",
-  contentUpdated: "2026-09-24",
+  contentUpdated: "2026-09-26",
 } as const;
 
 export const routes = {
   home: "/",
+  iptvUk: "/iptv-uk",
   trial: "/free-trial",
   plans: "/plans",
   plansHash: "/#plans",
@@ -21,6 +22,7 @@ export const routes = {
   refund: "/refund-policy",
   privacy: "/privacy-policy",
   terms: "/terms",
+  blog: "/blog",
 } as const;
 
 export const supportConfig = {
@@ -41,8 +43,10 @@ export const brandAssets = {
 
 export const navLinks = [
   { href: routes.home, label: "Home" },
+  { href: routes.iptvUk, label: "IPTV UK" },
   { href: routes.plans, label: "Plans" },
   { href: routes.installation, label: "Installation Guide" },
+  { href: routes.blog, label: "Blog" },
   { href: routes.reviews, label: "Reviews" },
   { href: routes.contact, label: "Contact Us" },
 ] as const;
@@ -55,9 +59,11 @@ export const footerQuickLinks = [
 
 export const footerPageLinks = [
   { href: routes.home, label: "Home" },
+  { href: routes.iptvUk, label: "Telvis IPTV UK" },
   { href: routes.about, label: "About Telvis" },
   { href: routes.installation, label: "Installation Guide" },
   { href: routes.reviews, label: "Reviews" },
+  { href: routes.blog, label: "Blog" },
   { href: routes.contact, label: "Contact Us" },
 ] as const;
 

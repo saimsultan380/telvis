@@ -5,6 +5,8 @@ import { ConnectionsSection } from "@/components/home/ConnectionsSection";
 import { DevicesSection } from "@/components/home/DevicesSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
+import { PayTvCompareSection } from "@/components/home/PayTvCompareSection";
+import { StatsBand } from "@/components/home/StatsBand";
 import { HeroSection } from "@/components/home/HeroSection";
 import { HomeReviewsSection } from "@/components/home/HomeReviewsSection";
 import { IncludedSection } from "@/components/home/IncludedSection";
@@ -36,6 +38,7 @@ export default function HomePage() {
       <JsonLd />
       <main>
         <HeroSection />
+        <StatsBand />
         <PlansSection />
         <CatalogueSection />
         <TrialSection />
@@ -47,6 +50,7 @@ export default function HomePage() {
         <StepsSection />
         <ViewersWantSection />
         <WhyChooseSection />
+        <PayTvCompareSection />
         <HomeReviewsSection />
         <FaqSection />
         <FinalCtaSection />

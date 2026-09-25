@@ -31,7 +31,7 @@ export function BlogArticle({ blocks }: BlogArticleProps) {
 
         if (block.type === "ul") {
           return (
-            <ul key={index} className="telvis-check-list telvis-blog-list">
+            <ul key={index} className="telvis-blog-list">
               {block.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}

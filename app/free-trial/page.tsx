@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { BlogRelatedReading } from "@/components/blog/BlogRelatedReading";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { blogSlugs } from "@/lib/blog-posts";
 import { ContactOptions } from "@/components/contact/ContactOptions";
 import { TrialChecklist, TrialHero } from "@/components/trial/TrialHero";
 import { TrialSchema } from "@/components/trial/TrialSchema";
@@ -25,6 +27,12 @@ export default function FreeTrialPage() {
       <main>
         <TrialHero />
         <TrialChecklist />
+        <BlogRelatedReading
+          id="trial-related-reading"
+          heading="Before you request a trial"
+          lead="Use these guides to test the right categories and devices during your 24 hours."
+          slugs={[blogSlugs.trial, blogSlugs.firestick]}
+        />
         <ContactOptions />
         <ContactForm />
       </main>

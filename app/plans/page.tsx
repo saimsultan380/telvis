@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BlogRelatedReading } from "@/components/blog/BlogRelatedReading";
 import { PlansSection } from "@/components/home/PlansSection";
+import { blogSlugs } from "@/lib/blog-posts";
 import { JsonLdScript } from "@/components/seo/JsonLdScript";
 import { HeroReveal } from "@/components/ui/HeroReveal";
 import { PageHero } from "@/components/ui/PageHero";
@@ -93,6 +95,13 @@ export default function PlansPage() {
             </>
           }
           lead="Every Telvis plan includes the same listed live and on-demand catalogue, dedicated-app or Xtream Codes access, and 24/7 support. Longer plans lower the average monthly price."
+        />
+
+        <BlogRelatedReading
+          id="plans-related-reading"
+          heading="Compare costs before you commit"
+          lead="See how Telvis plan lengths stack up against traditional UK pay TV bundles."
+          slugs={[blogSlugs.payTv, blogSlugs.trial]}
         />
       </main>
     </>

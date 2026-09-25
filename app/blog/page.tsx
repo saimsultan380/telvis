@@ -75,6 +75,7 @@ export default function BlogIndexPage() {
       <BlogIndexSchema />
       <main>
         <PageHero
+          layout="blog"
           eyebrow="Telvis Blog"
           headingId="blog-heading"
           titleLines={[

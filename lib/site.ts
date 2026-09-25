@@ -54,6 +54,7 @@ export const navLinks = [
 export const footerQuickLinks = [
   { href: routes.plans, label: "View Plans" },
   { href: routes.trial, label: "Start Free Trial" },
+  { href: routes.blog, label: "IPTV UK Guides" },
   { href: "/#faq", label: "FAQ" },
 ] as const;
 

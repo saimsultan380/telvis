@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BlogRelatedReading } from "@/components/blog/BlogRelatedReading";
 import { InstallationGuideBefore } from "@/components/installation/InstallationGuideBefore";
+import { blogSlugByDevice, blogSlugs } from "@/lib/blog-posts";
 import { InstallationGuideSupport } from "@/components/installation/InstallationGuideSchema";
 import { GuideContent } from "@/components/installation/GuideContent";
 import { JsonLdScript } from "@/components/seo/JsonLdScript";
@@ -107,6 +109,7 @@ export default async function DeviceGuidePage({ params }: DevicePageProps) {
   }
 
   const related = installationDeviceTabs.filter((item) => item.id !== device);
+  const deviceBlogSlug = blogSlugByDevice[device];
 
   return (
     <>
@@ -199,6 +202,15 @@ export default async function DeviceGuidePage({ params }: DevicePageProps) {
             </div>
           </div>
         </section>
+
+        {deviceBlogSlug ? (
+          <BlogRelatedReading
+            id={`${device}-blog-reading`}
+            heading="Extended setup guide"
+            lead="A longer walkthrough with tips that pair with the steps above."
+            slugs={[deviceBlogSlug, blogSlugs.trial]}
+          />
+        ) : null}
 
         <InstallationGuideSupport />
       </main>

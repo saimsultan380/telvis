@@ -1,6 +1,8 @@
 "use client";
 
 import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { blogPostHref, blogSlugs } from "@/lib/blog-posts";
 import { OrbitVisual } from "@/components/home/OrbitVisual";
 import { HeroReveal } from "@/components/ui/HeroReveal";
 import { PageHero } from "@/components/ui/PageHero";
@@ -82,7 +84,11 @@ export function TrialChecklist() {
           <p className="telvis-info-body">
             If something does not work, contact support during the trial. We can
             check your login, app, device and connection before you choose a
-            paid plan.
+            paid plan.{" "}
+            <Link href={blogPostHref(blogSlugs.trial)} className="telvis-text-link">
+              Full trial testing guide
+            </Link>
+            .
           </p>
         </div>
       </div>

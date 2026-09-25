@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BlogSpotlightSection } from "@/components/blog/BlogSpotlightSection";
 import { CatalogueSection } from "@/components/home/CatalogueSection";
 import { ClaritySection } from "@/components/home/ClaritySection";
 import { ConnectionsSection } from "@/components/home/ConnectionsSection";
@@ -51,6 +52,7 @@ export default function HomePage() {
         <ViewersWantSection />
         <WhyChooseSection />
         <PayTvCompareSection />
+        <BlogSpotlightSection id="home-blog-heading" />
         <HomeReviewsSection />
         <FaqSection />
         <FinalCtaSection />

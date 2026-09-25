@@ -475,6 +475,31 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
+/** Stable slugs for cross-page internal links. */
+export const blogSlugs = {
+  trial: "iptv-uk-free-trial-what-to-test-24-hours",
+  firestick: "install-iptv-on-firestick-uk-guide",
+  payTv: "iptv-uk-vs-pay-tv-costs-uk-households",
+} as const;
+
+/** Optional deep-dive article for a device guide page. */
+export const blogSlugByDevice: Partial<Record<string, string>> = {
+  firestick: blogSlugs.firestick,
+};
+
+export function blogPostHref(slug: string) {
+  return `/blog/${slug}`;
+}
+
+export function getBlogPostsBySlugs(slugs: readonly string[]) {
+  const order = new Map(slugs.map((slug, index) => [slug, index]));
+  return blogPosts
+    .filter((post) => order.has(post.slug))
+    .sort(
+      (a, b) => (order.get(a.slug) ?? 0) - (order.get(b.slug) ?? 0),
+    );
+}
+
 export function getBlogPost(slug: string) {
   return blogPosts.find((post) => post.slug === slug);
 }

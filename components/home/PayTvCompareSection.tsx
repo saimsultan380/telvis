@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CardReveal, CardRevealList, CardRevealListItem, CardRevealPart } from "@/components/ui/CardReveal";
 import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
+import { blogPostHref, blogSlugs } from "@/lib/blog-posts";
 import { payTvComparison } from "@/lib/marketing";
 import { routes } from "@/lib/site";
 
@@ -49,7 +50,11 @@ export function PayTvCompareSection() {
           <CardRevealPart as="p" className="telvis-info-body">
             Listed catalogue totals and programme availability can change. Use the
             free trial to confirm picture quality, categories and device compatibility
-            on your home connection before choosing a paid plan.
+            on your home connection before choosing a paid plan.{" "}
+            <Link href={blogPostHref(blogSlugs.payTv)} className="telvis-text-link">
+              Read the IPTV vs pay TV cost breakdown
+            </Link>
+            .
           </CardRevealPart>
           <CardRevealPart>
             <div className="telvis-inline-actions is-row">
@@ -58,6 +63,9 @@ export function PayTvCompareSection() {
               </Link>
               <Link href={routes.plans} className="telvis-cta-outline">
                 View Telvis Plans
+              </Link>
+              <Link href={routes.iptvUk} className="telvis-cta-outline">
+                Telvis IPTV UK
               </Link>
             </div>
           </CardRevealPart>

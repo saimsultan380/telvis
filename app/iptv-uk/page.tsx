@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BlogSpotlightSection } from "@/components/blog/BlogSpotlightSection";
 import { CatalogueSection } from "@/components/home/CatalogueSection";
 import { DevicesSection } from "@/components/home/DevicesSection";
 import { PayTvCompareSection } from "@/components/home/PayTvCompareSection";
@@ -157,6 +158,12 @@ export default function IptvUkPage() {
         <DevicesSection />
         <StepsSection />
         <PayTvCompareSection />
+
+        <BlogSpotlightSection
+          id="iptv-uk-blog-heading"
+          eyebrow="Buyer guides"
+          lead="Deep dives on trials, Firestick setup and UK pay TV costs — each article links back to Telvis trials and plans."
+        />
 
         <section
           id="faq"

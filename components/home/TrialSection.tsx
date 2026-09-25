@@ -2,6 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { CardReveal, CardRevealList, CardRevealListItem, CardRevealPart } from "@/components/ui/CardReveal";
 import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
+import { blogPostHref, blogSlugs } from "@/lib/blog-posts";
 import { routes } from "@/lib/site";
 
 const checklist = [
@@ -52,7 +53,11 @@ export function TrialSection() {
             <CardRevealPart variant="content" as="p" className="telvis-info-body">
               If something does not work, contact support during the trial. We
               can check your login, app, device and connection before you choose
-              a paid plan.
+              a paid plan.{" "}
+              <Link href={blogPostHref(blogSlugs.trial)} className="telvis-text-link">
+                Read the full 24-hour trial checklist
+              </Link>
+              .
             </CardRevealPart>
             <CardRevealPart variant="content">
               <Link href={routes.trial} className="telvis-cta-primary">

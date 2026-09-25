@@ -888,7 +888,7 @@ a {
   top: 0;
   z-index: 200;
   width: 100%;
-  padding: 14px 0 0;
+  padding: 14px 0 6px;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -2311,6 +2311,27 @@ main > :first-child.telvis-hero-page {
   .telvis-hero.telvis-hero-page .telvis-copy,
   .telvis-page-hero-copy .telvis-copy {
     max-width: 100%;
+  }
+
+  .telvis-blog-post-column {
+    width: min(calc(100% - 24px), 720px);
+  }
+
+  .telvis-hero-blog .telvis-section-end-line {
+    width: min(calc(100% - 24px), 720px);
+  }
+
+  .telvis-blog-post-title {
+    font-size: clamp(1.5rem, 7.2vw, 2rem);
+    margin-bottom: 14px;
+  }
+
+  .telvis-blog-prose-shell {
+    padding: 20px 18px;
+  }
+
+  .telvis-blog-h2 {
+    margin-top: 28px;
   }
 
   .telvis-hero.telvis-hero-page .telvis-actions {
@@ -4812,12 +4833,94 @@ main > :first-child.telvis-hero-page {
   color: #d7c8ff;
 }
 
-.telvis-blog-article-section {
-  padding-top: 8px;
+/* Blog post — shared reading column (hero + body align) */
+.telvis-blog-post-column {
+  width: min(calc(100% - 28px), 720px);
+  margin-inline: auto;
 }
 
-.telvis-blog-article-wrap {
-  max-width: 760px;
+main > :first-child.telvis-hero-blog {
+  padding-top: calc(var(--telvis-header-offset) + 22px);
+}
+
+.telvis-hero.telvis-hero-blog {
+  padding-bottom: 28px;
+}
+
+.telvis-hero-blog .telvis-container {
+  padding-bottom: 24px;
+}
+
+.telvis-hero-blog .telvis-section-end-line {
+  width: min(calc(100% - 28px), 720px);
+  margin-top: 8px;
+  opacity: 0.65;
+}
+
+.telvis-blog-post-title {
+  max-width: none;
+  font-size: clamp(1.65rem, 6.8vw, 2.35rem);
+  line-height: 1.12;
+  margin-bottom: 18px;
+}
+
+.telvis-blog-post-intro {
+  max-width: none;
+}
+
+.telvis-blog-post-meta {
+  margin: 0 0 14px;
+  color: var(--telvis-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.telvis-blog-post-deck {
+  margin: 0;
+  color: rgba(236, 232, 255, 0.92);
+  font-size: clamp(15px, 4vw, 17px);
+  line-height: 1.58;
+}
+
+.telvis-blog-post-body {
+  padding-top: 4px;
+  padding-bottom: 48px;
+}
+
+.telvis-blog-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 0 0 16px;
+  color: var(--telvis-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.telvis-blog-crumb a {
+  color: #d7c8ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.telvis-blog-crumb a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.telvis-blog-crumb span[aria-hidden="true"] {
+  color: rgba(255, 255, 255, 0.28);
+  font-weight: 400;
+}
+
+.telvis-blog-prose-shell {
+  padding: clamp(22px, 5vw, 36px) clamp(20px, 4.5vw, 32px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 10, 34, 0.52);
 }
 
 .telvis-blog-prose {
@@ -4825,47 +4928,83 @@ main > :first-child.telvis-hero-page {
   gap: 0;
 }
 
+.telvis-blog-prose > p:first-of-type {
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(240, 236, 255, 0.94);
+}
+
 .telvis-blog-prose p {
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   color: var(--telvis-body);
   font-size: 16px;
-  line-height: 1.68;
+  line-height: 1.72;
+}
+
+.telvis-blog-prose p:last-child {
+  margin-bottom: 0;
 }
 
 .telvis-blog-h2 {
-  margin: 32px 0 12px;
+  margin: 36px 0 14px;
+  padding-top: 8px;
   color: var(--telvis-heading);
-  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
-  line-height: 1.22;
+  font-size: clamp(1.28rem, 4.2vw, 1.55rem);
+  line-height: 1.25;
   font-weight: 780;
   letter-spacing: -0.03em;
 }
 
+.telvis-blog-prose > .telvis-blog-h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .telvis-blog-h3 {
-  margin: 22px 0 10px;
+  margin: 26px 0 12px;
   color: #efe8ff;
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  line-height: 1.35;
 }
 
 .telvis-blog-list,
 .telvis-blog-ordered {
-  margin: 0 0 18px;
-  padding-left: 1.25rem;
+  margin: 0 0 20px;
+  padding-left: 1.35rem;
   color: var(--telvis-body);
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 15.5px;
+  line-height: 1.68;
+}
+
+.telvis-blog-list {
+  list-style: disc;
+}
+
+.telvis-blog-list li::marker {
+  color: #b79cff;
+}
+
+.telvis-blog-ordered {
+  list-style: decimal;
 }
 
 .telvis-blog-list li + li,
 .telvis-blog-ordered li + li {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .telvis-blog-cta {
-  margin: 28px 0;
-  padding: 22px 20px;
+  margin: 32px 0 8px;
+  padding: clamp(20px, 4vw, 26px);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(168, 120, 255, 0.22);
+  background: rgba(129, 51, 255, 0.08);
+}
+
+.telvis-blog-related-section {
+  padding-top: 8px;
 }
 
 .telvis-blog-cta-title {
@@ -4881,14 +5020,19 @@ main > :first-child.telvis-hero-page {
   grid-template-columns: 1fr;
 }
 
-.telvis-blog-post-meta {
-  margin: 0 0 12px;
-  color: var(--telvis-muted);
-  font-size: 14px;
-  line-height: 1.5;
-}
-
 @media (min-width: 768px) {
+  main > :first-child.telvis-hero-blog {
+    padding-top: calc(var(--telvis-header-offset) + 32px);
+  }
+
+  .telvis-hero.telvis-hero-blog {
+    padding-bottom: 36px;
+  }
+
+  .telvis-blog-post-body {
+    padding-bottom: 64px;
+  }
+
   .telvis-blog-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -4900,5 +5044,49 @@ main > :first-child.telvis-hero-page {
   .telvis-blog-cta-actions {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.telvis-section-blog-spotlight {
+  padding-top: 8px;
+}
+
+.telvis-blog-spotlight-more {
+  margin: 20px 0 0;
+  text-align: center;
+}
+
+.telvis-section-related-reading {
+  padding-top: 0;
+}
+
+.telvis-related-reading-list {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.telvis-related-reading-link {
+  display: block;
+  color: var(--telvis-heading);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.telvis-related-reading-link:hover {
+  color: #d7c8ff;
+}
+
+.telvis-related-reading-meta {
+  display: block;
+  margin-top: 4px;
+  color: var(--telvis-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { BlogRelatedReading } from "@/components/blog/BlogRelatedReading";
 import { InstallationGuideBefore } from "@/components/installation/InstallationGuideBefore";
+import { blogSlugs } from "@/lib/blog-posts";
 import { InstallationGuideHero } from "@/components/installation/InstallationGuideHero";
 import {
   InstallationGuideSchema,
@@ -59,6 +61,12 @@ export default function InstallationGuidePage() {
         <InstallationGuideXtream />
         <InstallationGuideEpg />
         <InstallationGuideTroubleshooting />
+        <BlogRelatedReading
+          id="guide-related-reading"
+          heading="Setup articles"
+          lead="Step-by-step blog posts that complement the device guides below."
+          slugs={[blogSlugs.firestick, blogSlugs.trial]}
+        />
         <InstallationGuideSupport />
       </main>
     </>

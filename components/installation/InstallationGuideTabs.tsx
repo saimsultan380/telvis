@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { CardReveal, CardRevealPart } from "@/components/ui/CardReveal";
+import { GuideContent } from "@/components/installation/GuideContent";
 import { staggerDelay } from "@/lib/motion";
 import { installationDeviceTabs } from "@/lib/installation-guide-data";
 import {
-  deviceGuidePath,
   getDevicePageSeo,
   guideDeviceIcons,
 } from "@/lib/installation-guide-seo";
@@ -22,6 +21,7 @@ export function InstallationGuideTabs() {
             as="article"
             delay={staggerDelay(index, 0.04)}
             className="telvis-glass telvis-guide-device-card"
+            id={`device-${section.id}`}
           >
             <CardRevealPart className="telvis-guide-device-card-inner">
               <div className="telvis-guide-device-card-top">
@@ -35,14 +35,14 @@ export function InstallationGuideTabs() {
                   </p>
                 </div>
               </div>
-              <div className="telvis-guide-device-card-footer">
-                <Link
-                  href={deviceGuidePath(section.id)}
-                  className="telvis-guide-device-link"
-                >
-                  Open {section.label} guide
-                </Link>
-              </div>
+              <details className="telvis-guide-device-details">
+                <summary className="telvis-guide-device-summary">
+                  Show {section.label} steps
+                </summary>
+                <div className="telvis-guide-device-steps">
+                  <GuideContent blocks={section.blocks} />
+                </div>
+              </details>
             </CardRevealPart>
           </CardReveal>
         );

@@ -16,7 +16,7 @@ export function InstallationGuideSchema() {
         path: routes.installation,
         name: "IPTV Installation Guide UK | Firestick, Smart TV, Phone | Telvis",
         description:
-          "Choose your device and open a dedicated Telvis setup page for Firestick, Smart TV, Android, Apple, Windows or Kodi. Each guide has its own steps.",
+          "Set up Telvis on Firestick, Smart TV, Android, Apple, Windows and more. Device steps, Xtream Codes tips and troubleshooting on one Installation Guide page.",
       }),
     ],
   };

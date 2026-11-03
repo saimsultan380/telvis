@@ -21,7 +21,7 @@ export const metadata: Metadata = pageMetadata({
   path: routes.installation,
   title: "IPTV Installation Guide UK | Firestick, Smart TV, Phone | Telvis",
   description:
-    "Choose your device and open a dedicated Telvis setup page for Firestick, Smart TV, Android, Apple, Windows or Kodi. Each guide has its own steps.",
+    "Set up Telvis on Firestick, Smart TV, Android, Apple, Windows and more. Device steps, Xtream Codes tips and troubleshooting on one Installation Guide page.",
   keywords: [
     "IPTV installation guide UK",
     "Telvis setup",
@@ -39,6 +39,7 @@ export default function InstallationGuidePage() {
         <InstallationGuideBefore />
 
         <section
+          id="device-setup"
           className="telvis-section telvis-guide-section telvis-guide-devices-section"
           aria-labelledby="guide-devices-heading"
         >
@@ -48,11 +49,11 @@ export default function InstallationGuidePage() {
               eyebrow="Device setup"
               title={
                 <>
-                  Open the <TitleAccent>Device Guide</TitleAccent> That Matches
-                  Your Screen
+                  Choose the <TitleAccent>Device</TitleAccent> That Matches Your
+                  Screen
                 </>
               }
-              lead="Each device now has its own page. Open Firestick, Smart TV, Android, Apple, Windows or another guide, then follow one method at a time with your welcome message nearby."
+              lead="Expand your device below for setup steps. Follow one method at a time with your welcome message nearby, then use the Xtream Codes and troubleshooting sections on this page if needed."
             />
             <InstallationGuideTabs />
           </div>
@@ -64,7 +65,7 @@ export default function InstallationGuidePage() {
         <BlogRelatedReading
           id="guide-related-reading"
           heading="Setup articles"
-          lead="Step-by-step blog posts that complement the device guides below."
+          lead="Longer blog guides that complement the device steps on this page."
           slugs={[blogSlugs.firestick, blogSlugs.trial]}
         />
         <InstallationGuideSupport />

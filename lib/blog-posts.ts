@@ -214,7 +214,7 @@ export const blogPosts: BlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "Fire TV Stick and Fire TV Cube remain the most popular way UK households try IPTV. The setup is straightforward once you use one method at a time: install a trusted app, enter your account details exactly as supplied, and allow the first catalogue load to complete. This guide walks through a typical Telvis Firestick path and points to the full device page for screenshots-level detail.",
+        text: "Fire TV Stick and Fire TV Cube remain the most popular way UK households try IPTV. The setup is straightforward once you use one method at a time: install a trusted app, enter your account details exactly as supplied, and allow the first catalogue load to complete. This guide walks through a typical Telvis Firestick path and points to Device Setup on the Installation Guide for the live step list.",
       },
       {
         type: "h2",
@@ -237,7 +237,7 @@ export const blogPosts: BlogPost[] = [
         primaryLabel: "Free Firestick Trial",
         primaryHref: routes.trial,
         secondaryLabel: "Full Firestick guide",
-        secondaryHref: "/installation-guide/firestick",
+        secondaryHref: "/installation-guide/#device-firestick",
       },
       {
         type: "h2",
@@ -313,7 +313,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Searches for IPTV Firestick UK are high intent: the user already owns the device and wants a working login today. Providers that publish clear Firestick guides earn trust and reduce refund requests. Telvis keeps a dedicated Firestick URL, structured steps and WhatsApp support so you are not stuck on a generic homepage tab.",
+        text: "Searches for IPTV Firestick UK are high intent: the user already owns the device and wants a working login today. Providers that publish clear Firestick guides earn trust and reduce refund requests. Telvis keeps Firestick steps on the Installation Guide, structured blog walkthroughs and WhatsApp support so you are not guessing from a homepage alone.",
       },
       {
         type: "cta",
@@ -326,7 +326,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Listed channels and quality vary by listing and time of day. IPTV technology is legal; customers must use content they are entitled to access. For the canonical step list maintained with your account details, use the Telvis Firestick installation page linked from the main Installation Guide.",
+        text: "Listed channels and quality vary by listing and time of day. IPTV technology is legal; customers must use content they are entitled to access. For the live Firestick step list, open Device Setup on the Telvis Installation Guide and expand Firestick.",
       },
     ],
   },
@@ -380,7 +380,7 @@ export const blogPosts: BlogPost[] = [
           "Free 24-hour trial before you pay for a longer term",
           "Seven-day refund guarantee on eligible paid orders (see Refund Policy)",
           "Same listed catalogue features across plan lengths — you choose commitment, not content tier",
-          "Firestick, Smart TV, mobile and PC setup paths documented on separate guide pages",
+          "Firestick, Smart TV, mobile and PC setup paths on the Installation Guide",
           "WhatsApp and email support 24 hours a day",
         ],
       },
@@ -481,11 +481,6 @@ export const blogSlugs = {
   firestick: "install-iptv-on-firestick-uk-guide",
   payTv: "iptv-uk-vs-pay-tv-costs-uk-households",
 } as const;
-
-/** Optional deep-dive article for a device guide page. */
-export const blogSlugByDevice: Partial<Record<string, string>> = {
-  firestick: blogSlugs.firestick,
-};
 
 export function blogPostHref(slug: string) {
   return `/blog/${slug}`;

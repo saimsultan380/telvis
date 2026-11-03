@@ -16,6 +16,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/installation-guide/:device",
+        destination: "/installation-guide/",
+        permanent: true,
+      },
+      {
+        source: "/installation-guide/:device/",
+        destination: "/installation-guide/",
+        permanent: true,
+      },
+      {
         source: "/trial",
         destination: "/free-trial/",
         permanent: true,

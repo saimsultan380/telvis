@@ -12,14 +12,6 @@ import {
   Tv,
   TvMinimal,
 } from "lucide-react";
-import {
-  formatGuideText,
-  installationDeviceTabs,
-  type GuideBlock,
-  type GuideSectionData,
-} from "@/lib/installation-guide-data";
-import { routes } from "@/lib/site";
-
 export type DevicePageSeo = {
   title: string;
   description: string;
@@ -163,52 +155,6 @@ export const devicePageSeo: Record<string, DevicePageSeo> = {
   },
 };
 
-export function deviceGuidePath(deviceId: string) {
-  return `${routes.installation}/${deviceId}`;
-}
-
-export function getInstallationDevice(deviceId: string) {
-  return installationDeviceTabs.find((section) => section.id === deviceId);
-}
-
 export function getDevicePageSeo(deviceId: string) {
   return devicePageSeo[deviceId];
-}
-
-export function getIndexableGuideRoutes() {
-  return installationDeviceTabs.map((section) => deviceGuidePath(section.id));
-}
-
-export function guideHowToSteps(section: GuideSectionData) {
-  const headingSteps: { name: string; text: string }[] = [];
-
-  for (let index = 0; index < section.blocks.length; index += 1) {
-    const block = section.blocks[index];
-
-    if (block.type === "h3" && block.text.startsWith("Step ")) {
-      const next = section.blocks[index + 1];
-      headingSteps.push({
-        name: block.text.replace(/^Step \d+:\s*/, ""),
-        text:
-          next?.type === "p" ? formatGuideText(next.text) : formatGuideText(block.text),
-      });
-    }
-  }
-
-  if (headingSteps.length > 0) {
-    return headingSteps;
-  }
-
-  const ordered = section.blocks.find(
-    (block): block is Extract<GuideBlock, { type: "ol" }> => block.type === "ol",
-  );
-
-  if (!ordered) {
-    return [];
-  }
-
-  return ordered.items.map((item, index) => ({
-    name: `Step ${index + 1}`,
-    text: formatGuideText(item),
-  }));
 }

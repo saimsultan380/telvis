@@ -4660,67 +4660,42 @@ main > :first-child.telvis-hero-page {
   line-height: 1.62;
 }
 
-.telvis-guide-device-details {
-  margin-top: 16px;
-  padding-top: 14px;
+.telvis-guide-device-card-footer {
+  margin-top: 18px;
+  padding-top: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.telvis-guide-device-summary {
-  list-style: none;
-  cursor: pointer;
+.telvis-guide-device-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
   color: #d7c8ff;
+  font: inherit;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.4;
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  user-select: none;
+  text-align: left;
+  cursor: pointer;
 }
 
-.telvis-guide-device-summary::-webkit-details-marker {
-  display: none;
-}
-
-.telvis-guide-device-summary::after {
+.telvis-guide-device-open::after {
   content: "+";
-  margin-left: auto;
-  padding-left: 12px;
+  flex-shrink: 0;
   color: rgba(215, 200, 255, 0.85);
   font-size: 18px;
   font-weight: 600;
   line-height: 1;
 }
 
-.telvis-guide-device-details[open] .telvis-guide-device-summary::after {
-  content: "–";
-}
-
-.telvis-guide-device-summary:hover {
+.telvis-guide-device-open:hover {
   color: #ffffff;
-}
-
-.telvis-guide-device-steps {
-  margin-top: 14px;
-  padding-top: 4px;
-  color: var(--telvis-body);
-  font-size: 14px;
-  line-height: 1.62;
-}
-
-.telvis-guide-device-steps p {
-  margin: 0 0 12px;
-}
-
-.telvis-guide-device-steps ol,
-.telvis-guide-device-steps ul {
-  margin: 0 0 14px;
-  padding-left: 1.25rem;
-}
-
-.telvis-guide-device-steps li + li {
-  margin-top: 8px;
 }
 
 .telvis-guide-device-link {
@@ -4739,6 +4714,127 @@ main > :first-child.telvis-hero-page {
 
 .telvis-guide-device-link:hover {
   color: #ffffff;
+}
+
+.telvis-guide-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 320;
+  display: grid;
+  place-items: center;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+  background: rgba(4, 6, 22, 0.72);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+}
+
+.telvis-guide-modal {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 640px);
+  max-height: min(86vh, 760px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(112, 89, 255, 0.16);
+}
+
+.telvis-guide-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 20px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.telvis-guide-modal-heading {
+  min-width: 0;
+}
+
+.telvis-guide-modal-eyebrow {
+  margin: 0 0 6px;
+  color: var(--telvis-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.telvis-guide-modal-title {
+  margin: 0;
+  color: var(--telvis-heading);
+  font-size: clamp(1.2rem, 4vw, 1.45rem);
+  font-weight: 780;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.telvis-guide-modal-close {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin-top: -2px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #efe8ff;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.telvis-guide-modal-close:hover {
+  border-color: rgba(190, 140, 255, 0.4);
+  background: rgba(112, 89, 255, 0.18);
+  color: #ffffff;
+}
+
+.telvis-guide-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 20px 8px;
+  color: var(--telvis-body);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-overflow-scrolling: touch;
+}
+
+.telvis-guide-modal-body p {
+  margin: 0 0 14px;
+}
+
+.telvis-guide-modal-body ol,
+.telvis-guide-modal-body ul {
+  margin: 0 0 16px;
+  padding-left: 1.25rem;
+}
+
+.telvis-guide-modal-body li + li {
+  margin-top: 8px;
+}
+
+.telvis-guide-modal-body .telvis-guide-subtitle {
+  margin: 18px 0 10px;
+  color: #efe8ff;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.telvis-guide-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 14px 20px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.telvis-guide-modal-done {
+  min-width: 120px;
 }
 
 .telvis-guide-crumb-section {
@@ -4805,9 +4901,21 @@ main > :first-child.telvis-hero-page {
     gap: 24px 20px;
   }
 
-  .telvis-guide-device-details {
-    margin-top: 18px;
-    padding-top: 16px;
+  .telvis-guide-device-card-footer {
+    margin-top: 20px;
+    padding-top: 18px;
+  }
+
+  .telvis-guide-modal-head {
+    padding: 24px 24px 16px;
+  }
+
+  .telvis-guide-modal-body {
+    padding: 20px 24px 10px;
+  }
+
+  .telvis-guide-modal-footer {
+    padding: 16px 24px 24px;
   }
 }
 

@@ -6,6 +6,7 @@ import {
   useEffect,
   useRef,
   useState,
+  type PointerEvent as ReactPointerEvent,
 } from "react";
 import { ReviewCard } from "@/components/reviews/ReviewCard";
 import type { PublishedReview } from "@/lib/reviews-data";
@@ -14,18 +15,25 @@ type ReviewsSliderProps = {
   reviews: PublishedReview[];
 };
 
-const AUTO_PLAY_MS = 5200;
+const AUTO_PLAY_MS = 4500;
 const TRANSITION_MS = 520;
 const DESKTOP_BREAKPOINT = 1024;
+const TABLET_BREAKPOINT = 768;
 const DESKTOP_SLIDES = 3;
+const TABLET_SLIDES = 2;
 const MOBILE_SLIDES = 1;
+const SWIPE_THRESHOLD = 48;
 
 function getSlidesPerView(width: number) {
-  return width >= DESKTOP_BREAKPOINT ? DESKTOP_SLIDES : MOBILE_SLIDES;
+  if (width >= DESKTOP_BREAKPOINT) return DESKTOP_SLIDES;
+  if (width >= TABLET_BREAKPOINT) return TABLET_SLIDES;
+  return MOBILE_SLIDES;
 }
 
 export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
   const viewportRef = useRef<HTMLDivElement>(null);
+  const pointerStartX = useRef<number | null>(null);
+  const pointerDeltaX = useRef(0);
   const [slidesPerView, setSlidesPerView] = useState(MOBILE_SLIDES);
   const [slideWidth, setSlideWidth] = useState(0);
   const [trackIndex, setTrackIndex] = useState(0);
@@ -76,8 +84,8 @@ export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
   }, [measure]);
 
   useEffect(() => {
-    setTrackIndex((index) => Math.min(index, pageCount - 1));
-    setDotIndex((index) => Math.min(index, pageCount - 1));
+    setTrackIndex((index) => Math.min(index, Math.max(0, pageCount - 1)));
+    setDotIndex((index) => Math.min(index, Math.max(0, pageCount - 1)));
   }, [pageCount]);
 
   const resetToStart = useCallback(() => {
@@ -145,6 +153,30 @@ export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
     }
   };
 
+  const onPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    pointerStartX.current = event.clientX;
+    pointerDeltaX.current = 0;
+    setIsPaused(true);
+  };
+
+  const onPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (pointerStartX.current === null) return;
+    pointerDeltaX.current = event.clientX - pointerStartX.current;
+  };
+
+  const onPointerUp = () => {
+    if (pointerStartX.current === null) return;
+
+    const delta = pointerDeltaX.current;
+    pointerStartX.current = null;
+    pointerDeltaX.current = 0;
+    setIsPaused(false);
+
+    if (Math.abs(delta) < SWIPE_THRESHOLD) return;
+    if (delta < 0) goNext();
+    else goPrev();
+  };
+
   if (total === 0) return null;
 
   const offset = slideWidth > 0 ? trackIndex * slideWidth : 0;
@@ -183,6 +215,13 @@ export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
           className="telvis-review-slider-viewport"
           aria-live="polite"
           aria-atomic="true"
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
+          onPointerLeave={() => {
+            if (pointerStartX.current !== null) onPointerUp();
+          }}
         >
           <div
             className="telvis-review-slider-track"

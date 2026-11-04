@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReviewCard } from "@/components/reviews/ReviewCard";
+import { ReviewsSlider } from "@/components/reviews/ReviewsSlider";
 import { StarRating } from "@/components/reviews/StarRating";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
@@ -50,11 +50,7 @@ export function HomeReviewsSection() {
           </div>
         </ScrollReveal>
 
-        <div className="telvis-review-grid telvis-home-reviews-grid">
-          {publishedReviews.map((review) => (
-            <ReviewCard key={review.id} review={review} />
-          ))}
-        </div>
+        <ReviewsSlider reviews={publishedReviews} />
 
         <ScrollReveal delay={0.08} variant="cta">
           <div className="telvis-inline-actions is-row">

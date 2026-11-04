@@ -11,19 +11,37 @@ import { CardReveal, CardRevealPart } from "@/components/ui/CardReveal";
 import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
 
 const tips = [
-  { text: "Use Ethernet where practical", icon: Router },
-  { text: "Keep Wi-Fi devices close to the router", icon: Wifi },
-  { text: "Pause large downloads and game updates", icon: WifiOff },
-  { text: "Close unused apps on older devices", icon: HardDrive },
-  { text: "Keep enough free storage for updates", icon: HardDrive },
-  { text: "Restart the app, device and router if viewing changes", icon: RefreshCw },
   {
-    text: "Try another listing to see whether the issue affects one source or the whole account",
+    text: "Use a stable internet connection, especially for higher-resolution content",
+    icon: Wifi,
+  },
+  {
+    text: "Consider an Ethernet connection to reduce wireless interference",
+    icon: Router,
+  },
+  {
+    text: "Keep your device and applications updated",
+    icon: RefreshCw,
+  },
+  {
+    text: "Close unnecessary applications on older streaming devices",
+    icon: HardDrive,
+  },
+  {
+    text: "Restart your router and device if playback becomes unreliable",
+    icon: RefreshCw,
+  },
+  {
+    text: "Check different streams if only one channel is buffering",
     icon: Signal,
   },
   {
-    text: "Choose a lower-quality option if your connection cannot handle a higher-quality source",
-    icon: Signal,
+    text: "Keep enough free storage for smoother device performance",
+    icon: HardDrive,
+  },
+  {
+    text: "Pause large downloads and game updates while watching",
+    icon: WifiOff,
   },
 ] as const;
 
@@ -40,16 +58,16 @@ export function ViewingTipsSection() {
           eyebrow="Reliable viewing"
           title={
             <>
-              A Better <TitleAccent>Viewing Experience</TitleAccent> Starts with
-              the Right Setup
+              Get a Better IPTV Streaming Experience with the{" "}
+              <TitleAccent>Right Setup</TitleAccent>
             </>
           }
-          lead="Smooth viewing depends on your internet connection, Wi-Fi, router, device, app and the individual listing you choose."
+          lead="Even with a suitable IPTV service, buffering, freezing and loading problems can affect playback. The cause is not always the IPTV application. Your Wi-Fi signal, router, device performance, broadband connection and individual stream can all make a difference."
         />
 
         <CardReveal className="telvis-glass telvis-tips-shell">
           <CardRevealPart variant="content" as="h3" className="telvis-panel-title">
-            For more reliable IPTV UK viewing:
+            Simple ways to improve your setup
           </CardRevealPart>
           <div className="telvis-tips-grid">
             {tips.map((tip, index) => (
@@ -73,9 +91,8 @@ export function ViewingTipsSection() {
             as="p"
             className="telvis-info-body telvis-tips-note"
           >
-            No service can promise perfect playback on every channel, device and
-            home network. The useful difference is clear troubleshooting and
-            support that helps find the cause.
+            If the problem continues, contact support with your device model,
+            application name and the error you are experiencing.
           </CardRevealPart>
         </CardReveal>
       </div>

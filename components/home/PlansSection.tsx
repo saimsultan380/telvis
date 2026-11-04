@@ -18,13 +18,15 @@ import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
 import { routes } from "@/lib/site";
 
 const sharedFeatures = [
-  { text: "20,000+ listed live channels", icon: Tv },
-  { text: "80,000+ listed movies and series", icon: Clapperboard },
-  { text: "Dedicated app and Xtream Codes support", icon: MonitorPlay },
+  { text: "Access to the listed live TV catalogue", icon: Tv },
+  { text: "Movies and series on demand", icon: Clapperboard },
+  { text: "Dedicated app on supported devices", icon: MonitorPlay },
+  { text: "Xtream Codes support for compatible players", icon: MonitorPlay },
   { text: "EPG where available", icon: CalendarDays },
-  { text: "Selected Catch-Up", icon: Sparkles },
-  { text: "VPN included", icon: Shield },
-  { text: "24/7 customer support", icon: Headphones },
+  { text: "Selected Catch-Up TV", icon: Sparkles },
+  { text: "VPN functionality", icon: Shield },
+  { text: "Customer support", icon: Headphones },
+  { text: "Account activation and installation guidance", icon: Sparkles },
 ] as const;
 
 const plans = [
@@ -33,7 +35,7 @@ const plans = [
     title: "1-Month Plan",
     price: "£9.99",
     perMonth: "£9.99 / mo",
-    summary: "A simple starting option with the shortest paid commitment.",
+    summary: "Approx. monthly cost £9.99. A simple starting option with the shortest paid commitment.",
     cta: "Choose 1 Month",
     href: "/checkout?plan=1-month",
     featured: false,
@@ -43,7 +45,7 @@ const plans = [
     title: "3-Month Plan",
     price: "£24.99",
     perMonth: "~£8.33 / mo",
-    summary: "A three-month option costing approximately £8.33 per month.",
+    summary: "Approx. monthly cost £8.33. A three-month option after you have tested the service.",
     cta: "Choose 3 Months",
     href: "/checkout?plan=3-month",
     featured: false,
@@ -54,7 +56,7 @@ const plans = [
     price: "£39.99",
     perMonth: "~£6.67 / mo",
     summary:
-      "A practical choice after completing the trial. The average cost is approximately £6.67 per month.",
+      "Approx. monthly cost £6.67. A practical choice after completing the trial.",
     cta: "Choose 6 Months",
     href: "/checkout?plan=6-month",
     featured: true,
@@ -65,7 +67,7 @@ const plans = [
     price: "£49.99",
     perMonth: "~£4.17 / mo",
     summary:
-      "The lowest average monthly cost at approximately £4.17. Choose this after testing the service and confirming your setup.",
+      "Approx. monthly cost £4.17. The lowest average monthly cost after testing the service and confirming your setup.",
     cta: "Choose 12 Months",
     href: "/checkout?plan=12-month",
     featured: false,
@@ -96,14 +98,14 @@ export function PlansSection({
           title={
             title ?? (
               <>
-                Choose a <TitleAccent>Telvis</TitleAccent> Plan That Fits Your
-                Viewing
+                Choose Your <TitleAccent>Telvis IPTV UK</TitleAccent> Subscription
+                Plan
               </>
             )
           }
           lead={
             lead ??
-            "Choose the subscription length that suits you. Start with one month for flexibility or select a longer plan for a lower average monthly cost. Every Telvis plan includes the same catalogue, access options and support."
+            "Looking for an affordable IPTV UK subscription? Telvis offers four subscription durations. Choose a plan according to your viewing requirements and budget. Whether you want to try the service for a month or prefer a longer subscription, compare the available plans before ordering. All four plans offer the same core catalogue and access features."
           }
         />
 
@@ -159,20 +161,21 @@ export function PlansSection({
 
         <ScrollReveal variant="text">
           <p className="telvis-section-note">
-          Catalogue totals describe listed entries and can change as sources are
-          added, updated or removed. Availability, Catch-Up, EPG and picture
-          quality vary by channel, programme, device, player and location.
+          Check the applicable terms and connection allowance before ordering.
+          Catalogue totals describe listed entries and can change. Availability,
+          Catch-Up, EPG and picture quality vary by channel, programme, device,
+          player and location.
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.08} variant="cta">
           <div className="telvis-inline-actions is-row">
           <Link href={routes.trial} className="telvis-cta-primary">
-            Start Your 24-Hour Trial
+            Start a 24-Hour Free IPTV Trial
           </Link>
           {showCompareLink ? (
             <Link href={routes.plans} className="telvis-cta-outline">
-              Compare Telvis Plans
+              Compare IPTV Plans
             </Link>
           ) : (
             <Link href={routes.contact} className="telvis-cta-outline">

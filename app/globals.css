@@ -4174,6 +4174,13 @@ main > :first-child.telvis-hero-page {
   overflow: hidden;
   border-radius: 20px;
   min-height: 300px;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+}
+
+.telvis-review-slider-viewport:active {
+  cursor: grabbing;
 }
 
 .telvis-review-slider-track {
@@ -4926,8 +4933,17 @@ main > :first-child.telvis-hero-page {
 }
 
 .telvis-stats-band {
-  padding-top: 0;
+  padding-top: 8px;
   padding-bottom: 32px;
+}
+
+.telvis-stats-band .telvis-section-header {
+  margin-bottom: 24px;
+}
+
+.telvis-final-support-link {
+  margin-top: 12px;
+  justify-content: center;
 }
 
 .telvis-stats-grid {

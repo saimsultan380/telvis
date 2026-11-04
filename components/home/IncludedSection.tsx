@@ -3,7 +3,7 @@ import {
   Headphones,
   ListVideo,
   MonitorSmartphone,
-  Shield,
+  Sparkles,
   Tv,
 } from "lucide-react";
 import { GlassIcon } from "@/components/ui/GlassIcon";
@@ -13,33 +13,33 @@ import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
 
 const features = [
   {
-    title: "20,000+ Listed Live Channels",
-    body: "Browse entertainment, news, sport, documentaries, family viewing and international categories. Individual listings can change as the catalogue is updated.",
+    title: "Extensive Live TV Selection",
+    body: "Explore more than 20,000 listed live channels across entertainment, news, sports, documentaries, lifestyle and international categories. Individual channel availability can change.",
     icon: Tv,
   },
   {
-    title: "80,000+ Movies and Series",
-    body: "Search the on-demand library for movies, complete series, seasons and episodes. New titles may be added and unavailable titles may be removed.",
+    title: "Movies and Series on Demand",
+    body: "Browse a library of more than 80,000 listed movies and series. Explore different genres, search for available titles, and find entertainment according to your preferences.",
     icon: Clapperboard,
   },
   {
-    title: "EPG and Selected Catch-Up",
-    body: "The EPG shows what is playing now and what comes next where guide data is available. Catch-Up works only on selected listings and is not included on every channel.",
+    title: "HD and Selected 4K Streaming",
+    body: "Enjoy available HD, Full HD and selected 4K streams where supported. Actual picture quality depends on the individual source, your device, application and internet connection.",
+    icon: Sparkles,
+  },
+  {
+    title: "Electronic Programme Guide (EPG)",
+    body: "Use the Electronic Programme Guide to check available programme information. See what is currently playing and what comes next on channels where EPG data is provided.",
     icon: ListVideo,
   },
   {
-    title: "VPN Included",
-    body: "VPN functionality is included on supported setups. If you already use another VPN, test with and without it because running two routing tools can sometimes cause problems.",
-    icon: Shield,
-  },
-  {
-    title: "Dedicated App and Flexible Player Support",
-    body: "Use the dedicated IPTV UK app on supported Android-based devices. On many other devices, enter the supplied Xtream Codes details into a compatible player. Some third-party players charge their own app fee, which is separate unless checkout clearly says it is included.",
+    title: "Selected Catch-Up TV",
+    body: "Missed a programme? Catch-Up is available on selected listings, allowing you to access supported programmes after their original broadcast.",
     icon: MonitorSmartphone,
   },
   {
-    title: "24/7 Support",
-    body: "Contact support by email or WhatsApp for trials, plans, installation, login problems, EPG refreshes and account questions. Help is available 24 hours a day, although response times can vary.",
+    title: "Customer Support Whenever You Need It",
+    body: "Get help with subscription enquiries, installation, login information and technical problems. Telvis offers customer assistance through WhatsApp and email, with support available 24 hours a day.",
     icon: Headphones,
   },
 ] as const;
@@ -54,13 +54,13 @@ export function IncludedSection() {
       <div className="telvis-section-inner">
         <SectionHeader
           id="included-heading"
-          eyebrow="Included"
+          eyebrow="Why Choose Telvis"
           title={
             <>
-              What Is <TitleAccent>Included</TitleAccent> with Your Subscription?
+              Why Choose <TitleAccent>Telvis IPTV UK</TitleAccent>?
             </>
           }
-          lead="Know what is included before you pay. Every active IPTV UK plan provides the same seven core features, although some listings and player functions can vary."
+          lead="A good IPTV experience involves more than the number of channels available. Your device, application, streaming quality, programme information and customer support all matter. Telvis IPTV UK provides several features to make your IPTV UK subscription easier to access and manage."
           align="center"
         />
 

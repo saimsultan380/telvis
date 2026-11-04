@@ -1,10 +1,24 @@
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
 import { telvisStats } from "@/lib/marketing";
 
 export function StatsBand() {
   return (
-    <section className="telvis-section telvis-stats-band" aria-label="Telvis at a glance">
+    <section
+      className="telvis-section telvis-stats-band"
+      aria-labelledby="stats-heading"
+    >
       <div className="telvis-section-inner">
+        <SectionHeader
+          id="stats-heading"
+          eyebrow="At a glance"
+          title={
+            <>
+              Explore a Better Way to Watch{" "}
+              <TitleAccent>IPTV UK</TitleAccent>
+            </>
+          }
+        />
         <ScrollReveal variant="text">
           <div className="telvis-stats-grid">
             {telvisStats.map((stat) => (

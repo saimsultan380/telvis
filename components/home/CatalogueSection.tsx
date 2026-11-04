@@ -2,7 +2,7 @@ import {
   Clapperboard,
   Globe2,
   MonitorPlay,
-  Sparkles,
+  Newspaper,
   Trophy,
 } from "lucide-react";
 import Link from "next/link";
@@ -15,33 +15,39 @@ import { routes } from "@/lib/site";
 
 const categories = [
   {
-    title: "UK Entertainment and Everyday Television",
-    body: "Browse available entertainment, news, documentaries, lifestyle, music and family categories. Listings can change, so use the free trial to check the channels important to you.",
+    title: "British TV and Entertainment",
+    body: "Explore available British television categories, including entertainment, news, documentaries, lifestyle and general programming. If you mainly want British IPTV for everyday viewing, use the free trial to check the specific channels and programmes you prefer.",
     icon: MonitorPlay,
     wide: true,
   },
   {
-    title: "Live Sport and Event Categories",
-    body: "Explore available football, cricket, rugby, motorsport, boxing, combat sport, tennis, golf and basketball categories. Events and listings vary, so check your preferred sport during the trial.",
+    title: "Live Sports and Sporting Events",
+    body: "Sports fans can explore available categories covering football, cricket, rugby, Formula 1 and motorsports, boxing, UFC and other combat sports, tennis, golf and basketball. Event and channel availability can vary, so check the relevant listings during your trial.",
     icon: Trophy,
     wide: false,
   },
   {
-    title: "Movies, Series and Complete Seasons",
-    body: "Search movies and series by title, genre, season or episode where that information is available. Categories include action, drama, comedy, crime, thriller, documentaries, family viewing and international entertainment.",
+    title: "Movies and Films",
+    body: "Explore available movies across action and adventure, comedy, drama, crime and thriller, science fiction, horror, documentaries and family entertainment. Browse the available movie catalogue and search for titles according to your interests.",
     icon: Clapperboard,
     wide: false,
   },
   {
-    title: "International and Multi-Language Categories",
-    body: "Browse available regional and language categories alongside the main UK selection. Ask support during the trial if you need a particular country or language.",
+    title: "TV Series and Box Sets",
+    body: "Find available television series, seasons and episodes in the on-demand section. Browse different categories and continue watching supported series through compatible IPTV players.",
+    icon: Clapperboard,
+    wide: false,
+  },
+  {
+    title: "International Television",
+    body: "Alongside UK-focused entertainment, explore available international and regional categories. This is useful for households interested in television from different countries and languages.",
     icon: Globe2,
     wide: false,
   },
   {
-    title: "HD, Full HD and Selected 4K Sources",
-    body: "Available quality depends on the individual listing. Your television, device, player and internet connection also affect the picture you receive.",
-    icon: Sparkles,
+    title: "News and Documentaries",
+    body: "Browse available news, current affairs, educational programmes and documentary categories. Programme information and availability depend on the individual listings.",
+    icon: Newspaper,
     wide: false,
   },
 ] as const;
@@ -59,11 +65,11 @@ export function CatalogueSection() {
           eyebrow="Browse the catalogue"
           title={
             <>
-              UK Entertainment, <TitleAccent>Live Sport, Movies and Series</TitleAccent>{" "}
-              in One Place
+              Explore the Content Available with{" "}
+              <TitleAccent>Telvis IPTV</TitleAccent>
             </>
           }
-          lead="Big catalogue numbers matter only when you can find what you enjoy. Telvis organises live and on-demand listings into clear categories, making the service easier to browse."
+          lead="Finding something to watch should be straightforward. Telvis organises its listed content into different categories so you can explore live television and on-demand entertainment. Whether you are interested in British entertainment, live sports, international television or on-demand movies, the available catalogue gives you different categories to explore."
         />
 
         <div className="telvis-bento">
@@ -88,10 +94,13 @@ export function CatalogueSection() {
         </div>
 
         <ScrollReveal delay={0.1} variant="cta">
-          <div className="telvis-inline-actions">
-          <Link href={routes.trial} className="telvis-cta-primary">
-            Start Your Free 24-Hour Trial
-          </Link>
+          <div className="telvis-inline-actions is-row">
+            <Link href={routes.iptvUk} className="telvis-cta-primary">
+              Explore Telvis IPTV
+            </Link>
+            <Link href={routes.trial} className="telvis-cta-outline">
+              Get Your Free Trial
+            </Link>
           </div>
         </ScrollReveal>
       </div>

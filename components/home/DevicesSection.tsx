@@ -17,32 +17,32 @@ import { routes } from "@/lib/site";
 const devices = [
   {
     title: "Amazon Firestick and Fire TV",
-    body: "Install the dedicated app through Downloader using the verified code in the Installation Guide. Open the app and enter the details from your welcome message.",
+    body: "Firestick is a popular option for people who want to access IPTV through their television. Install the dedicated Telvis application using the instructions in our Installation Guide, then enter your supplied login details and allow the available categories to load.",
     icon: TvMinimal,
   },
   {
     title: "Android TV and Google TV",
-    body: "Use the dedicated app or a compatible player on supported Android TV, Google TV and Android box devices.",
+    body: "Android TV and Google TV devices support compatible IPTV applications. Use the dedicated application where supported or configure a compatible player with your Xtream Codes details. Android boxes can follow a similar path when the device specifications allow.",
     icon: Tv,
   },
   {
-    title: "Samsung, LG and Other Smart TVs",
-    body: "Install a compatible player from your television's official app store, then add the supplied Xtream Codes details. App availability varies by television model and operating system.",
+    title: "Samsung and LG Smart TVs",
+    body: "Many Samsung and LG Smart TVs support IPTV player applications through their respective app stores. Install a compatible application, open its login section and enter the account details provided with your subscription.",
     icon: Monitor,
   },
   {
-    title: "iPhone, iPad and Apple TV",
-    body: "Install a compatible player from the App Store and enter the supplied username, password and server address.",
+    title: "iPhone and iPad",
+    body: "Access IPTV through a compatible iOS player available from the Apple App Store. Install the application, enter your username, password and server address, and follow the player's instructions.",
     icon: Apple,
   },
   {
     title: "Android Phones and Tablets",
-    body: "Use the dedicated Android app or a compatible player. A phone or tablet is also useful for checking whether your account is active.",
+    body: "Android devices provide another convenient way to access IPTV. Use the dedicated application or a compatible IPTV player, depending on your device and setup.",
     icon: Smartphone,
   },
   {
-    title: "Windows and Mac",
-    body: "Install a reputable compatible player and add the supplied Xtream Codes details. Download software only from its official publisher or a recognised app store.",
+    title: "Windows and Mac Computers",
+    body: "Configure a compatible IPTV player on Windows and macOS. This option is useful if you prefer watching on a laptop or desktop computer rather than a television.",
     icon: TabletSmartphone,
   },
 ] as const;
@@ -60,11 +60,10 @@ export function DevicesSection() {
           eyebrow="Supported devices"
           title={
             <>
-              Watch <TitleAccent>IPTV UK</TitleAccent> on the Devices You Already
-              Use
+              Watch <TitleAccent>IPTV UK</TitleAccent> on Your Favourite Devices
             </>
           }
-          lead="Use IPTV UK on many popular televisions, streaming devices, phones, tablets and computers. The correct app and setup method depend on your device."
+          lead="You do not need to rely on just one television to access IPTV. Depending on the application and device, you can use a compatible setup on your television, streaming stick, smartphone, tablet or computer. Telvis provides installation guidance for popular devices to make the process easier."
         />
 
         <div className="telvis-device-grid">
@@ -88,9 +87,9 @@ export function DevicesSection() {
 
         <ScrollReveal delay={0.1} variant="cta">
           <div className="telvis-inline-actions">
-          <Link href={routes.installation} className="telvis-cta-primary">
-            Open the IPTV UK Installation Guide
-          </Link>
+            <Link href={routes.installation} className="telvis-cta-primary">
+              View the Complete IPTV Installation Guide
+            </Link>
           </div>
         </ScrollReveal>
       </div>

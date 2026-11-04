@@ -7,17 +7,17 @@ import {
   Wrench,
 } from "lucide-react";
 import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
-import { CardReveal, CardRevealList, CardRevealListItem, CardRevealPart } from "@/components/ui/CardReveal";
+import { CardReveal, CardRevealPart } from "@/components/ui/CardReveal";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { staggerDelay } from "@/lib/motion";
 
 const questions = [
-  { text: "Will it work on my device?", icon: MonitorCheck },
-  { text: "Can I test it before paying?", icon: ShieldCheck },
-  { text: "Are my preferred categories available?", icon: TvMinimalPlay },
-  { text: "How many screens can watch at once?", icon: CircleHelp },
-  { text: "Who helps me if setup fails?", icon: Wrench },
-  { text: "What is the refund process?", icon: Receipt },
+  { text: "Check the available content you actually watch", icon: TvMinimalPlay },
+  { text: "Test streaming quality during a trial", icon: ShieldCheck },
+  { text: "Confirm device and player compatibility", icon: MonitorCheck },
+  { text: "Understand the full subscription cost", icon: CircleHelp },
+  { text: "Look for proper customer support", icon: Wrench },
+  { text: "Read the terms before paying", icon: Receipt },
 ] as const;
 
 export function ViewersWantSection() {
@@ -33,11 +33,10 @@ export function ViewersWantSection() {
           eyebrow="Before you buy"
           title={
             <>
-              What UK Viewers Usually Want to Know{" "}
-              <TitleAccent>Before Buying</TitleAccent>
+              What Makes a Good <TitleAccent>IPTV UK</TitleAccent> Service?
             </>
           }
-          lead="Customers do not choose an IPTV UK subscription from catalogue numbers alone. They want quick answers:"
+          lead="There are many IPTV services available online, and choosing between them can be confusing. A large channel list or a low subscription price does not automatically mean a service will meet your requirements. Before choosing a UK IPTV provider, consider the following points."
           align="center"
         />
 
@@ -64,8 +63,8 @@ export function ViewersWantSection() {
 
         <ScrollReveal delay={0.1} variant="text">
           <p className="telvis-section-lead is-center">
-          Telvis answers these questions before checkout through the free trial,
-          plan details, Installation Guide and direct support.
+            These checks help you compare IPTV services in the UK more carefully
+            and avoid choosing a subscription based on advertising claims alone.
           </p>
         </ScrollReveal>
       </div>

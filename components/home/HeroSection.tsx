@@ -15,7 +15,7 @@ export function HeroSection() {
             <ScrollReveal delay={0.05} variant="text">
               <div className="telvis-eyebrow">
                 <span className="telvis-eyebrow-dot" />
-                PREMIUM IPTV STREAMING
+                IPTV UK SUBSCRIPTION
               </div>
             </ScrollReveal>
 
@@ -24,11 +24,11 @@ export function HeroSection() {
               className="telvis-h1"
               lines={[
                 <>
-                  Telvis IPTV UK – Subscription from{" "}
-                  <span className="telvis-h1-accent">£9.99</span>
+                  IPTV UK Subscription | Explore{" "}
+                  <span className="telvis-h1-accent">Telvis IPTV</span>
                 </>,
                 <>
-                  with Free{" "}
+                  with a Free{" "}
                   <span className="telvis-h1-accent">24-Hour Trial</span>
                 </>,
               ]}
@@ -37,16 +37,23 @@ export function HeroSection() {
             <ScrollReveal delay={0.22} variant="text">
               <div className="telvis-copy">
                 <p>
-                  Choose an IPTV UK subscription that lets you check compatibility
-                  before committing to a longer plan. Browse more than 20,000 listed
-                  live channels and over 80,000 listed movies and series on supported
-                  internet-connected devices, with paid plans starting from £9.99.
+                  Get a reliable IPTV UK subscription with live TV, sports, movies
+                  and series in HD quality at discounted prices. Telvis makes it
+                  easier to explore IPTV in the UK with flexible subscription plans,
+                  a free 24-hour trial, and support for popular streaming devices.
                 </p>
                 <p>
-                  Start with a free 24-hour IPTV UK trial on the device and broadband
-                  connection you actually use. If you decide to continue, choose one,
-                  three, six or twelve months and receive the access details,
-                  installation instructions and support needed to get set up.
+                  Browse 20,000+ listed live channels and 80,000+ listed movies and
+                  series on compatible devices. Whether you use an Amazon Firestick,
+                  Android TV, Smart TV, iPhone, iPad or computer, follow our
+                  installation instructions and choose a suitable way to access your
+                  subscription.
+                </p>
+                <p>
+                  Start with a free 24-hour IPTV UK trial. Check the available
+                  content, test playback on your home internet connection, and see
+                  how the service works on your preferred device before choosing a
+                  paid plan.
                 </p>
               </div>
             </ScrollReveal>
@@ -59,7 +66,7 @@ export function HeroSection() {
                 </Link>
 
                 <Link href={routes.plans} className="telvis-cta-secondary">
-                  View Plans from £9.99
+                  View IPTV Subscription Plans
                 </Link>
               </div>
             </ScrollReveal>

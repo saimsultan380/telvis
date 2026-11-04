@@ -1,1606 +1,287 @@
-Below is the final Telvis developer handoff for the exact dark navy + blue/violet/purple look in your latest design. Use these values as the canonical implementation rather than sampling colours from the JPG.
-
-1. app/globals.css
-   /_ =========================================================
-   TELVIS — MASTER DESIGN SYSTEM
-   ========================================================= _/
-
-:root {
-/_ ---------- BASE ---------- _/
-
---telvis-bg-black: #01020d;
---telvis-bg-main: #020316;
---telvis-bg-navy: #02051d;
---telvis-bg-blue: #03082b;
---telvis-bg-card: #080a22;
-
-/_ ---------- BRAND ---------- _/
-
---telvis-blue: #4d5cff;
---telvis-indigo: #6246ff;
---telvis-violet: #744eff;
---telvis-purple: #9450ff;
---telvis-bright-purple: #b64cff;
---telvis-pink-purple: #c14bff;
-
-/_ ---------- TEXT ---------- _/
-
---telvis-white: #ffffff;
---telvis-heading: #fbfbff;
---telvis-body: rgba(229, 229, 240, 0.86);
---telvis-muted: rgba(198, 198, 216, 0.72);
-
-/_ ---------- BORDERS ---------- _/
-
---telvis-border-soft: rgba(112, 89, 255, 0.25);
---telvis-border-purple: rgba(167, 72, 255, 0.72);
---telvis-border-white: rgba(255, 255, 255, 0.08);
-
-/_ ---------- GLOWS ---------- _/
-
---telvis-glow-blue: rgba(35, 77, 255, 0.30);
---telvis-glow-indigo: rgba(80, 57, 255, 0.28);
---telvis-glow-purple: rgba(134, 34, 255, 0.27);
---telvis-glow-violet: rgba(181, 67, 255, 0.22);
-
-/_ ---------- CTA ---------- _/
-
---telvis-cta-start: #4a4cff;
---telvis-cta-mid: #6946ff;
---telvis-cta-end: #a82bf1;
-
-/_ ---------- RADII ---------- _/
-
---radius-navbar: 22px;
---radius-button: 14px;
---radius-card: 17px;
---radius-pill: 999px;
-}
-
-/_ =========================================================
-RESET
-========================================================= _/
-
-- {
-  box-sizing: border-box;
-  }
-
-html {
-scroll-behavior: smooth;
-}
-
-body {
-margin: 0;
-background: var(--telvis-bg-main);
-
-font-family:
-Inter,
-"SF Pro Display",
-"SF Pro Text",
--apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-sans-serif;
-
-color: var(--telvis-white);
-
--webkit-font-smoothing: antialiased;
-text-rendering: optimizeLegibility;
-}
-
-button,
-a {
-font: inherit;
-}
-
-/_ =========================================================
-HERO
-========================================================= _/
-
-.telvis-hero {
-position: relative;
-isolation: isolate;
-
-min-height: 100svh;
-
-overflow: hidden;
-
-color: var(--telvis-white);
-
-background:
-radial-gradient(
-circle at 5% 63%,
-rgba(35, 77, 255, 0.30) 0%,
-rgba(25, 55, 220, 0.15) 18%,
-transparent 40%
-),
-
-    radial-gradient(
-      circle at 91% 50%,
-      rgba(134, 34, 255, 0.27) 0%,
-      rgba(91, 28, 214, 0.14) 23%,
-      transparent 48%
-    ),
-
-    radial-gradient(
-      circle at 52% 89%,
-      rgba(78, 46, 255, 0.16) 0%,
-      transparent 40%
-    ),
-
-    linear-gradient(
-      180deg,
-      #020316 0%,
-      #02051d 37%,
-      #03082b 68%,
-      #010315 100%
-    );
-
-}
-
-.telvis-hero::before {
-content: "";
-
-position: absolute;
-inset: 0;
-z-index: -2;
-
-pointer-events: none;
-
-background:
-radial-gradient(
-ellipse at 50% 31%,
-rgba(112, 54, 255, 0.075),
-transparent 50%
-);
-}
-
-/_ subtle upper-right light _/
-
-.telvis-hero::after {
-content: "";
-
-position: absolute;
-
-width: 400px;
-height: 400px;
-
-top: 160px;
-right: -260px;
-
-z-index: -1;
-
-pointer-events: none;
-
-border-radius: 50%;
-
-background: rgba(142, 45, 255, 0.12);
-
-filter: blur(100px);
-}
-
-/_ =========================================================
-HERO CONTAINER
-========================================================= _/
-
-.telvis-container {
-position: relative;
-
-width: min(calc(100% - 28px), 1180px);
-
-margin-inline: auto;
-
-padding-top: 12px;
-padding-bottom: 48px;
-}
-
-/_ =========================================================
-NAVBAR
-========================================================= _/
-
-.telvis-navbar {
-position: relative;
-
-display: flex;
-align-items: center;
-justify-content: space-between;
-
-width: 100%;
-
-min-height: 58px;
-
-padding: 8px 10px 8px 16px;
-
-border: 1px solid rgba(112, 89, 255, 0.25);
-border-radius: var(--radius-navbar);
-
-background:
-linear-gradient(
-100deg,
-rgba(5, 15, 58, 0.88),
-rgba(13, 5, 43, 0.78)
-);
-
-backdrop-filter: blur(18px);
--webkit-backdrop-filter: blur(18px);
-
-box-shadow:
-0 12px 35px rgba(0, 0, 0, 0.22),
-inset 0 1px 0 rgba(255, 255, 255, 0.025);
-}
-
-/_ =========================================================
-LOGO
-========================================================= _/
-
-.telvis-brand {
-display: flex;
-align-items: center;
-
-gap: 10px;
-}
-
-.telvis-logo {
-display: block;
-
-width: 42px;
-height: 42px;
-
-object-fit: contain;
-
-filter:
-drop-shadow(0 0 5px rgba(255, 255, 255, 0.25))
-drop-shadow(0 0 8px rgba(144, 65, 255, 0.82))
-drop-shadow(0 0 17px rgba(71, 70, 255, 0.48));
-}
-
-.telvis-wordmark {
-color: #ffffff;
-
-font-size: 27px;
-line-height: 1;
-
-font-weight: 750;
-letter-spacing: -0.04em;
-}
-
-/_ =========================================================
-MENU
-========================================================= _/
-
-.telvis-menu {
-display: grid;
-place-items: center;
-
-width: 44px;
-height: 44px;
-
-padding: 0;
-
-border-radius: 50%;
-
-border: 1px solid rgba(127, 91, 255, 0.30);
-
-background: rgba(25, 17, 72, 0.72);
-
-color: #ffffff;
-
-cursor: pointer;
-
-box-shadow:
-0 0 20px rgba(100, 52, 255, 0.12);
-
-transition:
-transform 180ms ease,
-background 180ms ease;
-}
-
-.telvis-menu:hover {
-transform: scale(1.04);
-
-background: rgba(40, 26, 100, 0.82);
-}
-
-.telvis-menu-lines {
-display: flex;
-flex-direction: column;
-
-gap: 5px;
-}
-
-.telvis-menu-lines span {
-display: block;
-
-width: 19px;
-height: 2px;
-
-border-radius: 10px;
-
-background: #ffffff;
-}
-
-/_ =========================================================
-HERO CONTENT
-========================================================= _/
-
-.telvis-content {
-position: relative;
-
-margin-top: 14px;
-}
-
-/_ =========================================================
-EYEBROW
-========================================================= _/
-
-.telvis-eyebrow {
-display: inline-flex;
-align-items: center;
-
-width: fit-content;
-
-gap: 9px;
-
-margin-bottom: 17px;
-
-padding: 7px 13px;
-
-border: 1px solid transparent;
-border-radius: var(--radius-pill);
-
-background:
-linear-gradient(#080a22, #080a22) padding-box,
-
-    linear-gradient(
-      90deg,
-      #8654ff,
-      #b442ff,
-      #4e5cff
-    ) border-box;
-
-color: #ecebf6;
-
-font-size: 11px;
-line-height: 1;
-
-font-weight: 500;
-
-letter-spacing: 0.14em;
-
-text-transform: uppercase;
-
-box-shadow:
-0 0 18px rgba(129, 51, 255, 0.12);
-}
-
-.telvis-eyebrow-dot {
-width: 7px;
-height: 7px;
-
-flex-shrink: 0;
-
-border-radius: 50%;
-
-background: #a855ff;
-
-box-shadow:
-0 0 6px #a855ff,
-0 0 14px rgba(168, 85, 255, 0.72);
-}
-
-/_ =========================================================
-H1
-========================================================= _/
-
-.telvis-h1 {
-max-width: 690px;
-
-margin: 0 0 16px;
-
-color: #fbfbff;
-
-font-size: clamp(2rem, 8.4vw, 2.55rem);
-
-line-height: 1.08;
-
-font-weight: 780;
-
-letter-spacing: -0.045em;
-
-text-wrap: balance;
-}
-
-/_ EXACT H1 ACCENT _/
-
-.telvis-h1-accent {
-display: inline;
-
-background:
-linear-gradient(
-100deg,
-#b64cff 0%,
-#9450ff 25%,
-#744eff 58%,
-#5362ff 100%
-);
-
-background-clip: text;
--webkit-background-clip: text;
-
-color: transparent;
--webkit-text-fill-color: transparent;
-
-filter:
-drop-shadow(
-0 0 12px rgba(124, 66, 255, 0.10)
-);
-}
-
-/_ =========================================================
-BODY TEXT
-========================================================= _/
-
-.telvis-copy {
-max-width: 660px;
-
-color: rgba(229, 229, 240, 0.86);
-
-font-size: clamp(14.5px, 4.05vw, 17px);
-
-line-height: 1.5;
-
-font-weight: 400;
-
-letter-spacing: -0.015em;
-}
-
-.telvis-copy p {
-margin: 0;
-}
-
-.telvis-copy p + p {
-margin-top: 17px;
-}
-
-/_ =========================================================
-CTA AREA
-========================================================= _/
-
-.telvis-actions {
-display: grid;
-
-grid-template-columns: 1fr 1fr;
-
-gap: 11px;
-
-width: 100%;
-
-margin-top: 18px;
-}
-
-/_ =========================================================
-PRIMARY CTA
-========================================================= _/
-
-.telvis-cta-primary {
-position: relative;
-
-display: inline-flex;
-align-items: center;
-justify-content: center;
-
-gap: 10px;
-
-min-height: 55px;
-
-padding: 11px 15px;
-
-overflow: hidden;
-
-border: 1px solid rgba(207, 143, 255, 0.60);
-border-radius: var(--radius-button);
-
-background:
-linear-gradient(
-100deg,
-#4a4cff 0%,
-#6946ff 42%,
-#a82bf1 100%
-);
-
-color: #ffffff;
-
-text-align: center;
-text-decoration: none;
-
-font-size: 14.5px;
-
-line-height: 1.15;
-
-font-weight: 700;
-
-box-shadow:
-0 7px 24px rgba(91, 58, 255, 0.28),
-0 0 18px rgba(153, 47, 255, 0.22),
-inset 0 1px 0 rgba(255, 255, 255, 0.20);
-
-transition:
-transform 180ms ease,
-box-shadow 180ms ease,
-filter 180ms ease;
-}
-
-/_ button lighting _/
-
-.telvis-cta-primary::before {
-content: "";
-
-position: absolute;
-
-width: 130px;
-height: 100px;
-
-top: -68px;
-left: 14%;
-
-border-radius: 50%;
-
-background: rgba(255, 255, 255, 0.22);
-
-filter: blur(35px);
-
-pointer-events: none;
-}
-
-.telvis-cta-primary:hover {
-transform: translateY(-2px);
-
-filter: brightness(1.07);
-
-box-shadow:
-0 10px 30px rgba(91, 58, 255, 0.36),
-0 0 25px rgba(160, 48, 255, 0.27);
-}
-
-.telvis-cta-primary:active {
-transform: scale(0.985);
-}
-
-/_ play icon _/
-
-.telvis-play-icon {
-width: 0;
-height: 0;
-
-flex-shrink: 0;
-
-border-top: 8px solid transparent;
-border-bottom: 8px solid transparent;
-border-left: 13px solid #ffffff;
-
-filter:
-drop-shadow(0 0 5px rgba(255, 255, 255, 0.25));
-}
-
-/_ =========================================================
-SECONDARY CTA
-========================================================= _/
-
-.telvis-cta-secondary {
-display: inline-flex;
-
-align-items: center;
-justify-content: center;
-
-min-height: 55px;
-
-padding: 11px 14px;
-
-border: 1px solid rgba(255, 255, 255, 0.88);
-border-radius: var(--radius-button);
-
-background:
-linear-gradient(
-180deg,
-#ffffff 0%,
-#f4f3fa 100%
-);
-
-color: #090a23;
-
-text-align: center;
-
-text-decoration: none;
-
-font-size: 14.5px;
-
-line-height: 1.15;
-
-font-weight: 700;
-
-box-shadow:
-0 8px 24px rgba(0, 0, 0, 0.18),
-inset 0 1px 0 #ffffff;
-
-transition:
-transform 180ms ease,
-box-shadow 180ms ease;
-}
-
-.telvis-cta-secondary:hover {
-transform: translateY(-2px);
-
-box-shadow:
-0 10px 30px rgba(0, 0, 0, 0.22),
-0 0 18px rgba(102, 77, 255, 0.09);
-}
-
-/_ =========================================================
-TRUST BAR
-========================================================= _/
-
-.telvis-trust {
-display: flex;
-
-align-items: center;
-justify-content: center;
-
-flex-wrap: wrap;
-
-gap: 6px 9px;
-
-width: 100%;
-
-margin-top: 11px;
-
-padding: 8px 11px;
-
-border: 1px solid rgba(104, 82, 255, 0.28);
-border-radius: var(--radius-pill);
-
-background:
-linear-gradient(
-90deg,
-rgba(7, 28, 83, 0.72),
-rgba(15, 8, 50, 0.74)
-);
-
-color: rgba(244, 244, 252, 0.90);
-
-font-size: 10px;
-
-line-height: 1.25;
-
-backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px);
-}
-
-.telvis-trust-dot {
-width: 4px;
-height: 4px;
-
-flex: 0 0 4px;
-
-border-radius: 50%;
-
-background: #8750ff;
-
-box-shadow:
-0 0 7px rgba(135, 80, 255, 0.80);
-}
-
-/_ =========================================================
-VISUAL / ORBIT
-========================================================= _/
-
-.telvis-visual {
-position: relative;
-
-width: min(100%, 390px);
-aspect-ratio: 1 / 1;
-
-margin: 20px auto 0;
-}
-
-/_ subtle visual glow _/
-
-.telvis-visual::before {
-content: "";
-
-position: absolute;
-
-width: 72%;
-height: 72%;
-
-top: 14%;
-left: 14%;
-
-border-radius: 50%;
-
-background:
-radial-gradient(
-circle,
-rgba(88, 54, 255, 0.13),
-transparent 68%
-);
-
-filter: blur(25px);
-
-pointer-events: none;
-}
-
-/_ =========================================================
-CENTRAL EMBLEM
-========================================================= _/
-
-.telvis-orbit-logo {
-position: absolute;
-
-top: 50%;
-left: 50%;
-
-z-index: 5;
-
-display: grid;
-place-items: center;
-
-width: 126px;
-aspect-ratio: 1;
-
-transform: translate(-50%, -50%);
-
-border: 2px solid #8657ff;
-border-radius: 50%;
-
-background:
-radial-gradient(
-circle,
-rgba(65, 30, 150, 0.30) 0%,
-rgba(11, 7, 48, 0.86) 64%,
-rgba(3, 5, 26, 0.96) 100%
-);
-
-box-shadow:
-0 0 8px rgba(117, 83, 255, 0.95),
-0 0 25px rgba(101, 63, 255, 0.60),
-0 0 55px rgba(103, 46, 255, 0.26),
-inset 0 0 25px rgba(107, 68, 255, 0.16);
-}
-
-.telvis-orbit-logo img {
-width: 56%;
-
-height: auto;
-
-filter:
-drop-shadow(0 0 6px rgba(255, 255, 255, 0.35))
-drop-shadow(0 0 15px rgba(131, 55, 255, 0.76));
-}
-
-/_ =========================================================
-ORBIT TRACK
-========================================================= _/
-
-.telvis-orbit-track {
-position: absolute;
-
-width: 77%;
-aspect-ratio: 1;
-
-top: 50%;
-left: 50%;
-
-z-index: 1;
-
-transform: translate(-50%, -50%);
-
-border: 1px solid rgba(115, 89, 255, 0.55);
-
-border-radius: 50%;
-
-box-shadow:
-0 0 10px rgba(93, 74, 255, 0.08);
-
-/_ only show sections of circle _/
-mask:
-linear-gradient(#000 0 0);
-
-opacity: 0.78;
-}
-
-/_ =========================================================
-ORBIT CARDS
-========================================================= _/
-
-.telvis-orbit-item {
---orbit-radius: 145px;
-
-position: absolute;
-
-top: 50%;
-left: 50%;
-
-z-index: 10;
-
-width: max-content;
-
-offset-path:
-circle(
-var(--orbit-radius)
-at 0 0
-);
-
-offset-rotate: 0deg;
-
-animation:
-telvis-orbit 30s linear infinite;
-
-animation-delay:
-calc(var(--orbit-index) \* -6s);
-}
-
-/_ cards _/
-
-.telvis-orbit-card {
-display: flex;
-
-align-items: center;
-
-gap: 8px;
-
-min-height: 47px;
-
-padding: 8px 13px;
-
-border: 1px solid rgba(167, 72, 255, 0.72);
-
-border-radius: var(--radius-card);
-
-background:
-linear-gradient(
-135deg,
-rgba(7, 12, 41, 0.94),
-rgba(15, 7, 45, 0.88)
-);
-
-color: rgba(255, 255, 255, 0.94);
-
-white-space: nowrap;
-
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-
-box-shadow:
-0 0 14px rgba(91, 65, 255, 0.12),
-inset 0 1px 0 rgba(255, 255, 255, 0.035);
-}
-
-.telvis-orbit-card svg {
-width: 25px;
-height: 25px;
-
-flex-shrink: 0;
-
-fill: none;
-stroke: #f5f3ff;
-
-stroke-width: 1.6;
-}
-
-.telvis-orbit-card span {
-font-size: 13px;
-
-line-height: 1.1;
-
-font-weight: 450;
-}
-
-/_ =========================================================
-ORBIT ANIMATION
-========================================================= _/
-
-@keyframes telvis-orbit {
-from {
-offset-distance: 0%;
-}
-
-to {
-offset-distance: 100%;
-}
-}
-
-/_ =========================================================
-GLOWING ORBIT POINTS
-========================================================= _/
-
-.telvis-orbit-point {
-position: absolute;
-
-width: 7px;
-height: 7px;
-
-z-index: 3;
-
-border-radius: 50%;
-
-background: #ffffff;
-
-box-shadow:
-0 0 5px #ffffff,
-0 0 10px #7856ff,
-0 0 18px rgba(106, 73, 255, 0.80);
-}
-
-/_ =========================================================
-AMBIENT GLOW BLOBS
-========================================================= _/
-
-.telvis-glow {
-position: absolute;
-
-z-index: -1;
-
-pointer-events: none;
-
-border-radius: 999px;
-
-filter: blur(85px);
-}
-
-.telvis-glow-blue {
-width: 300px;
-height: 360px;
-
-left: -180px;
-top: 560px;
-
-background: rgba(23, 68, 255, 0.30);
-}
-
-.telvis-glow-purple {
-width: 330px;
-height: 430px;
-
-right: -210px;
-top: 390px;
-
-background: rgba(123, 25, 255, 0.27);
-}
-
-/_ =========================================================
-TABLET / DESKTOP
-========================================================= _/
-
-@media (min-width: 768px) {
-
-.telvis-container {
-padding-top: 24px;
-}
-
-.telvis-navbar {
-min-height: 68px;
-
-    padding-inline: 20px 12px;
-
-}
-
-.telvis-h1 {
-max-width: 820px;
-
-    font-size: clamp(3.5rem, 5.2vw, 5rem);
-
-}
-
-.telvis-copy {
-max-width: 760px;
-
-    font-size: 18px;
-
-    line-height: 1.62;
-
-}
-
-.telvis-actions {
-max-width: 650px;
-}
-
-.telvis-visual {
-width: 560px;
-}
-
-.telvis-orbit-logo {
-width: 170px;
-}
-
-.telvis-orbit-item {
---orbit-radius: 205px;
-}
-
-.telvis-orbit-card {
-min-height: 54px;
-
-    padding: 10px 17px;
-
-}
-
-.telvis-orbit-card span {
-font-size: 15px;
-}
-}
-
-/_ =========================================================
-SMALL MOBILE
-========================================================= _/
-
-@media (max-width: 370px) {
-
-.telvis-container {
-width: calc(100% - 22px);
-}
-
-.telvis-h1 {
-font-size: 1.9rem;
-}
-
-.telvis-copy {
-font-size: 14px;
-}
-
-.telvis-actions {
-gap: 8px;
-}
-
-.telvis-cta-primary,
-.telvis-cta-secondary {
-padding-inline: 10px;
-
-    font-size: 13px;
-
-}
-
-.telvis-trust {
-font-size: 9.5px;
-}
-
-.telvis-visual {
-transform: scale(0.94);
-
-    transform-origin: top center;
-
-}
-}
-
-/_ =========================================================
-VERY SMALL DEVICES
-========================================================= _/
-
-@media (max-width: 330px) {
-
-.telvis-actions {
-grid-template-columns: 1fr;
-}
-}
-
-/_ =========================================================
-ACCESSIBILITY — REDUCED MOTION
-========================================================= _/
-
-@media (prefers-reduced-motion: reduce) {
-
-.telvis-orbit-item {
-animation-play-state: paused;
-}
-
-.telvis-cta-primary,
-.telvis-cta-secondary,
-.telvis-menu {
-transition: none;
-}
-} 2. TelvisHero.tsx
-export default function TelvisHero() {
-return (
-<section className="telvis-hero">
-
-      {/* Ambient background glows */}
-      <div className="telvis-glow telvis-glow-blue" />
-      <div className="telvis-glow telvis-glow-purple" />
-
-      <div className="telvis-container">
-
-        {/* NAVIGATION */}
-        <nav className="telvis-navbar">
-
-          <a href="/" className="telvis-brand">
-            <img
-              src="/telvis-logo.svg"
-              alt="Telvis"
-              className="telvis-logo"
-            />
-
-            <span className="telvis-wordmark">
-              Telvis
-            </span>
-          </a>
-
-          <button
-            className="telvis-menu"
-            aria-label="Open navigation menu"
-          >
-            <span className="telvis-menu-lines">
-              <span />
-              <span />
-              <span />
-            </span>
-          </button>
-
-        </nav>
-
-
-        {/* HERO CONTENT */}
-        <div className="telvis-content">
-
-          <div className="telvis-eyebrow">
-            <span className="telvis-eyebrow-dot" />
-
-            PREMIUM IPTV STREAMING
-          </div>
-
-
-          <h1 className="telvis-h1">
-
-            IPTV UK Subscription from{" "}
-
-            <span className="telvis-h1-accent">
-              £9.99
-            </span>{" "}
-
-            with a Free{" "}
-
-            <span className="telvis-h1-accent">
-              24-Hour Trial
-            </span>
-
-          </h1>
-
-
-          <div className="telvis-copy">
-
-            <p>
-              Choose an IPTV UK subscription that lets you check
-              compatibility before committing to a longer plan.
-              Browse more than 20,000 listed live channels and over
-              80,000 listed movies and series on supported
-              internet-connected devices, with paid plans starting
-              from £9.99.
-            </p>
-
-            <p>
-              Start with a free 24-hour IPTV UK trial on the device
-              and broadband connection you actually use. If you
-              decide to continue, choose one, three, six or twelve
-              months and receive the access details, installation
-              instructions and support needed to get set up.
-            </p>
-
-          </div>
-
-
-          {/* CTA */}
-          <div className="telvis-actions">
-
-            <a
-              href="/free-trial"
-              className="telvis-cta-primary"
-            >
-              <span className="telvis-play-icon" />
-
-              <span>
-                Start Your Free
-                <br />
-                24-Hour Trial
-              </span>
-            </a>
-
-
-            <a
-              href="/plans"
-              className="telvis-cta-secondary"
-            >
-              View Plans from £9.99
-            </a>
-
-          </div>
-
-
-          {/* TRUST BAR */}
-          <div className="telvis-trust">
-
-            <span>Free 24-Hour Trial</span>
-
-            <span className="telvis-trust-dot" />
-
-            <span>VPN Included</span>
-
-            <span className="telvis-trust-dot" />
-
-            <span>EPG and Selected Catch-Up</span>
-
-            <span className="telvis-trust-dot" />
-
-            <span>24/7 Support</span>
-
-          </div>
-
-
-          {/* ORBIT VISUAL */}
-          <div className="telvis-visual">
-
-            <div className="telvis-orbit-track" />
-
-
-            {/* CENTRE LOGO */}
-            <div className="telvis-orbit-logo">
-              <img
-                src="/telvis-symbol.svg"
-                alt=""
-              />
-            </div>
-
-
-            {/* LIVE TV */}
-            <OrbitCard
-              index={0}
-              label="Live TV"
-              icon={<TvIcon />}
-            />
-
-
-            {/* SERIES */}
-            <OrbitCard
-              index={1}
-              label="Series"
-              icon={<SeriesIcon />}
-            />
-
-
-            {/* CONTINUE WATCHING */}
-            <OrbitCard
-              index={2}
-              label={
-                <>
-                  Continue
-                  <br />
-                  Watching
-                </>
-              }
-              icon={<PlayIcon />}
-            />
-
-
-            {/* FAVOURITES */}
-            <OrbitCard
-              index={3}
-              label="Favourites"
-              icon={<FavouriteIcon />}
-            />
-
-
-            {/* MOVIES */}
-            <OrbitCard
-              index={4}
-              label="Movies"
-              icon={<MovieIcon />}
-            />
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-);
-} 3. Orbit component
-function OrbitCard({
-index,
-icon,
-label,
-}: {
-index: number;
-icon: React.ReactNode;
-label: React.ReactNode;
-}) {
-return (
-<div
-className="telvis-orbit-item"
-style={
-{
-"--orbit-index": index,
-} as React.CSSProperties
-} >
-<div className="telvis-orbit-card">
-{icon}
-
-        <span>
-          {label}
-        </span>
-      </div>
-    </div>
-
-);
-}
-
-This gives you the behaviour you described earlier:
-
-central Telvis emblem remains stationary while all five feature cards continuously orbit around it.
-
-The animation name is:
-
-telvis-orbit
-
-Recommended speed:
-
-animation-duration: 30s;
-
-For slightly more movement:
-
-24s
-
-For a more premium/slower feel:
-
-32s
-
-I recommend 30 seconds.
-
-4. Simple SVG icons
-
-These use currentColor / CSS strokes, so the developer doesn't need external icon packages.
-
-function TvIcon() {
-return (
-<svg viewBox="0 0 32 32">
-<rect x="4" y="7" width="24" height="17" rx="2" />
-<path d="M11 28h10" />
-<path d="M16 24v4" />
-<path d="M13 3l3 4 3-4" />
-<path d="M14 12l6 4-6 4z" />
-</svg>
-);
-}
-
-function SeriesIcon() {
-return (
-<svg viewBox="0 0 32 32">
-<rect x="5" y="8" width="17" height="17" rx="2" />
-<rect x="10" y="4" width="17" height="17" rx="2" />
-</svg>
-);
-}
-
-function PlayIcon() {
-return (
-<svg viewBox="0 0 32 32">
-<circle cx="16" cy="16" r="12" />
-<path d="M13 11l8 5-8 5z" />
-</svg>
-);
-}
-
-function FavouriteIcon() {
-return (
-<svg viewBox="0 0 32 32">
-<path d="M8 4h16v24l-8-5-8 5z" />
-<path d="M16 12c-2-3-6-1-6 2 0 3 6 7 6 7s6-4 6-7c0-3-4-5-6-2z" />
-</svg>
-);
-}
-
-function MovieIcon() {
-return (
-<svg viewBox="0 0 32 32">
-<circle cx="14" cy="15" r="10" />
-<circle cx="14" cy="10" r="2" />
-<circle cx="9" cy="15" r="2" />
-<circle cx="18" cy="15" r="2" />
-<circle cx="14" cy="20" r="2" />
-<path d="M22 21l6 6" />
-</svg>
-);
-} 5. Exact H1
-
-The developer should not make the entire heading purple.
-
-Use white for most of the H1:
-
-#FBFBFF
-
-Only these:
-
+SEO Title:
+IPTV UK Subscription | Telvis IPTV Free Trial | UK IPTV Buy
+
+Meta Description:
+Try Telvis IPTV UK with a free 24-hour trial. Explore live TV, films and series on supported devices, with plans from £9.99 and 24/7 support for setup help.
+_________________________________________________________________________
+IPTV UK Subscription | Explore Telvis IPTV with a Free 24-Hour Trial
+Get a reliable IPTV UK subscription with live TV, sports, movies, and series in HD quality at discounted prices. Telvis makes it easier to explore IPTV in the UK with flexible subscription plans, a free 24-hour trial, and support for popular streaming devices.
+Browse 20,000+ listed live channels and 80,000+ listed movies and series on compatible devices. Whether you use an Amazon Firestick, Android TV, Smart TV, iPhone, iPad, or computer, you can follow our installation instructions and choose a suitable way to access your subscription.
+Start with a free 24-hour IPTV UK trial. Check the available content, test playback on your home internet connection, and see how the service works on your preferred device before choosing a paid plan.
+[Start Your Free 24-Hour Trial]
+[View IPTV Subscription Plans]
+
+Explore a Better Way to Watch IPTV UK
+20,000+
+Listed Live Channels
+80,000+
+Movies & Series
+24 Hours
+Free IPTV Trial
+24/7
+Customer Support
+_________________________________________________________________________
+Choose Your Telvis IPTV UK Subscription Plan
+Looking for an affordable IPTV UK subscription? Telvis offers four subscription durations. Choose a plan according to your viewing requirements and budget.
+
+Whether you want to try the service for a month or prefer a longer subscription, you can compare the available plans before ordering.
+
+Subscription
+Price
+Approx. Monthly Cost
+1 Month
 £9.99
-24-Hour Trial
+£9.99
+3 Months
+£24.99
+£8.33
+6 Months
+£39.99
+£6.67
+12 Months
+£49.99
+£4.17
 
-get:
 
-linear-gradient(
-100deg,
-#B64CFF 0%,
-#9450FF 25%,
-#744EFF 58%,
-#5362FF 100%
-)
 
-That is what creates this specific look:
+Compare IPTV Plans
+Start a 24-hour free IPTV Trial
 
-IPTV UK Subscription from £9.99 with a Free 24-Hour Trial
+Features Included with Telvis Plans
+Access to the listed live TV catalogue
+Movies and series on demand
+Dedicated app on supported devices
+Xtream Codes support for compatible players
+EPG where available
+Selected Catch-Up TV
+VPN functionality
+Customer support
+Account activation and installation guidance
 
-6. Exact background recipe
+All four plans offer the same core catalogue and access features. Check the applicable terms and connection allowance before ordering.
 
-This is the part your developer should copy without simplifying it:
+_________________________________________________________________________
+Try IPTV UK Free for 24 Hours Before You Subscribe
+Choosing an IPTV provider without testing it first can leave you uncertain about device compatibility, available content and playback quality.
+That is why Telvis offers a free 24-hour IPTV trial.
+You can use the trial to explore the service on your own device and internet connection. It gives you an opportunity to check whether the available content and features meet your expectations.
+_________________________________________________________________________
+Your IPTV UK Subscription for Live TV, Sports, Movies and More
+Watching television through an internet connection gives you another way to access live and on-demand entertainment. With a suitable IPTV UK service, you can browse available television categories, explore movies and series, and watch through compatible streaming devices.
+Telvis brings these options together through one subscription. You can explore different content categories, use supported IPTV applications, and choose a subscription duration that matches your viewing requirements.
+Whether you are interested in British entertainment, live sports, international television, or on-demand movies, the available catalogue gives you different categories to explore.
+You do not need to choose a long subscription straight away. Start with the free IPTV UK trial, check the available features, and decide which plan works for you.
+[Explore Telvis IPTV]
+[Get Your Free Trial]
+_________________________________________________________________________
+Why Choose Telvis IPTV UK?
+A good IPTV experience involves more than the number of channels available. Your device, application, streaming quality, programme information, and customer support all matter.
+Telvis IPTV UK provides several features to make your IPTV UK subscription easier to access and manage.
+Extensive Live TV Selection
+Explore more than 20,000 listed live channels across entertainment, news, sports, documentaries, lifestyle and international categories. Individual channel availability can change.
+Movies and Series on Demand
+Browse a library of more than 80,000 listed movies and series. Explore different genres, search for available titles, and find entertainment according to your preferences.
+HD and Selected 4K Streaming
+Enjoy available HD, Full HD and selected 4K streams where supported. Actual picture quality depends on the individual source, your device, application and internet connection.
+Electronic Programme Guide (EPG)
+Use the Electronic Programme Guide to check available programme information. See what is currently playing and what comes next on channels where EPG data is provided.
+Selected Catch-Up TV
+Missed a programme? Catch-Up is available on selected listings, allowing you to access supported programmes after their original broadcast.
+Customer Support Whenever You Need It
+Get help with subscription enquiries, installation, login information, and technical problems. Telvis offers customer assistance through WhatsApp and email, with support available 24 hours a day.
+_________________________________________________________________________
+Watch IPTV UK on Your Favourite Devices
+You do not need to rely on just one television to access IPTV. Depending on the application and device, you can use a compatible setup on your television, streaming stick, smartphone, tablet or computer.
+Telvis provides installation guidance for popular devices to make the process easier.
+Amazon Firestick and Fire TV
+Firestick is a popular option for people who want to access IPTV through their television.
+You can install the dedicated Telvis application using the instructions in our installation guide. Once installed, enter your supplied login details and allow the available categories to load.
+Android TV and Google TV
+Android TV and Google TV devices support compatible IPTV applications. You can use the dedicated application where supported or configure a compatible player with your Xtream Codes details.
+Samsung and LG Smart TVs
+Many Samsung and LG Smart TVs support IPTV player applications through their respective app stores.
+Install a compatible application, open its login section and enter the account details provided with your subscription.
+iPhone and iPad
+You can access IPTV through a compatible iOS player available from the Apple App Store.
+Install the application, enter your username, password and server address, and follow the player's instructions.
+Android Phones and Tablets
+Android devices provide another convenient way to access IPTV. Use the dedicated application or a compatible IPTV player, depending on your device and setup.
+Windows and Mac Computers
+You can also configure a compatible IPTV player on Windows and macOS.
+This option is useful if you prefer watching on a laptop or desktop computer rather than a television.
+Android Boxes and IPTV Boxes
+An IPTV box or Android TV box can provide another way to watch through your television. Check the device specifications and application compatibility before installation.
+[View the Complete IPTV Installation Guide]
 
-background:
-radial-gradient(
-circle at 5% 63%,
-rgba(35, 77, 255, 0.30) 0%,
-rgba(25, 55, 220, 0.15) 18%,
-transparent 40%
-),
+IPTV Players and Applications Supported by Different Devices
+An IPTV subscription and an IPTV player are not necessarily the same thing.
+The subscription provides the account access and available content, while the IPTV player is the application you use to browse and play the streams.
+Depending on your device, you may be able to use the dedicated Telvis application or another compatible IPTV player.
+Device
+Compatible Player Options
+Android TV
+Telvis App, TiviMate, IPTV Smarters Pro
+Android Mobile
+Telvis App, IPTV Smarters Pro
+Firestick
+Telvis App and compatible Fire TV players
+Samsung Smart TV
+Compatible Samsung IPTV players
+LG Smart TV
+Compatible LG IPTV players
+iPhone and iPad
+Compatible iOS IPTV players
+Windows
+VLC and compatible IPTV players
+Mac
+VLC and compatible IPTV players
 
-radial-gradient(
-circle at 91% 50%,
-rgba(134, 34, 255, 0.27) 0%,
-rgba(91, 28, 214, 0.14) 23%,
-transparent 48%
-),
+Application availability and features depend on the device, operating system and player version. Some third-party players require a separate purchase or activation fee.
+For the easiest setup, follow the instructions for your particular device rather than installing several applications at once.
 
-radial-gradient(
-circle at 52% 89%,
-rgba(78, 46, 255, 0.16) 0%,
-transparent 40%
-),
 
-linear-gradient(
-180deg,
-#020316 0%,
-#02051D 37%,
-#03082B 68%,
-#010315 100%
-);
+Explore the Content Available with Telvis IPTV
+Finding something to watch should be straightforward. Telvis organises its listed content into different categories so you can explore live television and on-demand entertainment.
+British TV and Entertainment
+Explore available British television categories, including entertainment, news, documentaries, lifestyle and general programming.
+If you mainly want British IPTV for everyday viewing, use the free trial to check the specific channels and programmes you prefer.
+Live Sports and Sporting Events
+Sports fans can explore available categories covering different sporting interests.
+These include:
+Football
+Cricket
+Rugby
+Formula 1 and motorsports
+Boxing
+UFC and other combat sports
+Tennis
+Golf
+Basketball
+Event and channel availability can vary. Check the relevant listings during your trial before choosing a subscription.
+Movies and Films
+Explore available movies across different genres, including:
+Action and adventure
+Comedy
+Drama
+Crime and thriller
+Science fiction
+Horror
+Documentaries
+Family entertainment
+You can browse the available movie catalogue and search for titles according to your interests.
+TV Series and Box Sets
+Find available television series, seasons and episodes in the on-demand section. Browse different categories and continue watching supported series through compatible IPTV players.
+International Television
+Alongside UK-focused entertainment, you can explore available international and regional categories. This is useful for households interested in television from different countries and languages.
+News and Documentaries
+Browse available news, current affairs, educational programmes and documentary categories. Programme information and availability depend on the individual listings.
+_________________________________________________________________________
+How to Start Your Telvis IPTV Subscription
+Getting started does not need to be complicated. Follow these four steps to explore Telvis IPTV and configure your preferred device.
+STEP 01: Choose Your Free Trial or Subscription
+Start with the free 24-hour IPTV trial or review the available paid plans. Choose the option that matches your requirements.
+STEP 02: Confirm Your Device
+Let the support team know whether you use a Firestick, Smart TV, Android TV, smartphone, tablet or computer. This helps you receive the correct installation instructions.
+STEP 03: Receive Your IPTV Login Details
+Once your trial or subscription is arranged, you receive the required account information and setup guidance.
+Keep your username, password and server details available when configuring your IPTV player.
+STEP 04: Install and Start Watching
+Follow the installation guide for your device, enter the supplied details and wait for the available categories to load.
+You can then explore the supported live TV, movies and series sections.
+[Start Your IPTV UK Trial]
 
-The result should be:
+What Makes a Good IPTV UK Service?
+There are many IPTV services available online, and choosing between them can be confusing. A large channel list or a low subscription price does not automatically mean a service will meet your requirements.
+Before choosing a UK IPTV provider, consider the following points.
+Check the Available Content
+Look beyond the advertised number of channels. Check whether the service offers the categories and specific programmes you want to watch.
+Test the Streaming Quality
+Your viewing experience depends on the source, device and internet connection. Test different streams during a trial rather than relying only on advertised resolutions.
+Check Device Compatibility
+Make sure the service supports your preferred television, streaming device or mobile platform. Also check whether a dedicated application or third-party player is required.
+Understand the Subscription Cost
+Compare the total subscription price, duration, included features and any additional application fees.
+Look for Proper Customer Support
+Installation and login problems can happen. A provider should make it clear how customers can request help and where to find installation instructions.
+Read the Terms Before Paying
+Check the refund policy, subscription conditions, renewal arrangements and the rights associated with the content being offered.
+These checks help you compare IPTV services in the UK more carefully and avoid choosing a subscription based on advertising claims alone.
 
-Left/lower area: blue glow
-Right area: purple glow
-Centre: extremely dark navy
-Top: nearly black/navy
-Bottom: navy-black
+Get a Better IPTV Streaming Experience with the Right Setup
+Even with a suitable IPTV service, buffering, freezing and loading problems can affect playback.
+The cause is not always the IPTV application. Your Wi-Fi signal, router, device performance, broadband connection and individual stream can all make a difference.
+Here are some simple ways to improve your setup.
+Use a stable internet connection: A reliable broadband connection helps maintain consistent playback, especially when watching higher-resolution content.
+Consider an Ethernet connection: If your streaming device supports Ethernet, a wired connection can help reduce wireless interference.
+Keep your device updated: Install available system and application updates to maintain compatibility and performance.
+Close unnecessary applications: Older streaming devices can struggle when too many applications are running in the background.
+Restart your router and device: Restarting your equipment can sometimes resolve temporary network and application problems.
+Check different streams: If only one channel is buffering, try another listing. This can help identify whether the issue affects a particular source or your entire setup.
+Check your available storage: Devices with very little free storage may experience slower performance.
+If the problem continues, contact support with your device model, application name and the error you are experiencing.
 
-Not a flat purple background.
+IPTV UK: Important Things to Know Before Ordering
+Before purchasing an IPTV subscription, make sure you understand what the service provides and what your chosen plan includes.
+IPTV is a technology that delivers television content through internet connections. However, the legality of a particular service depends on whether it has the appropriate rights to distribute the content it offers.
+Always check the provider's content rights, terms and conditions, and applicable UK requirements before subscribing. Only access content you are legally entitled to watch.
+You should also confirm:
+Which channels and content categories are available.
+Whether your device supports the required application.
+How many simultaneous connections your plan allows.
+Whether EPG and Catch-Up are available for your preferred listings.
+Whether any third-party player requires a separate fee.
+What the refund and subscription conditions say.
+Taking a few minutes to check these details can help you make a better decision.
 
-7. Exact CTA gradient
+Frequently Asked Questions About Telvis IPTV UK
+1. What is Telvis IPTV UK?
+Telvis IPTV is an internet-based television service that provides access to live TV channels, movies and series through supported devices and compatible IPTV players.
+2. How can I get an IPTV UK free trial?
+Telvis offers a free 24-hour trial. Contact the team to request trial access and check the service on your device before choosing a subscription.
+3. How much does a Telvis IPTV UK subscription cost?
+Telvis plans start from £9.99. The website lists monthly, 3-month, 6-month and 12-month subscription options. Check the subscription page for current prices.
+4. Which devices support Telvis IPTV?
+You can use a compatible IPTV player on supported devices, including Amazon Firestick, Android TV, Android phones, tablets and selected Smart TVs. Compatibility depends on the device and app.
+5. Can I use UK IPTV on my Firestick?
+Yes. You can use a compatible IPTV player on an Amazon Firestick. Install a supported player, enter the login details provided with your subscription and load the available channels.
+6. Does Telvis IPTV include UK channels?
+Telvis advertises a selection of live TV channels, including UK and international categories. Channel availability can change, so use the free trial to check whether the channels you want are available.
+7. Does Telvis IPTV offer movies and TV series?
+Yes. Telvis lists a video-on-demand library with movies and series. The website advertises more than 80,000 titles, although individual titles and availability may change.
+8. Why does my IPTV keep buffering?
+Buffering can result from a weak internet connection, Wi-Fi interference, an overloaded device, player issues or problems with the stream source. Try restarting your router and device, using a wired connection where possible, and testing another channel.
+9. Do I need a VPN to use IPTV in the UK?
+A VPN is not automatically required. Whether to use one depends on your privacy needs, network conditions and applicable laws. A VPN cannot guarantee better streaming or make unauthorised content lawful.
+10. What is an IPTV player, and do I need one?
+An IPTV player is an application used to load and play an IPTV service. Some devices require a separate player. The player itself does not necessarily provide channels or a subscription.
+11. Does Telvis IPTV support an EPG or TV guide?
+Telvis lists EPG support. An Electronic Programme Guide displays programme information and schedules where the relevant data is available and supported by your IPTV player.
+12. Can I watch IPTV on more than one device?
+This depends on the connection limit included with your selected subscription. Check the plan details or contact Telvis support before using the same account on multiple devices at once.
+13. What should I do if my IPTV channels are not loading?
+First, check your internet connection and confirm that your subscription details are correct. Restart the IPTV player, refresh the playlist if the app supports it, and try another channel. Contact support if the issue continues.
+14. Is IPTV legal in the UK?
+IPTV is a technology for delivering television over the internet. Its legality depends on whether the provider has the necessary rights to distribute the content. Before subscribing to any UK IPTV service, check that its channels and programmes are properly licensed.
+15. How do I choose the right IPTV UK subscription?
+Compare the channels and content you actually watch, supported devices, stream quality, connection limits, customer support and subscription terms. A free trial can help you check compatibility and playback before committing to a longer plan.
+16. Does Telvis IPTV offer a refund?
+Telvis publishes a seven-day refund guarantee for eligible paid subscriptions. Contact support within seven days of purchase and check the refund policy for its conditions.
+Telvis+1
+17. Does Telvis IPTV include a VPN?
+Yes. VPN functionality is included with Telvis plans on supported setups. You do not have to use a separate VPN simply to access the service.
+Subscription from £9.99 with 24-Hour Trial+1
+18. Can I test IPTV UK during the hours I normally watch TV?
+Yes. The 24-hour trial is intended to let you test the service on your usual device and home internet connection. Try it during your normal viewing hours, including busy evening periods, to assess performance.
+Telvis+1
+19. How can I contact Telvis IPTV support?
+You can contact Telvis through WhatsApp or email for help with trials, subscriptions, installation, login errors and EPG issues. Support is advertised as available 24/7, although response times may vary.
+_________________________________________________________________________
+Ready to Explore Telvis IPTV UK?
+Find a subscription that matches your viewing requirements and check the service before choosing a longer plan.
+With a free 24-hour trial, flexible subscription durations, device-specific installation guidance and customer support, Telvis gives you a straightforward way to explore its IPTV offering.
+Browse the available content, test your preferred device and choose a plan only after checking the features that matter to you.
+Start your free IPTV UK trial today and explore Telvis on your own device.
+[Get Your Free 24-Hour Trial]
+[View IPTV Subscription Plans]
+[Contact Telvis Support]
 
-Primary:
-
-linear-gradient(
-100deg,
-#4A4CFF 0%,
-#6946FF 42%,
-#A82BF1 100%
-)
-
-Border:
-
-rgba(207, 143, 255, 0.60)
-
-Glow:
-
-box-shadow:
-0 7px 24px rgba(91, 58, 255, 0.28),
-0 0 18px rgba(153, 47, 255, 0.22),
-inset 0 1px 0 rgba(255, 255, 255, 0.20);
-
-Secondary:
-
-background:
-linear-gradient(
-180deg,
-#FFFFFF 0%,
-#F4F3FA 100%
-);
-
-color: #090A23; 8. Tailwind usage
-
-You don't actually need to duplicate every colour into Tailwind configuration. Because all master values are CSS variables, Tailwind can consume them directly:
-
-<div className="bg-[var(--telvis-bg-main)]">
-<div className="text-[var(--telvis-heading)]">
-<div className="border-[var(--telvis-border-purple)]">
-<div className="shadow-[0_0_25px_rgba(101,63,255,0.60)]">
-
-For your H1 gradient:
-
-<span
-className="
-bg-[linear-gradient(100deg,#B64CFF_0%,#9450FF_25%,#744EFF_58%,#5362FF_100%)]
-bg-clip-text
-text-transparent
-"
-
-> £9.99
-> </span>
-
-For the primary CTA:
-
-className="
-bg-[linear-gradient(100deg,#4A4CFF_0%,#6946FF_42%,#A82BF1_100%)]
-text-white
-" 9. Developer colour sheet
-
-Give them these as the master colours:
-
-TELVIS MASTER PALETTE
-
-Page Black
-#01020D
-
-Main Navy
-#020316
-
-Mid Navy
-#02051D
-
-Blue Navy
-#03082B
-
-Electric Blue
-#4D5CFF
-
-Indigo
-#6246FF
-
-Main Violet
-#744EFF
-
-Purple
-#9450FF
-
-Bright Purple
-#B64CFF
-
-Pink Purple
-#C14BFF
-
-H1 White
-#FBFBFF
-
-Pure White
-#FFFFFF
-
-Paragraph
-rgba(229,229,240,0.86)
-
-Blue Glow
-rgba(35,77,255,0.30)
-
-Purple Glow
-rgba(134,34,255,0.27)
-H1 gradient
-#B64CFF
-→ #9450FF
-→ #744EFF
-→ #5362FF
-CTA gradient
-#4A4CFF
-→ #6946FF
-→ #A82BF1
-Orbit gradient
-#5262FF
-→ #8250FF
-→ #C14BFF
-One important detail for the live website
-
-The 9:41 / Dynamic Island / Wi-Fi / battery visible in the design should normally not be coded into the actual website. Those are device/status-bar elements and were useful for the mobile design presentation.
-
-The actual production hero should begin with the Telvis navbar. On a real iPhone, iOS supplies its own status area.
-
-Everything from the Telvis navbar downward should use the code above.
-
-That will give your developer a much closer reproduction of the final Telvis concept than using one generic purple hex throughout.

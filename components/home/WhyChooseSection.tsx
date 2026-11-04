@@ -12,28 +12,28 @@ import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
 
 const reasons = [
   {
-    title: "Clear Pricing from £9.99",
-    body: "See the full price and duration before ordering. Choose one month for flexibility or a longer plan for better monthly value.",
+    title: "Flexible Plans from £9.99",
+    body: "Choose a one, three, six or twelve-month subscription according to your viewing requirements and budget. Longer plans lower the approximate monthly cost.",
     icon: BadgePoundSterling,
   },
   {
-    title: "Test Before a Longer Purchase",
-    body: "Use the free trial on your own device and home connection before choosing a paid plan.",
+    title: "Free 24-Hour IPTV Trial",
+    body: "Explore the service on your own device and home internet connection before choosing a paid plan.",
     icon: FlaskConical,
   },
   {
-    title: "Two Practical Access Methods",
-    body: "Use the dedicated app where supported or a compatible Xtream Codes player. This gives IPTV UK customers a clear setup option across different devices.",
+    title: "Dedicated App and Compatible Players",
+    body: "Use the dedicated application where supported, or configure a compatible IPTV player with your Xtream Codes details.",
     icon: Waypoints,
   },
   {
-    title: "Support Beyond the Sale",
-    body: "Get help with installation, login details, EPG, loading and account questions throughout your active subscription.",
+    title: "24/7 Customer Support",
+    body: "Get help with trials, subscriptions, installation, login errors and EPG issues through WhatsApp and email.",
     icon: Headphones,
   },
   {
-    title: "A Published Refund Process",
-    body: "Eligible purchases have a seven-day refund guarantee under the published Refund Policy. Read the conditions before ordering.",
+    title: "Published Refund Policy",
+    body: "Eligible paid subscriptions have a seven-day refund guarantee. Read the Refund Policy conditions before ordering.",
     icon: ScrollText,
   },
 ] as const;
@@ -48,12 +48,14 @@ export function WhyChooseSection() {
       <div className="telvis-section-inner">
         <SectionHeader
           id="why-choose-heading"
-          eyebrow="Why Choose"
+          eyebrow="Your IPTV UK subscription"
           title={
             <>
-              Why Choose <TitleAccent>Telvis</TitleAccent>?
+              Your IPTV UK Subscription for Live TV, Sports,{" "}
+              <TitleAccent>Movies and More</TitleAccent>
             </>
           }
+          lead="Watching television through an internet connection gives you another way to access live and on-demand entertainment. Telvis brings these options together through one subscription so you can explore different content categories, use supported IPTV applications, and choose a subscription duration that matches your viewing requirements."
           align="center"
         />
 

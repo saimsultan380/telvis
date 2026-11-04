@@ -1,8 +1,8 @@
 export const telvisStats = [
-  { value: "20,000+", label: "Listed live channels" },
-  { value: "80,000+", label: "Listed movies & series" },
-  { value: "24h", label: "Free trial" },
-  { value: "24/7", label: "WhatsApp & email support" },
+  { value: "20,000+", label: "Listed Live Channels" },
+  { value: "80,000+", label: "Movies & Series" },
+  { value: "24 Hours", label: "Free IPTV Trial" },
+  { value: "24/7", label: "Customer Support" },
 ] as const;
 
 export const payTvComparison = [

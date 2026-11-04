@@ -6,13 +6,13 @@ import { blogPostHref, blogSlugs } from "@/lib/blog-posts";
 import { routes } from "@/lib/site";
 
 const checklist = [
-  "The app installs and your login works",
-  "Live, movie and series categories load correctly",
-  "The channels and categories important to you are listed",
-  "Picture and sound work well on your home connection",
-  "Navigation, EPG and selected Catch-Up meet your needs",
-  "Performance is suitable at the time you normally watch",
-  "The plan includes enough screens for your household",
+  "The available content meets your expectations",
+  "Playback works on your home internet connection",
+  "Your preferred device installs and signs in correctly",
+  "Live TV, movies and series categories load as expected",
+  "Picture and sound quality are suitable for you",
+  "EPG and selected Catch-Up work where available",
+  "Performance is acceptable during your normal viewing hours",
 ] as const;
 
 export function TrialSection() {
@@ -31,10 +31,10 @@ export function TrialSection() {
               title={
                 <>
                   Try <TitleAccent>IPTV UK</TitleAccent> Free for{" "}
-                  <TitleAccent>24 Hours</TitleAccent> Before Choosing a Plan
+                  <TitleAccent>24 Hours</TitleAccent> Before You Subscribe
                 </>
               }
-              lead="A useful trial should answer your main questions before you pay. Test the 24-hour IPTV UK trial on the device and internet connection you normally use."
+              lead="Choosing an IPTV provider without testing it first can leave you uncertain about device compatibility, available content and playback quality. That is why Telvis offers a free 24-hour IPTV trial. Use it on your own device and internet connection to check whether the available content and features meet your expectations."
             />
           </div>
 
@@ -61,7 +61,7 @@ export function TrialSection() {
             </CardRevealPart>
             <CardRevealPart variant="content">
               <Link href={routes.trial} className="telvis-cta-primary">
-                Request a 24-Hour Trial
+                Get Your Free Trial
               </Link>
             </CardRevealPart>
           </CardReveal>

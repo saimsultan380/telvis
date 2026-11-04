@@ -5,82 +5,102 @@ export type FaqItem = {
 
 export const coreFaqs: FaqItem[] = [
   {
-    question: "What is IPTV?",
+    question: "What is Telvis IPTV UK?",
     answer:
-      "IPTV means television delivered through an internet connection instead of an aerial, cable or satellite feed. A compatible app organises the live and on-demand content supplied through your account.",
+      "Telvis IPTV is an internet-based television service that provides access to live TV channels, movies and series through supported devices and compatible IPTV players.",
   },
   {
-    question: "How much does Telvis IPTV UK cost?",
+    question: "How can I get an IPTV UK free trial?",
     answer:
-      "Telvis plans cost £9.99 for one month, £24.99 for three months, £39.99 for six months and £49.99 for twelve months. The twelve-month plan works out at about £4.17 per month. Start with the free 24-hour trial before you pay.",
+      "Telvis offers a free 24-hour trial. Contact the team to request trial access and check the service on your device before choosing a subscription.",
   },
   {
-    question: "What do I receive after ordering?",
+    question: "How much does a Telvis IPTV UK subscription cost?",
     answer:
-      "You receive the username, password, server information and setup guidance needed for the dedicated app or a compatible Xtream Codes player.",
+      "Telvis plans start from £9.99. The website lists monthly, 3-month, 6-month and 12-month subscription options. Check the subscription page for current prices.",
   },
   {
-    question: "Which devices work with Telvis?",
+    question: "Which devices support Telvis IPTV?",
     answer:
-      "Supported options include many Firestick, Fire TV, Android TV, Google TV, Smart TV, Apple, Android mobile, Windows and Mac devices. Open the Installation Guide for your device or contact support if you are unsure.",
+      "You can use a compatible IPTV player on supported devices, including Amazon Firestick, Android TV, Android phones, tablets and selected Smart TVs. Compatibility depends on the device and app.",
   },
   {
-    question: "Is a player app included?",
+    question: "Can I use UK IPTV on my Firestick?",
     answer:
-      "The dedicated Telvis app is available on supported Android-based devices. Some third-party players charge their own activation or licence fee, so check before installing one.",
+      "Yes. You can use a compatible IPTV player on an Amazon Firestick. Install a supported player, enter the login details provided with your subscription and load the available channels.",
   },
   {
-    question: "Can I watch on more than one device at once?",
+    question: "Does Telvis IPTV include UK channels?",
     answer:
-      "You can install your account on compatible devices, but the number of screens playing at the same time depends on your plan. Confirm the screen allowance with support before you pay.",
+      "Telvis advertises a selection of live TV channels, including UK and international categories. Channel availability can change, so use the free trial to check whether the channels you want are available.",
   },
   {
-    question: "Do I need a VPN for IPTV in the UK?",
+    question: "Does Telvis IPTV offer movies and TV series?",
     answer:
-      "A VPN is not required to use Telvis. VPN functionality is included with active plans for customers who want extra privacy on their connection. Picture quality and access still depend on your device, player and home internet.",
+      "Yes. Telvis lists a video-on-demand library with movies and series. The website advertises more than 80,000 titles, although individual titles and availability may change.",
   },
   {
-    question: "Can I watch live sport during the trial?",
+    question: "Why does my IPTV keep buffering?",
     answer:
-      "The trial includes access to the same listed categories as a paid plan, but individual sports events and channels vary. Use the 24-hour trial on your own connection to check the categories that matter to you.",
+      "Buffering can result from a weak internet connection, Wi-Fi interference, an overloaded device, player issues or problems with the stream source. Try restarting your router and device, using a wired connection where possible, and testing another channel.",
   },
   {
-    question: "How long does Firestick setup take?",
+    question: "Do I need a VPN to use IPTV in the UK?",
     answer:
-      "Many customers finish Firestick setup in under 30 minutes using the dedicated Installation Guide. Support can help on WhatsApp if Downloader, the app install or login details need checking.",
+      "A VPN is not automatically required. Whether to use one depends on your privacy needs, network conditions and applicable laws. A VPN cannot guarantee better streaming or make unauthorised content lawful.",
   },
   {
-    question: "Is every channel available in Catch-Up?",
+    question: "What is an IPTV player, and do I need one?",
     answer:
-      "No. Catch-Up works only on selected listings and for a limited period. EPG information can also vary.",
+      "An IPTV player is an application used to load and play an IPTV service. Some devices require a separate player. The player itself does not necessarily provide channels or a subscription.",
   },
   {
-    question: "Is 4K guaranteed?",
+    question: "Does Telvis IPTV support an EPG or TV guide?",
     answer:
-      "No. Available quality depends on the listing, device, player, television and internet connection.",
+      "Telvis lists EPG support. An Electronic Programme Guide displays programme information and schedules where the relevant data is available and supported by your IPTV player.",
   },
   {
-    question: "What can cause buffering?",
+    question: "Can I watch IPTV on more than one device?",
     answer:
-      "Common causes include weak Wi-Fi, busy home internet, low device storage, an outdated app or a temporary issue with one listing. Follow the Installation Guide before contacting support.",
+      "This depends on the connection limit included with your selected subscription. Check the plan details or contact Telvis support before using the same account on multiple devices at once.",
   },
   {
-    question: "How does the seven-day refund guarantee work?",
+    question: "What should I do if my IPTV channels are not loading?",
     answer:
-      "Contact support within seven days and include your order details and reason. Eligibility depends on the conditions in the published Refund Policy.",
+      "First, check your internet connection and confirm that your subscription details are correct. Restart the IPTV player, refresh the playlist if the app supports it, and try another channel. Contact support if the issue continues.",
   },
   {
     question: "Is IPTV legal in the UK?",
     answer:
-      "IPTV is a delivery technology. Legality depends on the rights and permissions held for the content. The service should offer only content it is authorised to distribute, and customers must follow applicable law.",
+      "IPTV is a technology for delivering television over the internet. Its legality depends on whether the provider has the necessary rights to distribute the content. Before subscribing to any UK IPTV service, check that its channels and programmes are properly licensed.",
   },
   {
-    question: "Why choose Telvis over other IPTV providers in the UK?",
+    question: "How do I choose the right IPTV UK subscription?",
     answer:
-      "Telvis focuses on a clear trial-first path, published prices from £9.99, device-specific setup guides, WhatsApp and email support, and a seven-day refund on eligible paid orders. Compare plans and test on your own device before committing to a longer subscription.",
+      "Compare the channels and content you actually watch, supported devices, stream quality, connection limits, customer support and subscription terms. A free trial can help you check compatibility and playback before committing to a longer plan.",
+  },
+  {
+    question: "Does Telvis IPTV offer a refund?",
+    answer:
+      "Telvis publishes a seven-day refund guarantee for eligible paid subscriptions. Contact support within seven days of purchase and check the Refund Policy for its conditions.",
+  },
+  {
+    question: "Does Telvis IPTV include a VPN?",
+    answer:
+      "Yes. VPN functionality is included with Telvis plans on supported setups. You do not have to use a separate VPN simply to access the service.",
+  },
+  {
+    question: "Can I test IPTV UK during the hours I normally watch TV?",
+    answer:
+      "Yes. The 24-hour trial is intended to let you test the service on your usual device and home internet connection. Try it during your normal viewing hours, including busy evening periods, to assess performance.",
+  },
+  {
+    question: "How can I contact Telvis IPTV support?",
+    answer:
+      "You can contact Telvis through WhatsApp or email for help with trials, subscriptions, installation, login errors and EPG issues. Support is advertised as available 24/7, although response times may vary.",
   },
 ];
 
-export const homepageFaqs = coreFaqs.slice(0, 11);
+export const homepageFaqs = coreFaqs;
 
 export const iptvUkFaqs = coreFaqs;

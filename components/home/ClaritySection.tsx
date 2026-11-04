@@ -7,37 +7,44 @@ import { routes } from "@/lib/site";
 
 const rows = [
   {
-    matter: "Try before paying",
-    provides: "A free 24-hour trial on your own supported device",
-  },
-  {
-    matter: "Clear prices",
-    provides: "Four plans starting from £9.99",
-  },
-  {
-    matter: "Live and on-demand choice",
+    matter: "Content rights and legality",
     provides:
-      "20,000+ listed live channels and 80,000+ listed movies and series",
+      "IPTV delivers television over the internet. Legality depends on the rights held for the content offered. Only access content you are legally entitled to watch.",
   },
   {
-    matter: "Two ways to sign in",
-    provides: "Dedicated app and Xtream Codes for compatible players",
+    matter: "Channels and categories",
+    provides:
+      "Confirm which channels and content categories are available during the free trial before you subscribe.",
   },
   {
-    matter: "Useful viewing features",
-    provides: "EPG where available, selected Catch-Up and VPN functionality",
+    matter: "Device and application support",
+    provides:
+      "Check whether your device supports the required application or a compatible IPTV player.",
   },
   {
-    matter: "Setup help",
-    provides: "Installation Guide plus email and WhatsApp support",
+    matter: "Simultaneous connections",
+    provides:
+      "Confirm how many simultaneous connections your plan allows before using the account on multiple screens.",
   },
   {
-    matter: "Screen information",
-    provides: "The number of active screens is confirmed before payment",
+    matter: "EPG and Catch-Up",
+    provides:
+      "EPG and Catch-Up availability depend on the individual listings and your player.",
   },
   {
-    matter: "Refund protection",
-    provides: "A seven-day guarantee under the published Refund Policy",
+    matter: "Third-party player fees",
+    provides:
+      "Some third-party players require a separate purchase or activation fee that is not part of the Telvis subscription unless checkout says otherwise.",
+  },
+  {
+    matter: "Refund and subscription terms",
+    provides:
+      "Read the refund policy, subscription conditions and renewal arrangements before paying.",
+  },
+  {
+    matter: "Support if something fails",
+    provides:
+      "Telvis provides WhatsApp and email support for installation, login and account questions.",
   },
 ] as const;
 
@@ -51,13 +58,14 @@ export function ClaritySection() {
       <div className="telvis-section-inner">
         <SectionHeader
           id="clarity-heading"
-          eyebrow="Clear details"
+          eyebrow="Before ordering"
           title={
             <>
-              Know What You Get <TitleAccent>Before You Pay</TitleAccent>
+              IPTV UK: Important Things to Know{" "}
+              <TitleAccent>Before Ordering</TitleAccent>
             </>
           }
-          lead="Telvis keeps the main details clear so you can choose without guessing."
+          lead="Before purchasing an IPTV subscription, make sure you understand what the service provides and what your chosen plan includes. Taking a few minutes to check these details can help you make a better decision."
         />
 
         <CardReveal className="telvis-glass telvis-table-wrap">
@@ -67,13 +75,13 @@ export function ClaritySection() {
                 <th scope="col">
                   <span className="telvis-table-head">
                     <Scale size={16} aria-hidden="true" />
-                    What matters
+                    What to check
                   </span>
                 </th>
                 <th scope="col">
                   <span className="telvis-table-head">
                     <BadgeCheck size={16} aria-hidden="true" />
-                    What Telvis provides
+                    Why it matters
                   </span>
                 </th>
               </tr>
@@ -100,9 +108,9 @@ export function ClaritySection() {
             </div>
           </CardRevealPart>
           <CardRevealPart variant="content" as="p" className="telvis-info-body">
-            You should know the price, supported devices, screen allowance and
-            refund conditions before ordering. Test the service first, choose the
-            right plan and ask support if anything is unclear.
+            Always check the provider&apos;s content rights, terms and conditions,
+            and applicable UK requirements before subscribing. Test the service
+            first, choose the right plan and ask support if anything is unclear.
           </CardRevealPart>
           <CardRevealPart variant="content">
             <Link href={routes.plans} className="telvis-cta-primary">

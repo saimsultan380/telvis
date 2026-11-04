@@ -4,34 +4,37 @@ import {
   PlayCircle,
   Smartphone,
 } from "lucide-react";
+import Link from "next/link";
 import { GlassIcon } from "@/components/ui/GlassIcon";
 import { CardReveal, CardRevealPart } from "@/components/ui/CardReveal";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { staggerDelay } from "@/lib/motion";
 import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
+import { routes } from "@/lib/site";
 
 const steps = [
   {
     number: "1",
-    title: "Choose Your Plan or Free Trial",
-    body: "Start with the free trial or choose one, three, six or twelve months. Longer plans have a lower average monthly cost.",
+    title: "Choose Your Free Trial or Subscription",
+    body: "Start with the free 24-hour IPTV trial or review the available paid plans. Choose the option that matches your requirements.",
     icon: MousePointerClick,
   },
   {
     number: "2",
-    title: "Tell Us Your Device",
-    body: "Let us know whether you use a Firestick, Smart TV, Android device, Apple device, phone, tablet or computer. This helps us give you the correct setup method.",
+    title: "Confirm Your Device",
+    body: "Let the support team know whether you use a Firestick, Smart TV, Android TV, smartphone, tablet or computer. This helps you receive the correct installation instructions.",
     icon: Smartphone,
   },
   {
     number: "3",
-    title: "Receive Your Login and Instructions",
-    body: "After your IPTV UK order is confirmed, you receive the account details and installation instructions needed for the dedicated app or a compatible player. Keep your login private.",
+    title: "Receive Your IPTV Login Details",
+    body: "Once your trial or subscription is arranged, you receive the required account information and setup guidance. Keep your username, password and server details available when configuring your IPTV player.",
     icon: KeyRound,
   },
   {
     number: "4",
-    title: "Install, Sign In and Start Watching",
-    body: "Follow the guide, enter your details and allow the categories to load. If you become stuck, send support your device model, app name and exact error.",
+    title: "Install and Start Watching",
+    body: "Follow the Installation Guide for your device, enter the supplied details and wait for the available categories to load. You can then explore the supported live TV, movies and series sections.",
     icon: PlayCircle,
   },
 ] as const;
@@ -49,10 +52,10 @@ export function StepsSection() {
           eyebrow="Getting started"
           title={
             <>
-              How to Start Your <TitleAccent>IPTV UK</TitleAccent> Subscription in
-              Four Simple Steps
+              How to Start Your <TitleAccent>Telvis IPTV</TitleAccent> Subscription
             </>
           }
+          lead="Getting started does not need to be complicated. Follow these four steps to explore Telvis IPTV and configure your preferred device."
           align="center"
         />
 
@@ -73,7 +76,7 @@ export function StepsSection() {
                 </div>
               </CardRevealPart>
               <CardRevealPart variant="content" as="h3" className="telvis-info-title">
-                {step.number}. {step.title}
+                STEP 0{step.number}: {step.title}
               </CardRevealPart>
               <CardRevealPart variant="content" as="p" className="telvis-info-body">
                 {step.body}
@@ -81,6 +84,14 @@ export function StepsSection() {
             </CardReveal>
           ))}
         </ol>
+
+        <ScrollReveal delay={0.1} variant="cta">
+          <div className="telvis-inline-actions">
+            <Link href={routes.trial} className="telvis-cta-primary">
+              Start Your IPTV UK Trial
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

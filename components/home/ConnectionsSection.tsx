@@ -3,10 +3,12 @@ import { CardReveal, CardRevealList, CardRevealListItem, CardRevealPart } from "
 import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
 
 const checks = [
-  "How many screens will play at the same time",
-  "Which device you will use most often",
-  "Whether each device supports the required app",
-  "Whether a third-party app charges separately",
+  "Android TV: Telvis App, TiviMate, IPTV Smarters Pro",
+  "Android Mobile: Telvis App, IPTV Smarters Pro",
+  "Firestick: Telvis App and compatible Fire TV players",
+  "Samsung and LG Smart TVs: Compatible official-store IPTV players",
+  "iPhone and iPad: Compatible iOS IPTV players",
+  "Windows and Mac: VLC and compatible IPTV players",
 ] as const;
 
 export function ConnectionsSection() {
@@ -21,20 +23,20 @@ export function ConnectionsSection() {
           <div className="telvis-split-copy">
             <SectionHeader
               id="connections-heading"
-              eyebrow="Connections"
+              eyebrow="Players and apps"
               title={
                 <>
-                  Understand Devices and{" "}
-                  <TitleAccent>Connections</TitleAccent> Before Ordering
+                  IPTV Players and Applications Supported by{" "}
+                  <TitleAccent>Different Devices</TitleAccent>
                 </>
               }
-              lead="Installing the service on several devices does not always mean every screen can play at the same time. Your plan includes a stated number of active connections."
+              lead="An IPTV subscription and an IPTV player are not necessarily the same thing. The subscription provides the account access and available content, while the IPTV player is the application you use to browse and play the streams. Depending on your device, you may be able to use the dedicated Telvis application or another compatible IPTV player."
             />
           </div>
 
           <CardReveal delay={0.1} className="telvis-glass telvis-panel">
             <CardRevealPart variant="content" as="h3" className="telvis-panel-title">
-              Before ordering IPTV UK for your household, check:
+              Compatible player options by device
             </CardRevealPart>
             <CardRevealList className="telvis-check-list">
               {checks.map((item) => (
@@ -45,9 +47,11 @@ export function ConnectionsSection() {
               ))}
             </CardRevealList>
             <CardRevealPart variant="content" as="p" className="telvis-info-body">
-              Check the screen allowance at checkout or ask support before
-              payment. Using more active screens than your plan allows can stop
-              playback.
+              Application availability and features depend on the device,
+              operating system and player version. Some third-party players
+              require a separate purchase or activation fee. For the easiest
+              setup, follow the instructions for your particular device rather
+              than installing several applications at once.
             </CardRevealPart>
           </CardReveal>
         </div>

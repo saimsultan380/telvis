@@ -1,32 +1,63 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BlogRelatedReading } from "@/components/blog/BlogRelatedReading";
 import { PlansSection } from "@/components/home/PlansSection";
-import { blogSlugs } from "@/lib/blog-posts";
+import {
+  PlansActivationSection,
+  PlansDevicesSection,
+  PlansFaqSection,
+  PlansFinalCta,
+  PlansHouseholdSection,
+  PlansIncludedSection,
+  PlansTrialSection,
+  PlansValueSection,
+  PlansWhySection,
+} from "@/components/plans/PlansPageSections";
+import { OrbitVisual } from "@/components/home/OrbitVisual";
 import { JsonLdScript } from "@/components/seo/JsonLdScript";
 import { HeroReveal } from "@/components/ui/HeroReveal";
 import { PageHero } from "@/components/ui/PageHero";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { TitleAccent } from "@/components/ui/SectionHeader";
+import { plansPageFaqs } from "@/lib/plans-page-data";
 import { homeProductGraph } from "@/lib/product-schema";
-import { buildBreadcrumbList, pageMetadata, webPageSchema } from "@/lib/seo";
+import {
+  buildBreadcrumbList,
+  canonicalUrl,
+  pageMetadata,
+  webPageSchema,
+} from "@/lib/seo";
 import { routes } from "@/lib/site";
 
-const title = "Telvis IPTV Plans from £9.99 | 1, 3, 6 and 12 Months";
+const title = "Telvis IPTV UK Subscription: Buy IPTV UK & IPTV Activation";
 const description =
-  "Compare Telvis IPTV plans from £9.99. Every plan includes the same catalogue and support. Start with a free 24-hour trial before you pay.";
+  "Buy IPTV UK with Telvis. Compare cheap IPTV UK plans from £9.99, get a free 24-hour IPTV trial & enjoy setup guidance & 24/7 support. Get IPTV Subscription UK";
 
 export const metadata: Metadata = pageMetadata({
   path: routes.plans,
   title,
   description,
   keywords: [
-    "Telvis plans",
-    "IPTV plans UK",
-    "IPTV 12 month price",
+    "buy IPTV UK",
+    "IPTV UK subscription",
+    "cheap IPTV UK",
+    "IPTV activation",
+    "12 month IPTV subscription",
+    "IPTV free trial",
+    "family IPTV package",
+    "IPTV deals UK",
   ],
 });
 
 function PlansSchema() {
+  const faqEntities = plansPageFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  }));
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -40,6 +71,11 @@ function PlansSchema() {
         description,
       }),
       ...homeProductGraph(),
+      {
+        "@type": "FAQPage",
+        "@id": `${canonicalUrl(routes.plans)}#faq`,
+        mainEntity: faqEntities,
+      },
     ],
   };
 
@@ -52,57 +88,80 @@ export default function PlansPage() {
       <PlansSchema />
       <main>
         <PageHero
-          eyebrow="Pricing"
+          eyebrow="Buy IPTV UK"
           headingId="plans-page-heading"
           titleLines={[
             <>
-              Telvis IPTV Plans from{" "}
-              <span className="telvis-h1-accent">£9.99</span>
+              Telvis IPTV UK Subscription | Buy{" "}
+              <span className="telvis-h1-accent">IPTV UK</span>
+            </>,
+            <>
+              | Get <span className="telvis-h1-accent">IPTV Activation</span>
             </>,
           ]}
+          visual={
+            <ScrollReveal
+              delay={0.18}
+              variant="media"
+              className="telvis-visual-wrap"
+            >
+              <OrbitVisual />
+            </ScrollReveal>
+          }
         >
           <HeroReveal delay={0.22}>
             <div className="telvis-copy">
               <p>
-                Four subscription lengths, one catalogue. Use the 24-hour trial
-                on your own device first, then choose the plan that matches how
-                long you want to stay.
+                Looking for an IPTV UK subscription with clear pricing and
+                flexible plans? Choose Telvis IPTV UK to explore live TV, movies
+                and series on supported devices. Start with a free 24-hour IPTV
+                trial, check the service on your own device, and select a plan
+                from just £9.99.
               </p>
               <p>
-                The number of screens playing at once is confirmed before
-                payment. Third-party player fees are separate unless checkout
-                says they are included.
+                Whether you need a monthly IPTV subscription or a 12-month IPTV
+                subscription, you can compare all four options before ordering.
               </p>
             </div>
           </HeroReveal>
           <HeroReveal delay={0.3} variant="cta">
             <div className="telvis-actions">
               <Link href={routes.trial} className="telvis-cta-primary">
-                Start Your 24-Hour Trial
+                Start Your Free IPTV Trial
               </Link>
-              <Link href={routes.refund} className="telvis-cta-secondary">
-                Read the Refund Policy
+              <Link href="#plans" className="telvis-cta-secondary">
+                View IPTV Subscription Plans
               </Link>
             </div>
           </HeroReveal>
         </PageHero>
 
         <PlansSection
-          showCompareLink={false}
+          eyebrow="Subscription plans"
           title={
             <>
-              Compare <TitleAccent>Plan Length</TitleAccent> and Monthly Cost
+              Choose Your <TitleAccent>IPTV UK</TitleAccent> Subscription Plan
             </>
           }
-          lead="Every Telvis plan includes the same listed live and on-demand catalogue, dedicated-app or Xtream Codes access, and 24/7 support. Longer plans lower the average monthly price."
+          lead="Select a UK IPTV subscription according to your viewing needs and budget. Every plan includes the same listed catalogue, access options, and support. The main difference is the subscription duration and total price. Choose a monthly IPTV subscription if you prefer a shorter commitment. If you have tested the service and want a lower average monthly cost, consider the annual IPTV subscription."
+          afterLead="Get monthly IPTV subscriptions, 12-month or annual IPTV subscriptions, and also 3-month & 6-month IPTV plans at discounted prices."
+          note="Every plan includes the same listed catalogue, access options and support. Confirm connection allowance and terms before ordering."
+          showCompareLink={false}
+          primaryCtaHref={routes.trial}
+          primaryCtaLabel="Start a 24-Hour Free IPTV Trial"
+          secondaryCtaHref="#plans"
+          secondaryCtaLabel="Compare IPTV Plans"
         />
 
-        <BlogRelatedReading
-          id="plans-related-reading"
-          heading="Compare costs before you commit"
-          lead="See how Telvis plan lengths stack up against traditional UK pay TV bundles."
-          slugs={[blogSlugs.payTv, blogSlugs.trial]}
-        />
+        <PlansValueSection />
+        <PlansTrialSection />
+        <PlansIncludedSection />
+        <PlansWhySection />
+        <PlansActivationSection />
+        <PlansDevicesSection />
+        <PlansHouseholdSection />
+        <PlansFaqSection />
+        <PlansFinalCta />
       </main>
     </>
   );

@@ -1,31 +1,41 @@
 import type { Metadata } from "next";
-import { BlogRelatedReading } from "@/components/blog/BlogRelatedReading";
 import { InstallationGuideBefore } from "@/components/installation/InstallationGuideBefore";
-import { blogSlugs } from "@/lib/blog-posts";
 import { InstallationGuideHero } from "@/components/installation/InstallationGuideHero";
 import {
-  InstallationGuideSchema,
-  InstallationGuideSupport,
-} from "@/components/installation/InstallationGuideSchema";
+  InstallationFaqSection,
+  InstallationFinalCta,
+  InstallationPlatformsSection,
+  InstallationPlayersSection,
+  InstallationProblemsSection,
+  InstallationTipsSection,
+  InstallationVpnSection,
+} from "@/components/installation/InstallationPageSections";
+import { InstallationGuideSchema } from "@/components/installation/InstallationGuideSchema";
 import { InstallationGuideTabs } from "@/components/installation/InstallationGuideTabs";
-import { InstallationGuideTroubleshooting } from "@/components/installation/InstallationGuideTroubleshooting";
 import {
   InstallationGuideEpg,
   InstallationGuideXtream,
 } from "@/components/installation/InstallationGuideXtream";
 import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
-import { routes } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
+import { routes } from "@/lib/site";
+
+const title = "IPTV Installation Guide: Firestick, Smart TV & Android Setup";
+const description =
+  "Learn how to install IPTV on Firestick, Samsung, LG Smart TV, Android, iPhone, iPad and Roku with easy setup steps, IPTV player options and login tips.";
 
 export const metadata: Metadata = pageMetadata({
   path: routes.installation,
-  title: "IPTV Installation Guide UK | Firestick, Smart TV, Phone | Telvis",
-  description:
-    "Set up Telvis on Firestick, Smart TV, Android, Apple, Windows and more. Device steps, Xtream Codes tips and troubleshooting on one Installation Guide page.",
+  title,
+  description,
   keywords: [
-    "IPTV installation guide UK",
-    "Telvis setup",
-    "IPTV device setup",
+    "IPTV installation guide",
+    "install IPTV on Firestick",
+    "IPTV Smart TV setup",
+    "IPTV Android setup",
+    "IPTV Smarters Pro",
+    "TiviMate IPTV",
+    "IPTV EPG guide",
   ],
   ogType: "article",
 });
@@ -36,7 +46,10 @@ export default function InstallationGuidePage() {
       <InstallationGuideSchema />
       <main>
         <InstallationGuideHero />
+        <InstallationPlatformsSection />
         <InstallationGuideBefore />
+        <InstallationPlayersSection />
+        <InstallationGuideXtream />
 
         <section
           id="device-setup"
@@ -46,29 +59,24 @@ export default function InstallationGuidePage() {
           <div className="telvis-section-inner">
             <SectionHeader
               id="guide-devices-heading"
-              eyebrow="Device setup"
+              eyebrow="Device guides"
               title={
                 <>
-                  Choose the <TitleAccent>Device</TitleAccent> That Matches Your
-                  Screen
+                  Explore <TitleAccent>Device Guides</TitleAccent> and Setup Steps
                 </>
               }
-              lead="Expand your device below for setup steps. Follow one method at a time with your welcome message nearby, then use the Xtream Codes and troubleshooting sections on this page if needed."
+              lead="Open the guide that matches your device. Follow one method at a time with your Telvis login or playlist details nearby."
             />
             <InstallationGuideTabs />
           </div>
         </section>
 
-        <InstallationGuideXtream />
         <InstallationGuideEpg />
-        <InstallationGuideTroubleshooting />
-        <BlogRelatedReading
-          id="guide-related-reading"
-          heading="Setup articles"
-          lead="Longer blog guides that complement the device steps on this page."
-          slugs={[blogSlugs.firestick, blogSlugs.trial]}
-        />
-        <InstallationGuideSupport />
+        <InstallationVpnSection />
+        <InstallationProblemsSection />
+        <InstallationTipsSection />
+        <InstallationFaqSection />
+        <InstallationFinalCta />
       </main>
     </>
   );

@@ -32,59 +32,77 @@ const sharedFeatures = [
 const plans = [
   {
     id: "1-month",
-    title: "1-Month Plan",
+    title: "1 Month",
     price: "£9.99",
-    perMonth: "£9.99 / mo",
-    summary: "Approx. monthly cost £9.99. A simple starting option with the shortest paid commitment.",
-    cta: "Choose 1 Month",
+    perMonth: "Average monthly cost £9.99",
+    summary: "Monthly IPTV subscription for the shortest paid commitment.",
+    cta: "Choose Your IPTV Plan",
     href: "/checkout?plan=1-month",
     featured: false,
   },
   {
     id: "3-month",
-    title: "3-Month Plan",
+    title: "3 Months",
     price: "£24.99",
-    perMonth: "~£8.33 / mo",
-    summary: "Approx. monthly cost £8.33. A three-month option after you have tested the service.",
-    cta: "Choose 3 Months",
+    perMonth: "Average monthly cost £8.33",
+    summary: "3-month IPTV plan at a discounted average monthly price.",
+    cta: "Choose Your IPTV Plan",
     href: "/checkout?plan=3-month",
     featured: false,
   },
   {
     id: "6-month",
-    title: "6-Month Plan",
+    title: "6 Months",
     price: "£39.99",
-    perMonth: "~£6.67 / mo",
-    summary:
-      "Approx. monthly cost £6.67. A practical choice after completing the trial.",
-    cta: "Choose 6 Months",
+    perMonth: "Average monthly cost £6.67",
+    summary: "6-month IPTV plan at a discounted average monthly price.",
+    cta: "Choose Your IPTV Plan",
     href: "/checkout?plan=6-month",
     featured: true,
   },
   {
     id: "12-month",
-    title: "12-Month Plan",
+    title: "12 Months",
     price: "£49.99",
-    perMonth: "~£4.17 / mo",
-    summary:
-      "Approx. monthly cost £4.17. The lowest average monthly cost after testing the service and confirming your setup.",
-    cta: "Choose 12 Months",
+    perMonth: "Average monthly cost £4.17",
+    summary: "Annual IPTV subscription with the lowest average monthly cost.",
+    cta: "Choose Your IPTV Plan",
     href: "/checkout?plan=12-month",
     featured: false,
   },
 ] as const;
 
 type PlansSectionProps = {
+  eyebrow?: string;
   title?: ReactNode;
   lead?: string;
+  afterLead?: string;
+  note?: string;
   showCompareLink?: boolean;
+  primaryCtaHref?: string;
+  primaryCtaLabel?: string;
+  secondaryCtaHref?: string;
+  secondaryCtaLabel?: string;
 };
 
 export function PlansSection({
+  eyebrow = "Telvis plans",
   title,
   lead,
+  afterLead,
+  note,
   showCompareLink = true,
+  primaryCtaHref = routes.trial,
+  primaryCtaLabel = "Start a 24-Hour Free IPTV Trial",
+  secondaryCtaHref,
+  secondaryCtaLabel,
 }: PlansSectionProps = {}) {
+  const resolvedSecondaryHref =
+    secondaryCtaHref ?? (showCompareLink ? routes.plans : routes.contact);
+  const resolvedSecondaryLabel =
+    secondaryCtaLabel ??
+    (showCompareLink ? "Compare IPTV Plans" : "Ask About a Plan");
+
   return (
     <section
       id="plans"
@@ -94,7 +112,7 @@ export function PlansSection({
       <div className="telvis-section-inner">
         <SectionHeader
           id="plans-heading"
-          eyebrow="Telvis plans"
+          eyebrow={eyebrow}
           title={
             title ?? (
               <>
@@ -108,6 +126,15 @@ export function PlansSection({
             "Looking for an affordable IPTV UK subscription? Telvis offers four subscription durations. Choose a plan according to your viewing requirements and budget. Whether you want to try the service for a month or prefer a longer subscription, compare the available plans before ordering. All four plans offer the same core catalogue and access features."
           }
         />
+
+        {afterLead ? (
+          <ScrollReveal variant="text">
+            <div className="telvis-glass telvis-panel telvis-plans-after-lead">
+              <h3 className="telvis-panel-title">Telvis UK IPTV Subscription Plans</h3>
+              <p className="telvis-info-body">{afterLead}</p>
+            </div>
+          </ScrollReveal>
+        ) : null}
 
         <div className="telvis-plan-grid">
           {plans.map((plan, index) => (
@@ -128,7 +155,8 @@ export function PlansSection({
                 <h3 className="telvis-plan-title">
                   <span className="telvis-plan-price">{plan.price}</span>
                 </h3>
-                <p className="telvis-plan-meta">{plan.perMonth}</p>
+                <p className="telvis-plan-meta">Total price {plan.price}</p>
+                <p className="telvis-plan-summary">{plan.perMonth}</p>
                 <p className="telvis-plan-summary">{plan.summary}</p>
               </CardRevealPart>
               <CardRevealList className="telvis-feature-list">
@@ -161,27 +189,19 @@ export function PlansSection({
 
         <ScrollReveal variant="text">
           <p className="telvis-section-note">
-          Check the applicable terms and connection allowance before ordering.
-          Catalogue totals describe listed entries and can change. Availability,
-          Catch-Up, EPG and picture quality vary by channel, programme, device,
-          player and location.
+            {note ??
+              "Check the applicable terms and connection allowance before ordering. Catalogue totals describe listed entries and can change. Availability, Catch-Up, EPG and picture quality vary by channel, programme, device, player and location."}
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.08} variant="cta">
           <div className="telvis-inline-actions is-row">
-          <Link href={routes.trial} className="telvis-cta-primary">
-            Start a 24-Hour Free IPTV Trial
-          </Link>
-          {showCompareLink ? (
-            <Link href={routes.plans} className="telvis-cta-outline">
-              Compare IPTV Plans
+            <Link href={primaryCtaHref} className="telvis-cta-primary">
+              {primaryCtaLabel}
             </Link>
-          ) : (
-            <Link href={routes.contact} className="telvis-cta-outline">
-              Ask About a Plan
+            <Link href={resolvedSecondaryHref} className="telvis-cta-outline">
+              {resolvedSecondaryLabel}
             </Link>
-          )}
           </div>
         </ScrollReveal>
       </div>

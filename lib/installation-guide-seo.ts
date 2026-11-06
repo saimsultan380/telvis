@@ -1,17 +1,18 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Apple,
   Box,
   Cast,
   Gamepad2,
   Laptop,
   Monitor,
-  PlayCircle,
   Router,
   Smartphone,
   TabletSmartphone,
   Tv,
   TvMinimal,
 } from "lucide-react";
+
 export type DevicePageSeo = {
   title: string;
   description: string;
@@ -23,135 +24,195 @@ export type DevicePageSeo = {
 export const guideDeviceIcons: Record<string, LucideIcon> = {
   firestick: Tv,
   "android-tv": Tv,
-  "android-mobile": Smartphone,
-  ios: TabletSmartphone,
-  "smart-tv": Monitor,
+  "android-box": Box,
+  samsung: Monitor,
+  lg: Monitor,
+  sony: Monitor,
+  philips: Monitor,
+  hisense: Monitor,
+  tcl: Monitor,
+  roku: TvMinimal,
+  "nvidia-shield": Tv,
+  ios: Smartphone,
+  ipad: TabletSmartphone,
+  "apple-tv": Apple,
   windows: Laptop,
   mac: Laptop,
-  roku: TvMinimal,
-  chromecast: Cast,
   xbox: Gamepad2,
-  "tv-box": Box,
+  playstation: Gamepad2,
   "mag-portal": Router,
-  kodi: PlayCircle,
+  enigma2: Router,
+  chromecast: Cast,
 };
 
 export const devicePageSeo: Record<string, DevicePageSeo> = {
   firestick: {
     title: "How to Install IPTV on Firestick UK | Telvis",
     description:
-      "Install Telvis IPTV on Amazon Firestick or Fire TV with Downloader, the TELVIS code, and your login. Follow the steps, then test the 24-hour trial.",
-    keywords: [
-      "IPTV on Firestick UK",
-      "install IPTV Firestick",
-      "Telvis Firestick setup",
-    ],
-    h1Lead: "Install Telvis IPTV on",
+      "Install IPTV on Amazon Firestick or Fire TV with a compatible player, Xtream Codes or M3U login, and EPG tips.",
+    keywords: ["IPTV on Firestick", "Firestick IPTV setup"],
+    h1Lead: "Install IPTV on",
     h1Accent: "Firestick and Fire TV",
   },
   "android-tv": {
-    title: "IPTV on Android TV and Google TV | Telvis",
+    title: "How to Install IPTV on Android TV | Telvis",
     description:
-      "Set up Telvis IPTV on Android TV, Google TV or an Android box. Install the dedicated app or a compatible player, then sign in with your account details.",
-    keywords: [
-      "IPTV Android TV",
-      "IPTV Google TV setup",
-      "Telvis Android TV",
-    ],
-    h1Lead: "Set Up Telvis IPTV on",
+      "Set up IPTV on Android TV or Google TV via Google Play Store using TiviMate, IPTV Smarters Pro or another compatible player.",
+    keywords: ["IPTV Android TV", "Google TV IPTV setup"],
+    h1Lead: "Install IPTV on",
     h1Accent: "Android TV and Google TV",
   },
-  "smart-tv": {
-    title: "IPTV on Samsung and LG Smart TV UK | Telvis",
+  "android-box": {
+    title: "How to Install IPTV on Android Box | Telvis",
     description:
-      "Add Telvis IPTV to a Samsung, LG or other Smart TV using a compatible player from the official app store and your Xtream Codes login.",
-    keywords: [
-      "IPTV Samsung Smart TV",
-      "IPTV LG Smart TV",
-      "Smart TV IPTV UK",
-    ],
-    h1Lead: "Set Up Telvis IPTV on",
-    h1Accent: "Samsung, LG and Smart TVs",
+      "Connect an Android box, install a compatible IPTV player from Google Play Store, and add Xtream Codes or M3U details.",
+    keywords: ["IPTV Android Box", "Android box IPTV setup"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "Android Box",
   },
-  ios: {
-    title: "IPTV on iPhone, iPad and Apple TV | Telvis",
+  samsung: {
+    title: "How to Install IPTV on Samsung Smart TV | Telvis",
     description:
-      "Install a compatible App Store player on iPhone, iPad or Apple TV, then add your Telvis username, password and server address.",
-    keywords: ["IPTV iPhone", "IPTV Apple TV", "IPTV iPad setup"],
-    h1Lead: "Set Up Telvis IPTV on",
-    h1Accent: "iPhone, iPad and Apple TV",
+      "Use a Tizen-compatible IPTV player from Samsung Apps. Do not install Android-only apps such as TiviMate directly on Samsung TVs.",
+    keywords: ["IPTV Samsung TV", "Samsung IPTV setup"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "Samsung Smart TV",
   },
-  "android-mobile": {
-    title: "IPTV on Android Phone and Tablet | Telvis",
+  lg: {
+    title: "How to Install IPTV on LG Smart TV | Telvis",
     description:
-      "Use the Telvis dedicated app or a Google Play player on an Android phone or tablet. Sign in and wait for the first catalogue update.",
-    keywords: ["IPTV Android phone", "IPTV Android tablet", "Telvis mobile app"],
-    h1Lead: "Set Up Telvis IPTV on",
-    h1Accent: "Android Phones and Tablets",
+      "Install a webOS-compatible IPTV player from the LG Content Store and add Xtream Codes or M3U activation details.",
+    keywords: ["IPTV LG TV", "LG IPTV setup"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "LG Smart TV",
   },
-  windows: {
-    title: "IPTV on Windows PC Setup | Telvis",
+  sony: {
+    title: "How to Install IPTV on Sony Smart TV | Telvis",
     description:
-      "Install a verified Windows IPTV player, add your Telvis Xtream Codes details, and wait for the EPG and catalogue to load.",
-    keywords: ["IPTV Windows", "IPTV PC setup", "Telvis Windows"],
-    h1Lead: "Set Up Telvis IPTV on",
-    h1Accent: "Windows",
+      "Many Sony TVs use Google TV or Android TV. Install a compatible player from Google Play Store and add your Telvis login.",
+    keywords: ["IPTV Sony TV", "Sony IPTV setup"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "Sony Smart TV",
   },
-  mac: {
-    title: "IPTV on Mac Setup | Telvis",
+  philips: {
+    title: "How to Install IPTV on Philips Smart TV | Telvis",
     description:
-      "Install a compatible Mac player from a verified source, add your Telvis login, and avoid unofficial modified apps.",
-    keywords: ["IPTV Mac", "IPTV macOS setup", "Telvis Mac"],
-    h1Lead: "Set Up Telvis IPTV on",
-    h1Accent: "Mac",
+      "Philips IPTV setup depends on Android TV, Google TV or another platform. Install a supported player and add your playlist or login.",
+    keywords: ["IPTV Philips TV"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "Philips Smart TV",
+  },
+  hisense: {
+    title: "How to Install IPTV on Hisense Smart TV | Telvis",
+    description:
+      "Hisense setup depends on Google TV, Android TV, VIDAA or another OS. Check the TV app store for a compatible IPTV player.",
+    keywords: ["IPTV Hisense TV"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "Hisense Smart TV",
+  },
+  tcl: {
+    title: "How to Install IPTV on TCL Smart TV | Telvis",
+    description:
+      "TCL models may use Google TV, Android TV or Roku OS. Choose the matching player path for your operating system.",
+    keywords: ["IPTV TCL TV"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "TCL Smart TV",
   },
   roku: {
-    title: "IPTV on Roku Setup | Telvis",
+    title: "How to Install IPTV on Roku | Telvis",
     description:
-      "Check whether a compatible Roku player is available for your country and model, then add only the Telvis details from your welcome message.",
-    keywords: ["IPTV Roku", "Roku IPTV setup", "Telvis Roku"],
-    h1Lead: "Set Up Telvis IPTV on",
-    h1Accent: "Roku",
+      "Roku IPTV options are limited. Check the Channel Store carefully, or use Firestick/Android TV on the same television for Xtream Codes setups.",
+    keywords: ["IPTV Roku"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "Roku and Roku TV",
   },
-  chromecast: {
-    title: "IPTV on Chromecast Setup | Telvis",
+  "nvidia-shield": {
+    title: "How to Install IPTV on NVIDIA Shield | Telvis",
     description:
-      "Use Chromecast with Google TV like Android TV, or cast from a supported phone player to a classic Chromecast.",
-    keywords: ["IPTV Chromecast", "Chromecast Google TV IPTV", "Telvis Chromecast"],
-    h1Lead: "Set Up Telvis IPTV on",
-    h1Accent: "Chromecast",
+      "NVIDIA Shield runs Android TV. Install TiviMate or IPTV Smarters Pro where available and add your Telvis login or M3U playlist.",
+    keywords: ["IPTV NVIDIA Shield"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "NVIDIA Shield TV",
+  },
+  ios: {
+    title: "How to Install IPTV on iPhone | Telvis",
+    description:
+      "Install a compatible App Store IPTV player on iPhone, then add Xtream Codes or M3U playlist details from your Telvis account.",
+    keywords: ["IPTV iPhone", "iOS IPTV setup"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "iPhone",
+  },
+  ipad: {
+    title: "How to Install IPTV on iPad | Telvis",
+    description:
+      "Set up IPTV on iPad with a compatible App Store player and your Telvis Xtream Codes or M3U details.",
+    keywords: ["IPTV iPad"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "iPad",
+  },
+  "apple-tv": {
+    title: "How to Install IPTV on Apple TV | Telvis",
+    description:
+      "Use a compatible tvOS IPTV player on Apple TV. Check platform compatibility before installing an iPhone-only app.",
+    keywords: ["IPTV Apple TV"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "Apple TV",
+  },
+  windows: {
+    title: "How to Install IPTV on Windows | Telvis",
+    description:
+      "Install a compatible Windows IPTV player or VLC, then add your M3U playlist or supported login details.",
+    keywords: ["IPTV Windows"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "Windows PC or Laptop",
+  },
+  mac: {
+    title: "How to Install IPTV on Mac | Telvis",
+    description:
+      "Use a compatible macOS IPTV player from the Mac App Store or official website, then add your playlist or login details.",
+    keywords: ["IPTV Mac"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "Mac and MacBook",
   },
   xbox: {
-    title: "IPTV on Xbox Setup | Telvis",
+    title: "How to Install IPTV on Xbox | Telvis",
     description:
-      "Install a compatible Xbox media player from the Microsoft Store if one is available, or connect a supported streaming stick instead.",
-    keywords: ["IPTV Xbox", "Xbox IPTV setup", "Telvis Xbox"],
-    h1Lead: "Set Up Telvis IPTV on",
+      "Check Microsoft Store options such as MyIPTV Player or Kodi, then add an M3U playlist and optional EPG URL.",
+    keywords: ["IPTV Xbox"],
+    h1Lead: "Install IPTV on",
     h1Accent: "Xbox",
   },
-  "tv-box": {
-    title: "IPTV on TV Box and Set-Top Box | Telvis",
+  playstation: {
+    title: "IPTV on PS5 | Telvis",
     description:
-      "Most Android TV boxes follow the Android TV method. MAG and portal decoders use a separate portal setup.",
-    keywords: ["IPTV TV box", "IPTV set top box", "Telvis Android box"],
-    h1Lead: "Set Up Telvis IPTV on",
-    h1Accent: "TV Boxes and Set-Top Boxes",
+      "PS5 does not offer a general IPTV playlist player. Use Firestick, Android TV or another supported device on the same TV.",
+    keywords: ["IPTV PS5"],
+    h1Lead: "IPTV options for",
+    h1Accent: "PlayStation 5",
   },
   "mag-portal": {
-    title: "IPTV MAG Portal Setup | Telvis",
+    title: "How to Install IPTV on MAG Box | Telvis",
     description:
-      "Add the Telvis portal name and the portal address supplied for your MAG or portal-based decoder. Confirm the MAC address privately with support.",
-    keywords: ["IPTV MAG", "MAG portal setup", "Telvis MAG"],
-    h1Lead: "Set Up Telvis IPTV on",
-    h1Accent: "MAG and Portal Decoders",
+      "Configure MAG devices with the portal URL supplied for your account, then restart and load available content.",
+    keywords: ["IPTV MAG Box"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "MAG Box",
   },
-  kodi: {
-    title: "IPTV on Kodi Setup | Telvis",
+  enigma2: {
+    title: "How to Set Up IPTV on Enigma2 | Telvis",
     description:
-      "Add the M3U playlist and EPG address supplied for your Telvis account in PVR Simple Client. Ask support first if your account is Xtream Codes only.",
-    keywords: ["IPTV Kodi", "Kodi PVR Simple Client", "Telvis Kodi"],
-    h1Lead: "Set Up Telvis IPTV on",
-    h1Accent: "Kodi",
+      "Enigma2 setup depends on receiver model and plugins. Add authorised playlist details and avoid unknown configuration files.",
+    keywords: ["IPTV Enigma2"],
+    h1Lead: "Set up IPTV on",
+    h1Accent: "Enigma2",
+  },
+  chromecast: {
+    title: "How to Install IPTV on Chromecast | Telvis",
+    description:
+      "Chromecast with Google TV uses Android TV-compatible IPTV players. Add Xtream Codes or M3U details after install.",
+    keywords: ["IPTV Chromecast"],
+    h1Lead: "Install IPTV on",
+    h1Accent: "Chromecast with Google TV",
   },
 };
 

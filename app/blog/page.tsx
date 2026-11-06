@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogCard } from "@/components/blog/BlogCard";
+import { OrbitVisual } from "@/components/home/OrbitVisual";
 import { JsonLdScript } from "@/components/seo/JsonLdScript";
 import { HeroReveal } from "@/components/ui/HeroReveal";
 import { PageHero } from "@/components/ui/PageHero";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
 import { blogPosts } from "@/lib/blog-posts";
 import {
@@ -75,7 +77,6 @@ export default function BlogIndexPage() {
       <BlogIndexSchema />
       <main>
         <PageHero
-          layout="blog"
           eyebrow="Telvis Blog"
           headingId="blog-heading"
           titleLines={[
@@ -84,6 +85,15 @@ export default function BlogIndexPage() {
             </>,
             <>You Buy With Confidence</>,
           ]}
+          visual={
+            <ScrollReveal
+              delay={0.18}
+              variant="media"
+              className="telvis-visual-wrap"
+            >
+              <OrbitVisual />
+            </ScrollReveal>
+          }
         >
           <HeroReveal delay={0.22}>
             <div className="telvis-copy">

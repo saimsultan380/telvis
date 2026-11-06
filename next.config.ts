@@ -41,6 +41,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/reseller",
+        destination: "/iptv-reseller/",
+        permanent: true,
+      },
+      {
+        source: "/iptv-reseller-uk",
+        destination: "/iptv-reseller/",
+        permanent: true,
+      },
+      {
         source: "/iptv",
         destination: "/iptv-uk/",
         permanent: true,

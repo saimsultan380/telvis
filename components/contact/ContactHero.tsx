@@ -1,10 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { OrbitVisual } from "@/components/home/OrbitVisual";
 import { HeroReveal } from "@/components/ui/HeroReveal";
 import { PageHero } from "@/components/ui/PageHero";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { supportConfig } from "@/lib/site";
+import { routes, supportConfig } from "@/lib/site";
 
 export function ContactHero() {
   return (
@@ -13,9 +14,9 @@ export function ContactHero() {
       headingId="contact-heading"
       titleLines={[
         <>
-          Contact <span className="telvis-h1-accent">Telvis</span>
+          Contact <span className="telvis-h1-accent">Telvis IPTV UK</span> for
         </>,
-        <>Support</>,
+        <>Support, Setup Help & Free Trial</>,
       ]}
       visual={
         <ScrollReveal delay={0.18} variant="media" className="telvis-visual-wrap">
@@ -25,14 +26,20 @@ export function ContactHero() {
     >
       <HeroReveal delay={0.22}>
         <div className="telvis-copy">
-          <p>
-            Need help before or after you order? Telvis support is available 24
-            hours a day by WhatsApp and email.
+          <p className="telvis-hero-subhead">
+            Need Help with Telvis IPTV? Get in Touch with Our Support Team
           </p>
           <p>
-            We can help with free trials, plans, compatible devices, installation,
-            login problems, EPG, selected Catch-Up, billing and eligible refund
-            requests. Tell us what device and app you use so we can help faster.
+            Have a question about your IPTV UK subscription, free trial,
+            installation or account? The Telvis support team is here to help you
+            find the information you need.
+          </p>
+          <p>
+            Whether you are trying IPTV for the first time, checking whether your
+            device is compatible or experiencing a problem with an existing
+            subscription, you can contact us through WhatsApp or email. Tell us
+            what you need help with, and our team will guide you towards the
+            appropriate solution.
           </p>
         </div>
       </HeroReveal>
@@ -45,8 +52,11 @@ export function ContactHero() {
             rel="noopener noreferrer"
             className="telvis-cta-primary"
           >
-            Message Support on WhatsApp
+            Contact Telvis Support
           </a>
+          <Link href={routes.trial} className="telvis-cta-secondary">
+            Request a Free IPTV Trial
+          </Link>
         </div>
       </HeroReveal>
     </PageHero>

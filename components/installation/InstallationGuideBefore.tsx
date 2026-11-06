@@ -9,7 +9,7 @@ export function InstallationGuideBefore() {
       eyebrow="Getting ready"
       title={
         <>
-          <TitleAccent>Before</TitleAccent> You Begin
+          What You Need Before <TitleAccent>IPTV Installation</TitleAccent>
         </>
       }
       blocks={beforeYouBeginSection.blocks}

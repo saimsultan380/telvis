@@ -72,7 +72,7 @@ export function ContactForm() {
                   <TitleAccent>Contact</TitleAccent> Form
                 </>
               }
-              lead="Include your device, app and a clear description so support can help faster."
+              lead="Use this form to prepare an email to support@telvis.uk. Include your device, IPTV player and a clear description so we can help faster."
               animate={false}
             />
           </CardRevealPart>

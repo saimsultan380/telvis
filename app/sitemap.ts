@@ -17,7 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         : path === "/iptv-uk" ||
             path === "/free-trial" ||
             path === "/plans" ||
-            path === "/installation-guide"
+            path === "/installation-guide" ||
+            path === "/iptv-reseller"
           ? 0.9
           : path.startsWith("/blog/")
             ? 0.8

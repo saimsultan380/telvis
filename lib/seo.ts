@@ -197,6 +197,7 @@ export const staticIndexableRoutes = [
   "/contact",
   "/reviews",
   "/installation-guide",
+  "/iptv-reseller",
   "/refund-policy",
   "/privacy-policy",
   "/terms",

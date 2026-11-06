@@ -5,7 +5,7 @@ import { HeroReveal } from "@/components/ui/HeroReveal";
 import { PageHero } from "@/components/ui/PageHero";
 import { OrbitVisual } from "@/components/home/OrbitVisual";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { routes, supportConfig } from "@/lib/site";
+import { routes } from "@/lib/site";
 
 export function InstallationGuideHero() {
   return (
@@ -13,9 +13,13 @@ export function InstallationGuideHero() {
       eyebrow="Installation Guide"
       headingId="installation-guide-heading"
       titleLines={[
-        <>Installation Guide for</>,
         <>
-          <span className="telvis-h1-accent">Firestick, Smart TV and More</span>
+          Telvis IPTV Installation Guide: Set Up IPTV on{" "}
+          <span className="telvis-h1-accent">Firestick</span>,
+        </>,
+        <>
+          Smart TV, Android,{" "}
+          <span className="telvis-h1-accent">iPhone & More</span>
         </>,
       ]}
       visual={
@@ -27,34 +31,28 @@ export function InstallationGuideHero() {
       <HeroReveal delay={0.22}>
         <div className="telvis-copy">
           <p>
-            Set up Telvis with the dedicated app or a compatible Xtream Codes
-            player. Choose your device below, keep your welcome message nearby and
-            enter every detail exactly as supplied.
+            Setting up IPTV doesn&apos;t have to be complicated. With the right
+            IPTV player and a few simple steps, you can watch Telvis IPTV on your
+            preferred device. Whether you&apos;re using an Amazon Firestick,
+            Samsung or LG Smart TV, Android TV, iPhone, iPad, Roku, Windows PC or
+            Mac, this guide will help you understand the installation process.
           </p>
           <p>
-            Most setup problems come from the wrong app, a typing mistake, an
-            incomplete server address or a blocked installation setting. Follow one
-            method at a time so you can see where the problem starts.
-          </p>
-          <p>
-            Need help now? Contact 24/7 support by{" "}
-            <a
-              href={supportConfig.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              WhatsApp
-            </a>{" "}
-            or email{" "}
-            <a href={`mailto:${supportConfig.email}`}>{supportConfig.email}</a>.
+            Follow our step-by-step IPTV installation instructions to choose a
+            compatible player, enter your IPTV login details, load your playlist,
+            and configure your TV guide (EPG). Get your device ready and enjoy a
+            smoother IPTV viewing experience with Telvis.
           </p>
         </div>
       </HeroReveal>
 
       <HeroReveal delay={0.3} variant="cta">
         <div className="telvis-actions">
-          <Link href={routes.contact} className="telvis-cta-primary">
-            Get Installation Help
+          <Link href="#device-setup" className="telvis-cta-primary">
+            Explore Device Guides
+          </Link>
+          <Link href={routes.plans} className="telvis-cta-secondary">
+            Get Your IPTV Subscription
           </Link>
         </div>
       </HeroReveal>

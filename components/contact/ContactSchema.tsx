@@ -1,10 +1,25 @@
 import Link from "next/link";
 import { CardReveal, CardRevealPart } from "@/components/ui/CardReveal";
 import { JsonLdScript } from "@/components/seo/JsonLdScript";
-import { buildBreadcrumbList, webPageSchema } from "@/lib/seo";
+import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
+import { contactFaqs } from "@/lib/contact-page-data";
+import { buildBreadcrumbList, canonicalUrl, webPageSchema } from "@/lib/seo";
 import { routes, supportConfig } from "@/lib/site";
 
+const title = "Contact Telvis IPTV UK | 24/7 Support & Free UK IPTV Trial";
+const description =
+  "Contact Telvis IPTV UK for 24/7 support, a free 24-hour IPTV trial, subscription enquiries, Firestick setup, Smart TV installation and account assistance.";
+
 export function ContactSchema() {
+  const faqEntities = contactFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  }));
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -15,10 +30,14 @@ export function ContactSchema() {
       webPageSchema({
         type: "ContactPage",
         path: routes.contact,
-        name: "Contact Telvis Support | Trial, Setup and Account Help",
-        description:
-          "Contact Telvis by email or WhatsApp for a free trial, plan advice, installation help or account support. Help is available 24 hours a day.",
+        name: title,
+        description,
       }),
+      {
+        "@type": "FAQPage",
+        "@id": `${canonicalUrl(routes.contact)}#faq`,
+        mainEntity: faqEntities,
+      },
     ],
   };
 
@@ -34,14 +53,19 @@ export function ContactFinalCta() {
       <div className="telvis-section-inner">
         <CardReveal className="telvis-glass telvis-final-panel">
           <CardRevealPart>
-            <h2 id="contact-final-heading" className="telvis-guide-panel-title is-center">
-              We&apos;re Ready to Help
-            </h2>
-          </CardRevealPart>
-          <CardRevealPart as="p" className="telvis-section-lead is-center">
-            Contact us for a trial, plan advice or technical help. Include your
-            device, app and a clear description in your first message for a faster
-            answer.
+            <SectionHeader
+              id="contact-final-heading"
+              eyebrow="Still have questions"
+              title={
+                <>
+                  Still Have Questions? Contact{" "}
+                  <TitleAccent>Telvis Today</TitleAccent>
+                </>
+              }
+              lead="Whether you need help with your IPTV UK subscription, want to request a free trial, have an installation question or need assistance with an existing account, the Telvis team is ready to help. Send us a message through WhatsApp or email and include a few details about your enquiry. We will guide you towards the relevant information or troubleshooting steps."
+              align="center"
+              animate={false}
+            />
           </CardRevealPart>
 
           <CardRevealPart>
@@ -52,23 +76,32 @@ export function ContactFinalCta() {
                 rel="noopener noreferrer"
                 className="telvis-cta-primary"
               >
-                Message Support on WhatsApp
+                Contact Telvis on WhatsApp
               </a>
-              <a
-                href={`mailto:${supportConfig.email}`}
-                className="telvis-cta-outline"
-              >
-                Send an Email
-              </a>
+              <Link href={routes.trial} className="telvis-cta-secondary">
+                Explore the Free IPTV Trial
+              </Link>
             </div>
           </CardRevealPart>
 
           <CardRevealPart as="p" className="telvis-section-note is-center">
-            <Link href={routes.home}>Telvis Homepage</Link>
-            {" • "}
-            <Link href={routes.installation}>Installation Guide</Link>
-            {" • "}
-            <Link href={routes.reviews}>Customer Reviews</Link>
+            Get help with installation, login, account and technical questions.
+            Test Telvis for 24 hours on your preferred supported device before
+            choosing a plan.
+          </CardRevealPart>
+
+          <CardRevealPart as="p" className="telvis-section-note is-center">
+            WhatsApp:{" "}
+            <a
+              href={supportConfig.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {supportConfig.whatsapp}
+            </a>
+            {" · "}
+            Email:{" "}
+            <a href={`mailto:${supportConfig.email}`}>{supportConfig.email}</a>
           </CardRevealPart>
         </CardReveal>
       </div>

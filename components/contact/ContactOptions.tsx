@@ -14,10 +14,11 @@ export function ContactOptions() {
           eyebrow="Get in touch"
           title={
             <>
-              Contact <TitleAccent>Options</TitleAccent>
+              Contact Telvis Through WhatsApp or{" "}
+              <TitleAccent>Email</TitleAccent>
             </>
           }
-          lead="Support is available 24/7. Replies may take longer during busy periods or when a problem needs more checking."
+          lead="Choose the contact method that suits your question. WhatsApp is useful for quick messages and setup screenshots, while email is suitable for billing enquiries and issues that need a more detailed explanation."
         />
 
         <div className="telvis-contact-grid">
@@ -25,15 +26,19 @@ export function ContactOptions() {
             <CardRevealPart as="h3" className="telvis-info-title">
               WhatsApp Support
             </CardRevealPart>
-            <CardRevealPart as="p" className="telvis-info-body">
-              Use WhatsApp for quick questions, screenshots and step-by-step
-              setup help.
-            </CardRevealPart>
             <CardRevealPart as="p" className="telvis-contact-detail">
-              WhatsApp:{" "}
-              <a href={supportConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={supportConfig.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {supportConfig.whatsapp}
               </a>
+            </CardRevealPart>
+            <CardRevealPart as="p" className="telvis-info-body">
+              Send a message about your free trial, IPTV installation, login
+              details or streaming problem. You can also share relevant
+              screenshots to help explain an issue.
             </CardRevealPart>
             <CardRevealPart>
               <a
@@ -42,33 +47,44 @@ export function ContactOptions() {
                 rel="noopener noreferrer"
                 className="telvis-cta-primary telvis-contact-cta"
               >
-                Message IPTV UK on WhatsApp
+                Message Telvis on WhatsApp
               </a>
             </CardRevealPart>
           </CardReveal>
 
-          <CardReveal delay={0.08} as="article" className="telvis-glass telvis-contact-card">
+          <CardReveal
+            delay={0.08}
+            as="article"
+            className="telvis-glass telvis-contact-card"
+          >
             <CardRevealPart as="h3" className="telvis-info-title">
               Email Support
             </CardRevealPart>
-            <CardRevealPart as="p" className="telvis-info-body">
-              Use email for billing questions, refund requests or a problem that
-              needs a longer explanation.
-            </CardRevealPart>
             <CardRevealPart as="p" className="telvis-contact-detail">
-              Email:{" "}
-              <a href={`mailto:${supportConfig.email}`}>{supportConfig.email}</a>
+              <a href={`mailto:${supportConfig.email}`}>
+                {supportConfig.email}
+              </a>
+            </CardRevealPart>
+            <CardRevealPart as="p" className="telvis-info-body">
+              Contact us about subscriptions, payments, refund requests, account
+              questions or technical problems that need a longer explanation.
             </CardRevealPart>
             <CardRevealPart>
               <a
                 href={`mailto:${supportConfig.email}`}
                 className="telvis-cta-outline telvis-contact-cta"
               >
-                Email Support
+                Email Telvis Support
               </a>
             </CardRevealPart>
           </CardReveal>
         </div>
+
+        <p className="telvis-section-note">
+          Support availability: Telvis support is available 24 hours a day
+          through WhatsApp and email. Response times may vary during busy
+          periods or when an issue requires further investigation.
+        </p>
       </div>
     </section>
   );

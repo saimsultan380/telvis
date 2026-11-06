@@ -8,11 +8,11 @@ import {
 export function InstallationGuideXtream() {
   return (
     <GuideStandaloneSection
-      id="guide-xtream-heading"
-      eyebrow="Login details"
+      id="guide-players-detail-heading"
+      eyebrow="Player guidance"
       title={
         <>
-          How to Enter <TitleAccent>Xtream Codes</TitleAccent> Correctly
+          Best IPTV App and IPTV Player <TitleAccent>Guidance</TitleAccent>
         </>
       }
       blocks={xtreamCodesSection.blocks}
@@ -29,7 +29,8 @@ export function InstallationGuideEpg() {
       eyebrow="Programme guide"
       title={
         <>
-          Refresh the <TitleAccent>EPG</TitleAccent>
+          IPTV EPG Guide: How to Load{" "}
+          <TitleAccent>Programme Information</TitleAccent>
         </>
       }
       blocks={refreshEpgSection.blocks}

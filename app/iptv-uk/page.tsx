@@ -7,10 +7,12 @@ import { PayTvCompareSection } from "@/components/home/PayTvCompareSection";
 import { PlansSection } from "@/components/home/PlansSection";
 import { StatsBand } from "@/components/home/StatsBand";
 import { StepsSection } from "@/components/home/StepsSection";
+import { OrbitVisual } from "@/components/home/OrbitVisual";
 import { FaqList } from "@/components/faq/FaqList";
 import { JsonLdScript } from "@/components/seo/JsonLdScript";
 import { HeroReveal } from "@/components/ui/HeroReveal";
 import { PageHero } from "@/components/ui/PageHero";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeader, TitleAccent } from "@/components/ui/SectionHeader";
 import { iptvUkFaqs } from "@/lib/faq-data";
 import { buildBreadcrumbList, pageMetadata, webPageSchema } from "@/lib/seo";
@@ -81,6 +83,15 @@ export default function IptvUkPage() {
             </>,
             <>TV, Sport Categories and On-Demand</>,
           ]}
+          visual={
+            <ScrollReveal
+              delay={0.18}
+              variant="media"
+              className="telvis-visual-wrap"
+            >
+              <OrbitVisual />
+            </ScrollReveal>
+          }
         >
           <HeroReveal delay={0.22}>
             <div className="telvis-copy">

@@ -49,6 +49,39 @@ export function BlogArticle({ blocks }: BlogArticleProps) {
           );
         }
 
+        if (block.type === "table") {
+          return (
+            <div key={index} className="telvis-glass telvis-table-wrap">
+              <table className="telvis-table">
+                <thead>
+                  <tr>
+                    {block.headers.map((header) => (
+                      <th key={header} scope="col">
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {block.rows.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      {row.map((cell, cellIndex) =>
+                        cellIndex === 0 ? (
+                          <th key={cellIndex} scope="row">
+                            {cell}
+                          </th>
+                        ) : (
+                          <td key={cellIndex}>{cell}</td>
+                        ),
+                      )}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
         return (
           <aside key={index} className="telvis-glass telvis-blog-cta">
             <h2 className="telvis-blog-cta-title">{block.title}</h2>

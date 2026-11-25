@@ -85,8 +85,8 @@ export function TrialChecklist() {
             If something does not work, contact support during the trial. We can
             check your login, app, device and connection before you choose a
             paid plan.{" "}
-            <Link href={blogPostHref(blogSlugs.trial)} className="telvis-text-link">
-              Full trial testing guide
+            <Link href={blogPostHref(blogSlugs.configuration)} className="telvis-text-link">
+              Full IPTV setup &amp; configuration guide
             </Link>
             .
           </p>

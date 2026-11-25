@@ -13,21 +13,35 @@ export function BlogCard({ post, delay = 0 }: BlogCardProps) {
   return (
     <CardReveal as="article" delay={delay} className="telvis-glass telvis-blog-card">
       <CardRevealPart>
-        <p className="telvis-blog-card-meta">
-          <span>{post.category}</span>
-          <span aria-hidden="true"> · </span>
-          <span>{post.readMinutes} min read</span>
-        </p>
-        <h2 className="telvis-blog-card-title">
-          <Link href={href}>{post.title}</Link>
-        </h2>
-        <p className="telvis-info-body">{post.excerpt}</p>
-      </CardRevealPart>
-      <CardRevealPart>
-        <Link href={href} className="telvis-guide-device-link">
-          Read article
+        <Link href={href} className="telvis-blog-card-media">
+          <img
+            src={post.image}
+            alt={post.imageAlt}
+            width={1280}
+            height={720}
+            loading="lazy"
+            className="telvis-blog-card-img"
+          />
         </Link>
       </CardRevealPart>
+      <div className="telvis-blog-card-body">
+        <CardRevealPart>
+          <p className="telvis-blog-card-meta">
+            <span>{post.category}</span>
+            <span aria-hidden="true"> · </span>
+            <span>{post.readMinutes} min read</span>
+          </p>
+          <h2 className="telvis-blog-card-title">
+            <Link href={href}>{post.title}</Link>
+          </h2>
+          <p className="telvis-info-body">{post.excerpt}</p>
+        </CardRevealPart>
+        <CardRevealPart>
+          <Link href={href} className="telvis-guide-device-link">
+            Read article
+          </Link>
+        </CardRevealPart>
+      </div>
     </CardReveal>
   );
 }

@@ -7,6 +7,7 @@ export type BlogBlock =
   | { type: "ul"; items: string[] }
   | { type: "ol"; items: string[] }
   | { type: "table"; headers: string[]; rows: string[][] }
+  | { type: "faq"; items: { question: string; answer: string }[] }
   | {
       type: "cta";
       title: string;
@@ -27,453 +28,13 @@ export type BlogPost = {
   readMinutes: number;
   datePublished: string;
   dateModified: string;
+  image: string;
+  imageAlt: string;
   excerpt: string;
   blocks: BlogBlock[];
 };
 
 export const blogPosts: BlogPost[] = [
-  {
-    slug: "iptv-uk-free-trial-what-to-test-24-hours",
-    title: "IPTV UK Free Trial: What to Test in 24 Hours Before You Pay",
-    seoTitle: "IPTV UK Free Trial Guide | What to Test in 24 Hours | Telvis",
-    description:
-      "Use a 24-hour IPTV UK free trial properly: device setup, live categories, sport, movies, EPG and home Wi-Fi. Telvis checklist before you choose a plan.",
-    keywords: [
-      "IPTV UK free trial",
-      "24 hour IPTV trial",
-      "IPTV trial UK",
-      "try IPTV before buying",
-    ],
-    category: "Getting started",
-    readMinutes: 9,
-    datePublished: "2026-09-20",
-    dateModified: "2026-09-26",
-    excerpt:
-      "A free trial only helps if you test the right things on the right device. This checklist shows UK buyers what to verify in 24 hours before paying for IPTV.",
-    blocks: [
-      {
-        type: "p",
-        text: "An IPTV UK free trial should answer one question: will this service work on my screen, on my broadband, at the time I actually watch? Many UK buyers activate a trial, scroll for five minutes, and then blame the subscription when something fails on match day. A structured 24-hour test avoids that.",
-      },
-      {
-        type: "p",
-        text: "Telvis offers a free 24-hour trial so you can check compatibility before choosing a paid plan. This guide explains what to test, in what order, and when to contact support — whether you trial Telvis or any other provider that offers a short test window.",
-      },
-      {
-        type: "h2",
-        text: "Why a 24-hour IPTV trial is worth doing properly",
-      },
-      {
-        type: "p",
-        text: "IPTV delivers live and on-demand listings through an internet connection and a compatible app or player. Picture quality, category load times and EPG behaviour all depend on your device, player and home network — not only on the subscription itself. A trial on the wrong device, or on mobile data instead of home Wi-Fi, tells you very little.",
-      },
-      {
-        type: "ul",
-        items: [
-          "Confirm the app installs and your login works on your main TV or Firestick",
-          "Check that live, movie and series categories load without constant errors",
-          "Test at the time you normally watch — especially for evening sport or peak hours",
-          "Verify sound, remote navigation and EPG where available",
-          "Ask support to confirm how many screens can play at once on your chosen plan",
-        ],
-      },
-      {
-        type: "cta",
-        title: "Start a Telvis 24-hour trial",
-        body: "Request trial access on your own Firestick, Smart TV or phone. No card required — test first, then compare plans from £9.99.",
-        primaryLabel: "Request Free Trial",
-        primaryHref: routes.trial,
-        secondaryLabel: "Telvis IPTV UK overview",
-        secondaryHref: routes.iptvUk,
-      },
-      {
-        type: "h2",
-        text: "Before the clock starts: prepare your device",
-      },
-      {
-        type: "p",
-        text: "Do not start the trial until you know which app and setup method you need. Firestick users often install via Downloader; Samsung or LG Smart TVs typically use a compatible player from the official app store with Xtream Codes details. If you are unsure, read the device guide first so you do not burn trial time on the wrong steps.",
-      },
-      {
-        type: "ol",
-        items: [
-          "Decide your primary device — the one you will use most after paying",
-          "Connect it to the same Wi-Fi you use for everyday streaming",
-          "Free storage space for app updates if you sideload on Firestick",
-          "Have your trial login, server address and setup notes ready in one place",
-          "Close other heavy downloads on the home network during the first load",
-        ],
-      },
-      {
-        type: "h2",
-        text: "Hour-by-hour checklist for a useful IPTV UK trial",
-      },
-      {
-        type: "h3",
-        text: "First 30 minutes: login and first load",
-      },
-      {
-        type: "p",
-        text: "Install or open the recommended player, enter username, password and complete server URL exactly as supplied. Typos in the server field are the most common trial failure. Allow the first catalogue update to finish before you judge speed — initial loads can take several minutes.",
-      },
-      {
-        type: "h3",
-        text: "Next 2–3 hours: categories that matter to you",
-      },
-      {
-        type: "p",
-        text: "Open the live categories you care about — UK entertainment, news, kids, or sport categories you plan to watch. You are not trying to watch everything; you are checking that the listings you need appear and play on your connection. If a category is empty, note whether it populates after a refresh or app restart.",
-      },
-      {
-        type: "h3",
-        text: "Evening block: peak-time test",
-      },
-      {
-        type: "p",
-        text: "If possible, stream during the same evening window when your household usually watches TV. Wi-Fi congestion and busy ISP routes show up then. Buffering once might be a one-off listing; buffering on every channel points to network or setup issues support can help with.",
-      },
-      {
-        type: "h3",
-        text: "Before the trial ends: movies, series and EPG",
-      },
-      {
-        type: "p",
-        text: "Browse a few on-demand titles if your plan includes them. Open the EPG on a live channel where guide data is available. Catch-Up, if offered, works only on selected listings — do not assume every channel supports it.",
-      },
-      {
-        type: "h2",
-        text: "What to write down if something fails",
-      },
-      {
-        type: "p",
-        text: "Good support fixes problems faster when you send clear facts. Include your device model, app name, whether the issue affects one channel or all channels, and a photo of any error message. Never post your full password in public chats.",
-      },
-      {
-        type: "ul",
-        items: [
-          "Device: e.g. Firestick 4K, Samsung TV model, Android phone",
-          "App: dedicated Telvis app or third-party player name",
-          "Issue: login error, black screen, buffering, missing EPG",
-          "Time: when it happened and whether other apps stream fine on the same Wi-Fi",
-        ],
-      },
-      {
-        type: "h2",
-        text: "After a successful trial: choosing a plan",
-      },
-      {
-        type: "p",
-        text: "If the trial meets your needs, compare plan length against how long you want to commit. Telvis plans start at £9.99 for one month, with lower average monthly cost on three, six and twelve-month options. Confirm screen allowance and refund terms before payment. Eligible paid orders include a seven-day refund guarantee under the published Refund Policy.",
-      },
-      {
-        type: "cta",
-        title: "Trial worked? Compare Telvis plans",
-        body: "Every plan includes the same listed catalogue and support. Pick the term that fits your budget after a successful 24-hour test.",
-        primaryLabel: "View Plans from £9.99",
-        primaryHref: routes.plans,
-        secondaryLabel: "Read customer reviews",
-        secondaryHref: routes.reviews,
-      },
-      {
-        type: "h2",
-        text: "Common trial mistakes to avoid",
-      },
-      {
-        type: "ul",
-        items: [
-          "Testing on a phone only, then expecting the same on a Smart TV without checking",
-          "Using guest Wi-Fi or mobile data instead of your home broadband",
-          "Installing two different players at once and mixing login details between them",
-          "Expecting every listing to be 4K or available in Catch-Up",
-          "Skipping support when a simple EPG refresh or server typo fix would solve the issue",
-        ],
-      },
-      {
-        type: "p",
-        text: "IPTV is a technology, not a guarantee of identical performance on every channel. A careful trial turns an IPTV UK free trial into a buying decision you can trust — and that is what protects you more than any marketing claim on a competitor homepage.",
-      },
-    ],
-  },
-  {
-    slug: "install-iptv-on-firestick-uk-guide",
-    title: "How to Install IPTV on Firestick UK (2026 Setup Guide)",
-    seoTitle: "Install IPTV on Firestick UK (2026) | Telvis Step-by-Step",
-    description:
-      "Install IPTV on Amazon Firestick or Fire TV in the UK: Downloader, app install, login and EPG tips. Full Telvis Firestick guide plus trial link.",
-    keywords: [
-      "IPTV Firestick UK",
-      "install IPTV on Firestick",
-      "IPTV on Fire TV UK",
-      "Firestick IPTV setup",
-    ],
-    category: "Installation",
-    readMinutes: 11,
-    datePublished: "2026-09-22",
-    dateModified: "2026-09-26",
-    excerpt:
-      "Firestick is the most common UK device for IPTV. Follow this 2026 setup path — Downloader, verified app install, login and troubleshooting — before you pay for a plan.",
-    blocks: [
-      {
-        type: "p",
-        text: "Fire TV Stick and Fire TV Cube remain the most popular way UK households try IPTV. The setup is straightforward once you use one method at a time: install a trusted app, enter your account details exactly as supplied, and allow the first catalogue load to complete. This guide walks through a typical Telvis Firestick path and points to Device Setup on the Installation Guide for the live step list.",
-      },
-      {
-        type: "h2",
-        text: "What you need before installing IPTV on Firestick",
-      },
-      {
-        type: "ul",
-        items: [
-          "Amazon Firestick, Fire TV Stick 4K or Fire TV Cube on the same Amazon account",
-          "Active trial or subscription login from your provider",
-          "Stable home Wi-Fi — Ethernet adapter optional but helpful for 4K listings",
-          "Downloader app from the Amazon Appstore for sideloading the dedicated app when required",
-          "Permission to install apps from unknown sources for Downloader, if your Fire OS version asks for it",
-        ],
-      },
-      {
-        type: "cta",
-        title: "New to Telvis?",
-        body: "Start with a 24-hour trial on the same Firestick you plan to keep. If login and picture look good, choose a plan from £9.99.",
-        primaryLabel: "Free Firestick Trial",
-        primaryHref: routes.trial,
-        secondaryLabel: "Full Firestick guide",
-        secondaryHref: "/installation-guide/#device-firestick",
-      },
-      {
-        type: "h2",
-        text: "Step 1: Install Downloader on Firestick",
-      },
-      {
-        type: "p",
-        text: "From the Fire TV home screen, search for Downloader and install the recognised orange Downloader application. If you cannot find it in your region, check Amazon’s help pages for your Fire OS version or contact Telvis support for the current recommended approach.",
-      },
-      {
-        type: "h2",
-        text: "Step 2: Allow app installation",
-      },
-      {
-        type: "p",
-        text: "Open Settings, then My Fire TV, then Developer Options (or Install Unknown Apps on newer Fire OS). Enable installation for Downloader when prompted. This is a standard step for sideloading the dedicated player — not a hack, but a normal Fire TV configuration.",
-      },
-      {
-        type: "h2",
-        text: "Step 3: Download the Telvis app with your code",
-      },
-      {
-        type: "p",
-        text: "Open Downloader, enter the verified downloader code supplied by Telvis (shown in your welcome message and on the official Firestick installation page), and confirm the download belongs to Telvis before installing. Delete the APK after install if you want to free storage.",
-      },
-      {
-        type: "h2",
-        text: "Step 4: Sign in and wait for the first load",
-      },
-      {
-        type: "p",
-        text: "Open the app and enter username, password and complete server address from your trial or paid welcome email. Do not truncate http:// or port numbers. Keep the app open until live, movie, series and EPG categories finish their first sync.",
-      },
-      {
-        type: "h2",
-        text: "Alternative: Xtream Codes on a third-party player",
-      },
-      {
-        type: "p",
-        text: "Some users prefer IPTV Smarters, IBO Player or similar apps from the store or sideload. Telvis supports Xtream Codes login on many compatible players. Third-party apps may charge their own activation fee — that is separate from your Telvis subscription unless checkout clearly states otherwise.",
-      },
-      {
-        type: "h2",
-        text: "Firestick IPTV troubleshooting (UK)",
-      },
-      {
-        type: "h3",
-        text: "Buffering on every channel",
-      },
-      {
-        type: "p",
-        text: "Move the Firestick closer to the router, restart the router, close background apps, or try a lower-quality option if the player offers it. Test another streaming app on the same Firestick to see if the issue is network-wide.",
-      },
-      {
-        type: "h3",
-        text: "Login failed or categories empty",
-      },
-      {
-        type: "p",
-        text: "Re-check server URL, username and password. Refresh the EPG from the player menu if available. Contact support with your device model and a screenshot of the error — not your password.",
-      },
-      {
-        type: "h3",
-        text: "App not installed",
-      },
-      {
-        type: "p",
-        text: "Free storage on the Firestick, remove an old version of the same app, reboot the device and try the download again.",
-      },
-      {
-        type: "h2",
-        text: "Why Firestick setup matters for SEO buyers — and for you",
-      },
-      {
-        type: "p",
-        text: "Searches for IPTV Firestick UK are high intent: the user already owns the device and wants a working login today. Providers that publish clear Firestick guides earn trust and reduce refund requests. Telvis keeps Firestick steps on the Installation Guide, structured blog walkthroughs and WhatsApp support so you are not guessing from a homepage alone.",
-      },
-      {
-        type: "cta",
-        title: "Install done? Test on your connection",
-        body: "Use the trial to check sport and entertainment categories on your Firestick before you pick a one, three, six or twelve-month plan.",
-        primaryLabel: "Start 24-Hour Trial",
-        primaryHref: routes.trial,
-        secondaryLabel: "WhatsApp install help",
-        secondaryHref: "https://wa.me/447482794475",
-      },
-      {
-        type: "p",
-        text: "Listed channels and quality vary by listing and time of day. IPTV technology is legal; customers must use content they are entitled to access. For the live Firestick step list, open Device Setup on the Telvis Installation Guide and expand Firestick.",
-      },
-    ],
-  },
-  {
-    slug: "iptv-uk-vs-pay-tv-costs-uk-households",
-    title: "IPTV UK vs Cable and Satellite: What UK Households Pay in 2026",
-    seoTitle: "IPTV UK vs Pay TV Costs (2026) | Telvis Plans from £9.99",
-    description:
-      "Compare IPTV UK subscription costs with typical UK cable and satellite bundles in 2026. See trial-first buying, contracts, devices and when Telvis plans make sense.",
-    keywords: [
-      "IPTV UK subscription",
-      "IPTV UK cost",
-      "best IPTV UK",
-      "IPTV UK plans",
-      "cheap IPTV UK",
-    ],
-    category: "Pricing & value",
-    readMinutes: 10,
-    datePublished: "2026-09-24",
-    dateModified: "2026-09-26",
-    excerpt:
-      "UK pay TV bundles often exceed £80 a month. See how an IPTV UK subscription compares on price, contracts, devices and trials — without ignoring the fine print.",
-    blocks: [
-      {
-        type: "p",
-        text: "UK households comparing IPTV UK against cable or satellite are really comparing three things: monthly cost, contract lock-in, and whether the service works on the devices they already own. Marketing pages that only shout channel counts miss the question most buyers ask — what will I pay, and can I leave if it does not work?",
-      },
-      {
-        type: "h2",
-        text: "Typical UK pay TV costs in 2026",
-      },
-      {
-        type: "p",
-        text: "Bundled pay TV from major UK providers often lands between roughly £80 and £110 or more per month once sport, cinema or multi-room extras are included. Contracts frequently run 12 to 18 months. Installation may require engineer visits or proprietary boxes tied to the main television.",
-      },
-      {
-        type: "p",
-        text: "Those packages can suit viewers who want a single bill and regulated broadcast products. They are less flexible for households that already stream on Firestick, Smart TV apps and mobile devices across the home.",
-      },
-      {
-        type: "h2",
-        text: "How Telvis IPTV UK pricing compares",
-      },
-      {
-        type: "p",
-        text: "Telvis publishes plan prices on the Plans page: £9.99 for one month, £24.99 for three months, £39.99 for six months and £49.99 for twelve months. The twelve-month option averages about £4.17 per month — far below a typical pay TV bundle, with no engineer visit and setup via published guides.",
-      },
-      {
-        type: "ul",
-        items: [
-          "Free 24-hour trial before you pay for a longer term",
-          "Seven-day refund guarantee on eligible paid orders (see Refund Policy)",
-          "Same listed catalogue features across plan lengths — you choose commitment, not content tier",
-          "Firestick, Smart TV, mobile and PC setup paths on the Installation Guide",
-          "WhatsApp and email support 24 hours a day",
-        ],
-      },
-      {
-        type: "cta",
-        title: "Compare Telvis plans side by side",
-        body: "See one, three, six and twelve-month totals and start with a trial if you are still comparing IPTV UK providers.",
-        primaryLabel: "View IPTV UK Plans",
-        primaryHref: routes.plans,
-        secondaryLabel: "Telvis IPTV UK hub",
-        secondaryHref: routes.iptvUk,
-      },
-      {
-        type: "h2",
-        text: "What IPTV UK buyers should compare (not just price)",
-      },
-      {
-        type: "h3",
-        text: "Trial and refund terms",
-      },
-      {
-        type: "p",
-        text: "Many IPTV sites claim instant activation but hide refund rules. Telvis leads with a trial-first path and a published seven-day refund policy for eligible orders. If a provider offers no trial, you are paying before you know if your Firestick or Samsung TV setup works.",
-      },
-      {
-        type: "h3",
-        text: "Device support",
-      },
-      {
-        type: "p",
-        text: "Pay TV boxes often lock you to one TV. IPTV UK subscriptions typically work on multiple device types, but simultaneous screens depend on your plan. Confirm screen allowance before checkout.",
-      },
-      {
-        type: "h3",
-        text: "Catalogue honesty",
-      },
-      {
-        type: "p",
-        text: "Telvis lists 20,000+ live channels and 80,000+ movies and series as catalogue totals that can change. Picture quality, Catch-Up, EPG and individual listings vary. Use the trial to verify categories you care about rather than trusting the largest number on a competitor homepage.",
-      },
-      {
-        type: "h2",
-        text: "Simple cost table: pay TV bundle vs Telvis (illustrative)",
-      },
-      {
-        type: "p",
-        text: "Figures below are illustrative comparisons for budgeting — not quotes from a specific Sky, Virgin or BT package. Your household should use current provider bills for exact maths.",
-      },
-      {
-        type: "ul",
-        items: [
-          "Typical bundled pay TV: often £960–£1,320+ per year before add-ons",
-          "Telvis 12-month plan: £49.99 one payment (about £4.17 per month average)",
-          "Telvis 1-month plan: £9.99 for flexibility while you test long-term fit",
-          "Setup cost: pay TV may include install fees; Telvis uses self-setup guides",
-        ],
-      },
-      {
-        type: "h2",
-        text: "When IPTV UK is a good fit",
-      },
-      {
-        type: "p",
-        text: "IPTV UK suits viewers who already use streaming apps, want multi-device flexibility, and prefer to test on their own connection before committing. It is a poor fit if you require a single regulated broadcast bundle with no setup involvement — in that case traditional pay TV or licensed streaming apps may be simpler mentally, even at higher cost.",
-      },
-      {
-        type: "h2",
-        text: "When to choose Telvis over generic IPTV providers",
-      },
-      {
-        type: "p",
-        text: "Search results for best IPTV UK include dozens of brands with similar claims. Practical differences are support response, setup documentation, trial access and published refund terms. Telvis invests in device-specific guides, a dedicated IPTV UK landing page and UK support channels so you can become a customer without guessing.",
-      },
-      {
-        type: "cta",
-        title: "Ready to run the numbers on your home?",
-        body: "Start the free trial on your main TV or Firestick. If it passes your checklist, pick the plan length that matches your budget.",
-        primaryLabel: "Start Free Trial",
-        primaryHref: routes.trial,
-        secondaryLabel: "Contact sales & support",
-        secondaryHref: routes.contact,
-      },
-      {
-        type: "h2",
-        text: "Legal and licensing reminder",
-      },
-      {
-        type: "p",
-        text: "IPTV is a delivery technology. Legality depends on content rights. Customers must follow applicable UK law and access only content they are entitled to view. Telvis is intended for personal, lawful use. This article compares costs and buying experience — it is not legal advice.",
-      },
-    ],
-  },
   {
     slug: "british-iptv-4k-iptv-streaming-uk",
     title: "British IPTV 4K: What to Expect from 4K IPTV Streaming in the UK",
@@ -491,6 +52,8 @@ export const blogPosts: BlogPost[] = [
     readMinutes: 8,
     datePublished: "2026-10-05",
     dateModified: "2026-10-05",
+    image: "/british-iptv-4k-thumbnail.webp",
+    imageAlt: "British IPTV 4K streaming guide on UK smart TV and devices",
     excerpt:
       "Choosing a 4K IPTV service involves more than Ultra HD marketing claims. Learn how 4K IPTV works, what equipment and speeds you need, and how to test quality on your own setup.",
     blocks: [
@@ -815,6 +378,8 @@ export const blogPosts: BlogPost[] = [
     readMinutes: 12,
     datePublished: "2026-10-12",
     dateModified: "2026-10-12",
+    image: "/iptv-buffering-fixes-thumbnail.webp",
+    imageAlt: "How to fix IPTV buffering for smoother streaming on Firestick and Smart TV",
     excerpt:
       "Identify why IPTV buffers on Firestick, Smart TV or Android and follow a practical step-by-step order to fix Wi-Fi, cache, peak-time and player issues.",
     blocks: [
@@ -1153,68 +718,49 @@ export const blogPosts: BlogPost[] = [
         text: "Frequently Asked Questions",
       },
       {
-        type: "h3",
-        text: "1. Why does my IPTV keep buffering even with fast internet?",
-      },
-      {
-        type: "p",
-        text: "A fast broadband package does not guarantee stable playback. Wi-Fi interference, network routing, device limitations, application problems or an overloaded stream source can cause buffering even when a speed test shows good results.",
-      },
-      {
-        type: "h3",
-        text: "2. How do I fix IPTV buffering on Firestick?",
-      },
-      {
-        type: "p",
-        text: "Restart your Firestick, clear the IPTV player's cache, check available storage and install relevant updates. Also test your connection on the Firestick itself and consider Ethernet if Wi-Fi is unstable.",
-      },
-      {
-        type: "h3",
-        text: "3. Why does IPTV buffer only at night?",
-      },
-      {
-        type: "p",
-        text: "Evening buffering can be associated with increased network usage, home Wi-Fi congestion, routing problems or higher demand on the streaming source. Compare playback at different times and test with Ethernet to narrow down the cause.",
-      },
-      {
-        type: "h3",
-        text: "4. Can a VPN stop IPTV buffering?",
-      },
-      {
-        type: "p",
-        text: "A VPN may help if a particular network route is causing problems, but it can also make streaming slower. Compare performance with and without the VPN rather than assuming it will always improve playback.",
-      },
-      {
-        type: "h3",
-        text: "5. Why do some IPTV channels work while others keep freezing?",
-      },
-      {
-        type: "p",
-        text: "Different channels may use different sources and delivery routes. If only certain channels buffer, the problem may be specific to those streams rather than your entire internet connection.",
-      },
-      {
-        type: "h3",
-        text: "6. Does clearing the IPTV cache delete my subscription?",
-      },
-      {
-        type: "p",
-        text: "Clearing the application cache normally does not remove your subscription details. However, selecting Clear Data may reset the application and require you to enter your login information again.",
-      },
-      {
-        type: "h3",
-        text: "7. Is Ethernet better than Wi-Fi for IPTV?",
-      },
-      {
-        type: "p",
-        text: "Ethernet can provide a more stable connection by avoiding wireless interference. It is worth testing if your device supports a wired connection and IPTV regularly buffers over Wi-Fi.",
-      },
-      {
-        type: "h3",
-        text: "8. How can I test Telvis before buying a subscription?",
-      },
-      {
-        type: "p",
-        text: "Telvis offers a free 24-hour trial. Test the service on your usual device and internet connection, check the content you want to watch and assess playback during your normal viewing hours.",
+        type: "faq",
+        items: [
+          {
+            question: "1. Why does my IPTV keep buffering even with fast internet?",
+            answer:
+              "A fast broadband package does not guarantee stable playback. Wi-Fi interference, network routing, device limitations, application problems or an overloaded stream source can cause buffering even when a speed test shows good results.",
+          },
+          {
+            question: "2. How do I fix IPTV buffering on Firestick?",
+            answer:
+              "Restart your Firestick, clear the IPTV player's cache, check available storage and install relevant updates. Also test your connection on the Firestick itself and consider Ethernet if Wi-Fi is unstable.",
+          },
+          {
+            question: "3. Why does IPTV buffer only at night?",
+            answer:
+              "Evening buffering can be associated with increased network usage, home Wi-Fi congestion, routing problems or higher demand on the streaming source. Compare playback at different times and test with Ethernet to narrow down the cause.",
+          },
+          {
+            question: "4. Can a VPN stop IPTV buffering?",
+            answer:
+              "A VPN may help if a particular network route is causing problems, but it can also make streaming slower. Compare performance with and without the VPN rather than assuming it will always improve playback.",
+          },
+          {
+            question: "5. Why do some IPTV channels work while others keep freezing?",
+            answer:
+              "Different channels may use different sources and delivery routes. If only certain channels buffer, the problem may be specific to those streams rather than your entire internet connection.",
+          },
+          {
+            question: "6. Does clearing the IPTV cache delete my subscription?",
+            answer:
+              "Clearing the application cache normally does not remove your subscription details. However, selecting Clear Data may reset the application and require you to enter your login information again.",
+          },
+          {
+            question: "7. Is Ethernet better than Wi-Fi for IPTV?",
+            answer:
+              "Ethernet can provide a more stable connection by avoiding wireless interference. It is worth testing if your device supports a wired connection and IPTV regularly buffers over Wi-Fi.",
+          },
+          {
+            question: "8. How can I test Telvis before buying a subscription?",
+            answer:
+              "Telvis offers a free 24-hour trial. Test the service on your usual device and internet connection, check the content you want to watch and assess playback during your normal viewing hours.",
+          },
+        ],
       },
     ],
   },
@@ -1236,6 +782,8 @@ export const blogPosts: BlogPost[] = [
     readMinutes: 10,
     datePublished: "2026-10-19",
     dateModified: "2026-10-19",
+    image: "/free-sports-iptv-playlist-thumbnail.webp",
+    imageAlt: "Free popular IPTV playlist sports guide for UK viewers",
     excerpt:
       "Understand how public M3U sports playlists work, where legitimate free sports streams exist in the UK, why free links stop working, and how paid trials compare.",
     blocks: [
@@ -1568,6 +1116,8 @@ export const blogPosts: BlogPost[] = [
     readMinutes: 11,
     datePublished: "2026-10-26",
     dateModified: "2026-10-26",
+    image: "/iptv-on-lg-tv-setup-thumbnail.webp",
+    imageAlt: "How to set up or download IPTV on LG Smart TV",
     excerpt:
       "Step-by-step instructions to install a webOS IPTV player from the LG Content Store, add M3U or Xtream Codes details, and troubleshoot common LG Smart TV issues.",
     blocks: [
@@ -1878,100 +1428,69 @@ export const blogPosts: BlogPost[] = [
         text: "Frequently Asked Questions",
       },
       {
-        type: "h3",
-        text: "1. How do I download IPTV on my LG Smart TV?",
-      },
-      {
-        type: "p",
-        text: "Press Home on your LG remote, open the LG Content Store or Apps section, search for a compatible IPTV player and select Install. Once installed, open the application and add your IPTV subscription details.",
-      },
-      {
-        type: "h3",
-        text: "2. Can I install IPTV on an LG TV without a Firestick?",
-      },
-      {
-        type: "p",
-        text: "Yes. If your LG Smart TV supports a compatible IPTV player through the LG Content Store, you can install and use it directly without purchasing an additional streaming device.",
-      },
-      {
-        type: "h3",
-        text: "3. Which IPTV app works best on LG Smart TV?",
-      },
-      {
-        type: "p",
-        text: "The best option depends on your LG model, webOS version, region and required login method. Applications such as Smart IPTV, SET IPTV, IBO Player and IPTV Smarters may be available on selected models. Always check the LG Content Store first.",
-      },
-      {
-        type: "h3",
-        text: "4. Can I install TiviMate on an LG Smart TV?",
-      },
-      {
-        type: "p",
-        text: "No. TiviMate is designed for Android TV-based devices and cannot be installed directly on LG's webOS. You need a compatible webOS IPTV player or an external Android TV device.",
-      },
-      {
-        type: "h3",
-        text: "5. How do I add an M3U playlist to my LG TV?",
-      },
-      {
-        type: "p",
-        text: "Install an IPTV player that supports M3U playlists, open its playlist settings and enter the complete M3U URL supplied by your provider. Some applications require you to upload the playlist through their activation website.",
-      },
-      {
-        type: "h3",
-        text: "6. Why is IPTV not showing in my LG Content Store?",
-      },
-      {
-        type: "p",
-        text: "The application may not support your LG model, webOS version or country. Check for available software updates and search for other compatible webOS players.",
-      },
-      {
-        type: "h3",
-        text: "7. Do I need to pay to download an IPTV app on LG TV?",
-      },
-      {
-        type: "p",
-        text: "Some IPTV players are free to download, while others require a separate activation fee or paid licence. The cost of the player is separate from the IPTV subscription.",
-      },
-      {
-        type: "h3",
-        text: "8. Does Telvis support LG Smart TVs?",
-      },
-      {
-        type: "p",
-        text: "Telvis provides setup guidance for compatible LG Smart TVs using webOS IPTV players. Application availability and login compatibility depend on your model and the supported player. Contact Telvis support if you need help confirming your setup.",
-      },
-      {
-        type: "h3",
-        text: "9. Can I watch IPTV in 4K on an LG OLED TV?",
-      },
-      {
-        type: "p",
-        text: "An LG OLED television may support 4K playback, but the actual IPTV stream must also be available in 4K. Your player, internet connection and content source must support the required resolution.",
-      },
-      {
-        type: "h3",
-        text: "10. How do I fix IPTV buffering on my LG TV?",
-      },
-      {
-        type: "p",
-        text: "Check your internet connection, restart your router and IPTV player, and close unnecessary applications. If possible, connect your LG television through Ethernet to reduce Wi-Fi interference.",
-      },
-      {
-        type: "h3",
-        text: "11. Can I use IPTV on an LG TV with webOS?",
-      },
-      {
-        type: "p",
-        text: "Yes. Compatible webOS IPTV players are available through the LG Content Store in supported regions. You can add your IPTV playlist or login details once the application is installed.",
-      },
-      {
-        type: "h3",
-        text: "12. Can I try Telvis before buying a subscription?",
-      },
-      {
-        type: "p",
-        text: "Yes. Telvis offers a free 24-hour trial. You can use this period to check available content, compatibility and playback on your supported device before choosing a paid plan.",
+        type: "faq",
+        items: [
+          {
+            question: "1. How do I download IPTV on my LG Smart TV?",
+            answer:
+              "Press Home on your LG remote, open the LG Content Store or Apps section, search for a compatible IPTV player and select Install. Once installed, open the application and add your IPTV subscription details.",
+          },
+          {
+            question: "2. Can I install IPTV on an LG TV without a Firestick?",
+            answer:
+              "Yes. If your LG Smart TV supports a compatible IPTV player through the LG Content Store, you can install and use it directly without purchasing an additional streaming device.",
+          },
+          {
+            question: "3. Which IPTV app works best on LG Smart TV?",
+            answer:
+              "The best option depends on your LG model, webOS version, region and required login method. Applications such as Smart IPTV, SET IPTV, IBO Player and IPTV Smarters may be available on selected models. Always check the LG Content Store first.",
+          },
+          {
+            question: "4. Can I install TiviMate on an LG Smart TV?",
+            answer:
+              "No. TiviMate is designed for Android TV-based devices and cannot be installed directly on LG's webOS. You need a compatible webOS IPTV player or an external Android TV device.",
+          },
+          {
+            question: "5. How do I add an M3U playlist to my LG TV?",
+            answer:
+              "Install an IPTV player that supports M3U playlists, open its playlist settings and enter the complete M3U URL supplied by your provider. Some applications require you to upload the playlist through their activation website.",
+          },
+          {
+            question: "6. Why is IPTV not showing in my LG Content Store?",
+            answer:
+              "The application may not support your LG model, webOS version or country. Check for available software updates and search for other compatible webOS players.",
+          },
+          {
+            question: "7. Do I need to pay to download an IPTV app on LG TV?",
+            answer:
+              "Some IPTV players are free to download, while others require a separate activation fee or paid licence. The cost of the player is separate from the IPTV subscription.",
+          },
+          {
+            question: "8. Does Telvis support LG Smart TVs?",
+            answer:
+              "Telvis provides setup guidance for compatible LG Smart TVs using webOS IPTV players. Application availability and login compatibility depend on your model and the supported player. Contact Telvis support if you need help confirming your setup.",
+          },
+          {
+            question: "9. Can I watch IPTV in 4K on an LG OLED TV?",
+            answer:
+              "An LG OLED television may support 4K playback, but the actual IPTV stream must also be available in 4K. Your player, internet connection and content source must support the required resolution.",
+          },
+          {
+            question: "10. How do I fix IPTV buffering on my LG TV?",
+            answer:
+              "Check your internet connection, restart your router and IPTV player, and close unnecessary applications. If possible, connect your LG television through Ethernet to reduce Wi-Fi interference.",
+          },
+          {
+            question: "11. Can I use IPTV on an LG TV with webOS?",
+            answer:
+              "Yes. Compatible webOS IPTV players are available through the LG Content Store in supported regions. You can add your IPTV playlist or login details once the application is installed.",
+          },
+          {
+            question: "12. Can I try Telvis before buying a subscription?",
+            answer:
+              "Yes. Telvis offers a free 24-hour trial. You can use this period to check available content, compatibility and playback on your supported device before choosing a paid plan.",
+          },
+        ],
       },
     ],
   },
@@ -1993,6 +1512,8 @@ export const blogPosts: BlogPost[] = [
     readMinutes: 13,
     datePublished: "2026-11-02",
     dateModified: "2026-11-02",
+    image: "/iptv-configuration-settings-thumbnail.webp",
+    imageAlt: "IPTV configuration and player settings guide",
     excerpt:
       "Understand essential IPTV configuration and player settings — from Xtream Codes and M3U setup to hardware decoding, buffer size, stream formats, EPG and audio output.",
     blocks: [
@@ -2390,92 +1911,65 @@ export const blogPosts: BlogPost[] = [
         text: "Frequently Asked Questions",
       },
       {
-        type: "h3",
-        text: "1. What are the best IPTV settings for smooth streaming?",
-      },
-      {
-        type: "p",
-        text: "Start with hardware decoding where supported, Auto or Medium buffer size, Auto aspect ratio and automatic playlist updates. Adjust individual settings only if you experience a specific problem.",
-      },
-      {
-        type: "h3",
-        text: "2. What is IPTV configuration?",
-      },
-      {
-        type: "p",
-        text: "IPTV configuration involves connecting an IPTV subscription to a compatible player, adding the required login details and adjusting playback, EPG and device settings.",
-      },
-      {
-        type: "h3",
-        text: "3. What is the difference between IPTV settings and IPTV configuration?",
-      },
-      {
-        type: "p",
-        text: "IPTV configuration refers to the complete setup process, including account connection and player installation. IPTV settings are the individual options used to manage playback, picture quality, buffering and programme information.",
-      },
-      {
-        type: "h3",
-        text: "4. Should I use hardware or software decoding for IPTV?",
-      },
-      {
-        type: "p",
-        text: "Hardware decoding is generally the best starting point on supported devices because it uses dedicated video-processing hardware. Try software decoding if a particular stream has compatibility problems.",
-      },
-      {
-        type: "h3",
-        text: "5. What buffer size should I use for IPTV?",
-      },
-      {
-        type: "p",
-        text: "Auto or Medium is a sensible starting point. You can test a larger buffer if playback suffers from brief connection interruptions, but it cannot repair a consistently unstable internet connection.",
-      },
-      {
-        type: "h3",
-        text: "6. How do I configure an IPTV M3U playlist?",
-      },
-      {
-        type: "p",
-        text: "Open a compatible IPTV player, choose Add Playlist, select the M3U URL option and enter the complete playlist address supplied by your provider.",
-      },
-      {
-        type: "h3",
-        text: "7. What is an IPTV encoder?",
-      },
-      {
-        type: "p",
-        text: "An IPTV encoder converts video and audio signals into digital streams for distribution over an IP network. It is mainly used by broadcasters and content providers rather than ordinary IPTV viewers.",
-      },
-      {
-        type: "h3",
-        text: "8. How do I set up an IPTV encoder?",
-      },
-      {
-        type: "p",
-        text: "Connect the supported video source, configure input and encoding formats, set resolution and bitrate, select a supported output protocol and test the resulting stream. Exact instructions depend on the encoder model.",
-      },
-      {
-        type: "h3",
-        text: "9. Why are my IPTV settings not saving?",
-      },
-      {
-        type: "p",
-        text: "Check whether the application has permission to save data, whether your device has sufficient storage and whether the player requires you to confirm changes before leaving the settings menu.",
-      },
-      {
-        type: "h3",
-        text: "10. Can I configure Telvis IPTV on different devices?",
-      },
-      {
-        type: "p",
-        text: "Telvis provides setup guidance for supported devices. The installation method and available login options depend on your device's operating system and compatible IPTV player.",
-      },
-      {
-        type: "h3",
-        text: "11. Do I need to change IPTV settings after installation?",
-      },
-      {
-        type: "p",
-        text: "Not necessarily. Most players work with their default settings. You should only change options such as decoder, buffer or stream format when there is a specific reason to do so.",
+        type: "faq",
+        items: [
+          {
+            question: "1. What are the best IPTV settings for smooth streaming?",
+            answer:
+              "Start with hardware decoding where supported, Auto or Medium buffer size, Auto aspect ratio and automatic playlist updates. Adjust individual settings only if you experience a specific problem.",
+          },
+          {
+            question: "2. What is IPTV configuration?",
+            answer:
+              "IPTV configuration involves connecting an IPTV subscription to a compatible player, adding the required login details and adjusting playback, EPG and device settings.",
+          },
+          {
+            question:
+              "3. What is the difference between IPTV settings and IPTV configuration?",
+            answer:
+              "IPTV configuration refers to the complete setup process, including account connection and player installation. IPTV settings are the individual options used to manage playback, picture quality, buffering and programme information.",
+          },
+          {
+            question: "4. Should I use hardware or software decoding for IPTV?",
+            answer:
+              "Hardware decoding is generally the best starting point on supported devices because it uses dedicated video-processing hardware. Try software decoding if a particular stream has compatibility problems.",
+          },
+          {
+            question: "5. What buffer size should I use for IPTV?",
+            answer:
+              "Auto or Medium is a sensible starting point. You can test a larger buffer if playback suffers from brief connection interruptions, but it cannot repair a consistently unstable internet connection.",
+          },
+          {
+            question: "6. How do I configure an IPTV M3U playlist?",
+            answer:
+              "Open a compatible IPTV player, choose Add Playlist, select the M3U URL option and enter the complete playlist address supplied by your provider.",
+          },
+          {
+            question: "7. What is an IPTV encoder?",
+            answer:
+              "An IPTV encoder converts video and audio signals into digital streams for distribution over an IP network. It is mainly used by broadcasters and content providers rather than ordinary IPTV viewers.",
+          },
+          {
+            question: "8. How do I set up an IPTV encoder?",
+            answer:
+              "Connect the supported video source, configure input and encoding formats, set resolution and bitrate, select a supported output protocol and test the resulting stream. Exact instructions depend on the encoder model.",
+          },
+          {
+            question: "9. Why are my IPTV settings not saving?",
+            answer:
+              "Check whether the application has permission to save data, whether your device has sufficient storage and whether the player requires you to confirm changes before leaving the settings menu.",
+          },
+          {
+            question: "10. Can I configure Telvis IPTV on different devices?",
+            answer:
+              "Telvis provides setup guidance for supported devices. The installation method and available login options depend on your device's operating system and compatible IPTV player.",
+          },
+          {
+            question: "11. Do I need to change IPTV settings after installation?",
+            answer:
+              "Not necessarily. Most players work with their default settings. You should only change options such as decoder, buffer or stream format when there is a specific reason to do so.",
+          },
+        ],
       },
     ],
   },
@@ -2483,9 +1977,6 @@ export const blogPosts: BlogPost[] = [
 
 /** Stable slugs for cross-page internal links. */
 export const blogSlugs = {
-  trial: "iptv-uk-free-trial-what-to-test-24-hours",
-  firestick: "install-iptv-on-firestick-uk-guide",
-  payTv: "iptv-uk-vs-pay-tv-costs-uk-households",
   british4k: "british-iptv-4k-iptv-streaming-uk",
   fixBuffering: "how-to-fix-iptv-buffering-for-smooth-streaming",
   sportsPlaylist: "free-popular-iptv-playlist-sports",

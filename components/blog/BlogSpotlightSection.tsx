@@ -15,9 +15,9 @@ type BlogSpotlightSectionProps = {
 };
 
 const defaultSlugs = [
-  "iptv-uk-free-trial-what-to-test-24-hours",
-  "install-iptv-on-firestick-uk-guide",
-  "iptv-uk-vs-pay-tv-costs-uk-households",
+  "british-iptv-4k-iptv-streaming-uk",
+  "how-to-fix-iptv-buffering-for-smooth-streaming",
+  "iptv-configuration-and-iptv-settings",
 ] as const;
 
 export function BlogSpotlightSection({

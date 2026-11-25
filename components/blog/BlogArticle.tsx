@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaqList } from "@/components/faq/FaqList";
 import type { BlogBlock } from "@/lib/blog-posts";
 
 type BlogArticleProps = {
@@ -80,6 +81,10 @@ export function BlogArticle({ blocks }: BlogArticleProps) {
               </table>
             </div>
           );
+        }
+
+        if (block.type === "faq") {
+          return <FaqList key={index} items={block.items} />;
         }
 
         return (

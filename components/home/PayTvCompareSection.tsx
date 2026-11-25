@@ -51,8 +51,8 @@ export function PayTvCompareSection() {
             Listed catalogue totals and programme availability can change. Use the
             free trial to confirm picture quality, categories and device compatibility
             on your home connection before choosing a paid plan.{" "}
-            <Link href={blogPostHref(blogSlugs.payTv)} className="telvis-text-link">
-              Read the IPTV vs pay TV cost breakdown
+            <Link href={blogPostHref(blogSlugs.british4k)} className="telvis-text-link">
+              Read our British IPTV 4K &amp; UK streaming guide
             </Link>
             .
           </CardRevealPart>

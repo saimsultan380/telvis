@@ -40,7 +40,7 @@ export function BlogPostSchema({ post }: { post: BlogPost }) {
             url: absoluteAssetUrl(brandAssets.logo512),
           },
         },
-        image: [absoluteAssetUrl(brandAssets.ogImage)],
+        image: [absoluteAssetUrl(post.image)],
         keywords: post.keywords.join(", "),
       },
     ],

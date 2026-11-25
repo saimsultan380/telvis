@@ -104,6 +104,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <span>{post.category}</span>
             </nav>
 
+            <figure className="telvis-glass telvis-blog-post-media">
+              <img
+                src={post.image}
+                alt={post.imageAlt}
+                width={1280}
+                height={720}
+                className="telvis-blog-post-img"
+              />
+            </figure>
+
             <div className="telvis-glass telvis-blog-prose-shell">
               <BlogArticle blocks={post.blocks} />
             </div>

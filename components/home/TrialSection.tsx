@@ -54,8 +54,8 @@ export function TrialSection() {
               If something does not work, contact support during the trial. We
               can check your login, app, device and connection before you choose
               a paid plan.{" "}
-              <Link href={blogPostHref(blogSlugs.trial)} className="telvis-text-link">
-                Read the full 24-hour trial checklist
+              <Link href={blogPostHref(blogSlugs.configuration)} className="telvis-text-link">
+                Read the complete IPTV setup &amp; configuration guide
               </Link>
               .
             </CardRevealPart>
